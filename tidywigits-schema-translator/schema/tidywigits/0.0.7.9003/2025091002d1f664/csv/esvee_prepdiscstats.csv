@@ -1,0 +1,16 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+tot_reads, double
+prep_reads, double
+translocation, double
+inv_lt_1k, double
+inv_1_to_5k, double
+inv_5_to_100k, double
+inv_gt_100k, double
+del_1_to_5k, double
+del_5_to_100k, double
+del_gt_100k, double
+dup_1_to_5k, double
+dup_5_to_100k, double
+dup_gt_100k, double

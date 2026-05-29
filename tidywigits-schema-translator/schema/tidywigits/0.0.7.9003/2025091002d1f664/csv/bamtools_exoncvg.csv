@@ -1,0 +1,9 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+gene, varchar
+chrom, varchar
+start, double
+end, double
+exon, double
+dp_med, double

@@ -1,0 +1,21 @@
+models:
+- name: purple_purityrange
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: purity
+    data_type: double
+  - name: norm_factor
+    data_type: double
+  - name: score
+    data_type: double
+  - name: diploid_proportion
+    data_type: double
+  - name: ploidy
+    data_type: double
+  - name: somatic_penalty
+    data_type: double

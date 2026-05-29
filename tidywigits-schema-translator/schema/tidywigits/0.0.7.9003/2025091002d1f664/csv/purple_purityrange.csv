@@ -1,0 +1,9 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+purity, double
+norm_factor, double
+score, double
+diploid_proportion, double
+ploidy, double
+somatic_penalty, double

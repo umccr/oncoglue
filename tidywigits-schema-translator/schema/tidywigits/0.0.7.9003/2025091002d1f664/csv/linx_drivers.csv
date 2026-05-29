@@ -1,0 +1,6 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+cluster_id, varchar
+gene, varchar
+event_type, varchar

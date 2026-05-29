@@ -1,0 +1,10 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+chrom, varchar
+pos_start, bigint
+pos_end, bigint
+n_snp, bigint
+n_hom, bigint
+n_het, bigint
+filter, varchar

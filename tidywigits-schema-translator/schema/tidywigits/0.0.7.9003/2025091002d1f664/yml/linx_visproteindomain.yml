@@ -1,0 +1,21 @@
+models:
+- name: linx_visproteindomain
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: cluster_id
+    data_type: varchar
+  - name: transcript
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: start
+    data_type: varchar
+  - name: end
+    data_type: varchar
+  - name: info
+    data_type: varchar

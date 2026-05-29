@@ -1,0 +1,13 @@
+models:
+- name: chord_signatures
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: signature
+    data_type: varchar
+  - name: count
+    data_type: bigint

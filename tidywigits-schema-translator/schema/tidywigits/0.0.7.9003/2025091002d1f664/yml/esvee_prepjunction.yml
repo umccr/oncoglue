@@ -1,0 +1,33 @@
+models:
+- name: esvee_prepjunction
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: position
+    data_type: double
+  - name: orientation
+    data_type: double
+  - name: junc_frags
+    data_type: double
+  - name: exact_support_frags
+    data_type: double
+  - name: other_support_frags
+    data_type: double
+  - name: low_map_qual_frags
+    data_type: double
+  - name: max_qual
+    data_type: double
+  - name: extra_info
+    data_type: double
+  - name: indel
+    data_type: varchar
+  - name: hotspot
+    data_type: varchar
+  - name: initial_read_id
+    data_type: varchar

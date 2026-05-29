@@ -1,0 +1,30 @@
+version: 2
+models:
+- name: sat_esvee_assemblephased
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: assembly_ids
+    data_type: varchar
+  - name: assembly_info
+    data_type: varchar
+  - name: merged
+    data_type: varchar
+  - name: sequence_length
+    data_type: double
+  - name: assembly_cigar
+    data_type: varchar
+  - name: full_sequence
+    data_type: varchar

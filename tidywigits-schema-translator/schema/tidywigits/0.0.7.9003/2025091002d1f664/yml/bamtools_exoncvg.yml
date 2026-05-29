@@ -1,0 +1,21 @@
+models:
+- name: bamtools_exoncvg
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: gene
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: start
+    data_type: double
+  - name: end
+    data_type: double
+  - name: exon
+    data_type: double
+  - name: dp_med
+    data_type: double

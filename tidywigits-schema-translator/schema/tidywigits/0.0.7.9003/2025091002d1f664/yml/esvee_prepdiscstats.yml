@@ -1,0 +1,35 @@
+models:
+- name: esvee_prepdiscstats
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: tot_reads
+    data_type: double
+  - name: prep_reads
+    data_type: double
+  - name: translocation
+    data_type: double
+  - name: inv_lt_1k
+    data_type: double
+  - name: inv_1_to_5k
+    data_type: double
+  - name: inv_5_to_100k
+    data_type: double
+  - name: inv_gt_100k
+    data_type: double
+  - name: del_1_to_5k
+    data_type: double
+  - name: del_5_to_100k
+    data_type: double
+  - name: del_gt_100k
+    data_type: double
+  - name: dup_1_to_5k
+    data_type: double
+  - name: dup_5_to_100k
+    data_type: double
+  - name: dup_gt_100k
+    data_type: double

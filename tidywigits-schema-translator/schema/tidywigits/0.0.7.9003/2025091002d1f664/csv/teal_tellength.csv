@@ -1,0 +1,16 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+sample_id, varchar
+type, varchar
+tel_length_raw, double
+tel_length_final, double
+fragments_full, double
+fragments_c_rich_partial, double
+fragments_g_rich_partial, double
+reads_telomeric_total, double
+purity, double
+ploidy, double
+dup_prop, double
+dp_read_mean, double
+dp_read_gc50, double

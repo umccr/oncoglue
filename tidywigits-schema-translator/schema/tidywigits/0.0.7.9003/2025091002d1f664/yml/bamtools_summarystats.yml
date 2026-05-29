@@ -1,0 +1,37 @@
+models:
+- name: bamtools_summarystats
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: tot_region_bases
+    data_type: double
+  - name: tot_reads
+    data_type: double
+  - name: dup_reads
+    data_type: double
+  - name: dual_strand_reads
+    data_type: double
+  - name: cov_mean
+    data_type: double
+  - name: cov_sd
+    data_type: double
+  - name: cov_median
+    data_type: double
+  - name: cov_mad
+    data_type: double
+  - name: lowmapq_pct
+    data_type: double
+  - name: dup_pct
+    data_type: double
+  - name: unpaired_pct
+    data_type: double
+  - name: lowbaseq_pct
+    data_type: double
+  - name: overlap_read_pct
+    data_type: double
+  - name: cov_capped
+    data_type: double
