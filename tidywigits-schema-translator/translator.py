@@ -215,10 +215,10 @@ if __name__ == '__main__':
         # )
 
         for file in par_files:
-            tbl_name = file['tbl_name']
+            tbl_name = file.get('tbl_name', file['tbl'])  # handle legacy
             tables.add(tbl_name)
 
-            outpath = Path(base_dir, file['outpath'])
+            outpath = Path(base_dir, file.get('outpath', file['fout']))  # handle legacy
             s: pa.Schema = pq.read_schema(outpath)
             # print(s)
 
