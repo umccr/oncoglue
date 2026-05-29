@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS tidywigits.purple_germdeltsv;

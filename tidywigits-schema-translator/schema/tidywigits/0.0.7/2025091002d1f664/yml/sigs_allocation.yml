@@ -1,0 +1,15 @@
+models:
+- name: sigs_allocation
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: signature
+    data_type: varchar
+  - name: allocation
+    data_type: double
+  - name: percent
+    data_type: double

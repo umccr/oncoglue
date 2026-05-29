@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: sat_purple_qc
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: qc_status
+    data_type: varchar
+  - name: method
+    data_type: varchar
+  - name: cn_segments
+    data_type: bigint
+  - name: cn_segments_unsupported
+    data_type: bigint
+  - name: purity
+    data_type: double
+  - name: gender_amber
+    data_type: varchar
+  - name: gender_cobalt
+    data_type: varchar
+  - name: deleted_genes
+    data_type: bigint
+  - name: contamination
+    data_type: double
+  - name: germline_aberrations
+    data_type: varchar
+  - name: mean_depth_amber
+    data_type: double
+  - name: loh_percent
+    data_type: double
+  - name: tinc_level
+    data_type: double
+  - name: chimerism_percent
+    data_type: double

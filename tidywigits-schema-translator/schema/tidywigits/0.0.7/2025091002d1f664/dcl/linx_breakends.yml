@@ -1,0 +1,58 @@
+version: 2
+models:
+- name: sat_linx_breakends
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: bnd_id
+    data_type: varchar
+  - name: sv_id
+    data_type: varchar
+  - name: is_start
+    data_type: varchar
+  - name: gene
+    data_type: varchar
+  - name: transcript_id
+    data_type: varchar
+  - name: canonical
+    data_type: varchar
+  - name: gene_orientation
+    data_type: varchar
+  - name: disruptive
+    data_type: varchar
+  - name: reported_disruption
+    data_type: varchar
+  - name: undisrupted_cn
+    data_type: double
+  - name: region_type
+    data_type: varchar
+  - name: coding_type
+    data_type: varchar
+  - name: biotype
+    data_type: varchar
+  - name: exonic_basephase
+    data_type: double
+  - name: next_splice_exon_rank
+    data_type: double
+  - name: next_splice_exon_phase
+    data_type: double
+  - name: next_splice_distance
+    data_type: double
+  - name: total_exon_count
+    data_type: double
+  - name: exon_up
+    data_type: double
+  - name: exon_down
+    data_type: double

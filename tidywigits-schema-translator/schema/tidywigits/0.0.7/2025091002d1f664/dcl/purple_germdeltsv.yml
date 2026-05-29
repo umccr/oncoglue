@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: sat_purple_germdeltsv
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: gene
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: chrom_band
+    data_type: varchar
+  - name: start_region
+    data_type: double
+  - name: end_region
+    data_type: double
+  - name: window_count_depth
+    data_type: double
+  - name: start_exon
+    data_type: double
+  - name: end_exon
+    data_type: double
+  - name: detection_method
+    data_type: varchar
+  - name: status_germline
+    data_type: varchar
+  - name: status_tumor
+    data_type: varchar
+  - name: cn_germline
+    data_type: double
+  - name: cn_tumor
+    data_type: double
+  - name: filter
+    data_type: varchar
+  - name: cohort_frequency
+    data_type: double
+  - name: reported
+    data_type: varchar

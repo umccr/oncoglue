@@ -1,0 +1,19 @@
+models:
+- name: bamtools_genecvg_genes
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: gene
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: pos_start
+    data_type: double
+  - name: pos_end
+    data_type: double
+  - name: missed_var_likelihood
+    data_type: double

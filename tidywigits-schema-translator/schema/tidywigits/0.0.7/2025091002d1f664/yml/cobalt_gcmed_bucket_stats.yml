@@ -1,0 +1,13 @@
+models:
+- name: cobalt_gcmed_bucket_stats
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: gc_bucket
+    data_type: varchar
+  - name: median
+    data_type: double

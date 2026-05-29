@@ -1,0 +1,21 @@
+models:
+- name: cider_locstats
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: locus
+    data_type: varchar
+  - name: reads_used
+    data_type: double
+  - name: reads_total
+    data_type: double
+  - name: downsampled
+    data_type: varchar
+  - name: sequences
+    data_type: double
+  - name: sequences_pass
+    data_type: double

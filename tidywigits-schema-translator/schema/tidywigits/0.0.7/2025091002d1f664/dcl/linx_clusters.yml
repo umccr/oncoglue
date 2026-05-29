@@ -1,0 +1,30 @@
+version: 2
+models:
+- name: sat_linx_clusters
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: cluster_id
+    data_type: varchar
+  - name: category
+    data_type: varchar
+  - name: synthetic
+    data_type: varchar
+  - name: resolved_type
+    data_type: varchar
+  - name: cluster_count
+    data_type: double
+  - name: cluster_desc
+    data_type: varchar

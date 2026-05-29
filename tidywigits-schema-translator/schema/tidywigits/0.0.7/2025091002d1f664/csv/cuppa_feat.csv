@@ -1,0 +1,7 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+source, varchar
+category, varchar
+key, varchar
+value, double

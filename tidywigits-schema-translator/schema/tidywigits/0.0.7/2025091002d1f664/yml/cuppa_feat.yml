@@ -1,0 +1,17 @@
+models:
+- name: cuppa_feat
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: source
+    data_type: varchar
+  - name: category
+    data_type: varchar
+  - name: key
+    data_type: varchar
+  - name: value
+    data_type: double
