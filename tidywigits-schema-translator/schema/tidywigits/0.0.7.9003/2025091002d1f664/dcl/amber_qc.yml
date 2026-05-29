@@ -1,0 +1,26 @@
+version: 2
+models:
+- name: sat_amber_qc
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: qc_status
+    data_type: varchar
+  - name: contamination
+    data_type: double
+  - name: consanguinity
+    data_type: double
+  - name: uniparental_disomy
+    data_type: varchar

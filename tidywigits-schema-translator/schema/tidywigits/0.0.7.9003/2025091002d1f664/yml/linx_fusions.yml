@@ -1,0 +1,57 @@
+models:
+- name: linx_fusions
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: breakendid5
+    data_type: varchar
+  - name: breakendid3
+    data_type: varchar
+  - name: name
+    data_type: varchar
+  - name: reported
+    data_type: varchar
+  - name: reported_type
+    data_type: varchar
+  - name: reportable_reasons
+    data_type: varchar
+  - name: phased
+    data_type: varchar
+  - name: likelihood
+    data_type: varchar
+  - name: chain_length
+    data_type: double
+  - name: chain_links
+    data_type: double
+  - name: chain_terminated
+    data_type: varchar
+  - name: domains_kept
+    data_type: varchar
+  - name: domains_lost
+    data_type: varchar
+  - name: skipped_exons_up
+    data_type: double
+  - name: skipped_exons_down
+    data_type: double
+  - name: fused_exon_up
+    data_type: double
+  - name: fused_exon_down
+    data_type: double
+  - name: gene_start
+    data_type: varchar
+  - name: gene_context_start
+    data_type: varchar
+  - name: transcript_start
+    data_type: varchar
+  - name: gene_end
+    data_type: varchar
+  - name: gene_context_end
+    data_type: varchar
+  - name: transcript_end
+    data_type: varchar
+  - name: junction_cn
+    data_type: double

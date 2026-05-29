@@ -1,0 +1,34 @@
+version: 2
+models:
+- name: sat_linx_visgeneexon
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: cluster_id
+    data_type: varchar
+  - name: gene
+    data_type: varchar
+  - name: transcript
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: annotation_type
+    data_type: varchar
+  - name: exon_rank
+    data_type: varchar
+  - name: exon_start
+    data_type: varchar
+  - name: exon_end
+    data_type: varchar

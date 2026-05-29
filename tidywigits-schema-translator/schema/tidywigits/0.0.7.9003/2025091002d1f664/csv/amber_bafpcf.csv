@@ -1,0 +1,10 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+sampleid, varchar
+chrom, varchar
+arm, varchar
+start_pos, bigint
+end_pos, bigint
+n_probes, bigint
+mean, double

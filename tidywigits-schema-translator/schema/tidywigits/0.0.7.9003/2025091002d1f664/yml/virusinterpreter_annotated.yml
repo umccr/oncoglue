@@ -1,0 +1,31 @@
+models:
+- name: virusinterpreter_annotated
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: taxid
+    data_type: varchar
+  - name: name
+    data_type: varchar
+  - name: qc_status
+    data_type: varchar
+  - name: integrations
+    data_type: double
+  - name: interpretation
+    data_type: varchar
+  - name: percentage_covered
+    data_type: double
+  - name: mean_coverage
+    data_type: double
+  - name: expected_clonal_coverage
+    data_type: varchar
+  - name: reported
+    data_type: varchar
+  - name: blacklisted
+    data_type: varchar
+  - name: driver_likelihood
+    data_type: varchar

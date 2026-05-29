@@ -1,0 +1,41 @@
+models:
+- name: linx_visfusion
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: cluster_id
+    data_type: varchar
+  - name: reportable
+    data_type: varchar
+  - name: gene_name_up
+    data_type: varchar
+  - name: transcript_up
+    data_type: varchar
+  - name: chr_up
+    data_type: varchar
+  - name: pos_up
+    data_type: varchar
+  - name: strand_up
+    data_type: varchar
+  - name: region_type_up
+    data_type: varchar
+  - name: fused_exon_up
+    data_type: varchar
+  - name: gene_name_down
+    data_type: varchar
+  - name: transcript_down
+    data_type: varchar
+  - name: chr_down
+    data_type: varchar
+  - name: pos_down
+    data_type: varchar
+  - name: strand_down
+    data_type: varchar
+  - name: region_type_down
+    data_type: varchar
+  - name: fused_exon_down
+    data_type: varchar
