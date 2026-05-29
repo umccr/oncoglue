@@ -1,0 +1,9 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+gene, varchar
+haplotype, varchar
+count, double
+function, varchar
+linked_drugs, varchar
+prescription_urls, varchar

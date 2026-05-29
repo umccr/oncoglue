@@ -1,0 +1,14 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+taxid, varchar
+name, varchar
+qc_status, varchar
+integrations, double
+interpretation, varchar
+percentage_covered, double
+mean_coverage, double
+expected_clonal_coverage, varchar
+reported, varchar
+blacklisted, varchar
+driver_likelihood, varchar

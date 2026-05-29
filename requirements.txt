@@ -1,1 +1,3 @@
 pyarrow
+pyyaml
+python-dotenv

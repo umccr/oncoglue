@@ -1,0 +1,6 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+variant_cn_bucket, double
+cn_bucket, double
+count, double

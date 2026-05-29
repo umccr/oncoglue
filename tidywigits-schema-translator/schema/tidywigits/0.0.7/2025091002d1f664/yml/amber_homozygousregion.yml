@@ -1,0 +1,23 @@
+models:
+- name: amber_homozygousregion
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: pos_start
+    data_type: bigint
+  - name: pos_end
+    data_type: bigint
+  - name: n_snp
+    data_type: bigint
+  - name: n_hom
+    data_type: bigint
+  - name: n_het
+    data_type: bigint
+  - name: filter
+    data_type: varchar

@@ -1,0 +1,15 @@
+models:
+- name: bamtools_genecvg_cvg
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: gene
+    data_type: varchar
+  - name: dr
+    data_type: varchar
+  - name: value
+    data_type: double

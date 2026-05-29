@@ -1,0 +1,105 @@
+models:
+- name: cider_vdj
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: cdr3_seq
+    data_type: varchar
+  - name: cdr3_aa
+    data_type: varchar
+  - name: locus
+    data_type: varchar
+  - name: filter
+    data_type: varchar
+  - name: blastn_status
+    data_type: varchar
+  - name: min_high_qual_base_reads
+    data_type: double
+  - name: assigned_reads
+    data_type: double
+  - name: v_aligned_reads
+    data_type: double
+  - name: j_aligned_reads
+    data_type: double
+  - name: in_frame
+    data_type: varchar
+  - name: contains_stop
+    data_type: varchar
+  - name: v_type
+    data_type: varchar
+  - name: v_anchor_start
+    data_type: double
+  - name: v_anchor_end
+    data_type: double
+  - name: v_anchor_seq
+    data_type: varchar
+  - name: v_anchor_template_seq
+    data_type: varchar
+  - name: v_anchor_aa
+    data_type: varchar
+  - name: v_anchor_template_aa
+    data_type: varchar
+  - name: v_match_method
+    data_type: varchar
+  - name: v_similarity_score
+    data_type: double
+  - name: v_non_split_reads
+    data_type: double
+  - name: j_type
+    data_type: varchar
+  - name: j_anchor_start
+    data_type: double
+  - name: j_anchor_end
+    data_type: double
+  - name: j_anchor_seq
+    data_type: varchar
+  - name: j_anchor_template_seq
+    data_type: varchar
+  - name: j_anchor_aa
+    data_type: varchar
+  - name: j_anchor_template_aa
+    data_type: varchar
+  - name: j_match_method
+    data_type: varchar
+  - name: j_similarity_score
+    data_type: double
+  - name: j_non_split_reads
+    data_type: double
+  - name: v_gene
+    data_type: varchar
+  - name: v_pident
+    data_type: double
+  - name: v_align_start
+    data_type: double
+  - name: v_align_end
+    data_type: double
+  - name: d_gene
+    data_type: varchar
+  - name: d_pident
+    data_type: double
+  - name: d_align_start
+    data_type: double
+  - name: d_align_end
+    data_type: double
+  - name: j_gene
+    data_type: varchar
+  - name: j_pident
+    data_type: double
+  - name: j_align_start
+    data_type: double
+  - name: j_align_end
+    data_type: double
+  - name: v_primer_matches
+    data_type: double
+  - name: j_primer_matches
+    data_type: double
+  - name: layout_id
+    data_type: varchar
+  - name: full_seq
+    data_type: varchar
+  - name: support
+    data_type: varchar

@@ -1,0 +1,10 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+cluster_id, varchar
+chain_id, varchar
+chrom, varchar
+pos_start, varchar
+pos_end, varchar
+link_ploidy, double
+in_double_minute, varchar

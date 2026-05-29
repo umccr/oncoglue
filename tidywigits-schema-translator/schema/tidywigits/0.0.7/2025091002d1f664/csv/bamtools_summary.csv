@@ -1,0 +1,17 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+tot_region_bases, double
+tot_reads, double
+dup_reads, double
+dual_strand_reads, double
+cov_mean, double
+cov_sd, double
+cov_median, double
+cov_mad, double
+lowmapq_pct, double
+dup_pct, double
+unpaired_pct, double
+lowbaseq_pct, double
+overlap_read_pct, double
+cov_capped, double

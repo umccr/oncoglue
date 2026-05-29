@@ -1,0 +1,25 @@
+models:
+- name: chord_prediction
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_pfix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: sample_id
+    data_type: varchar
+  - name: p_brca1
+    data_type: double
+  - name: p_brca2
+    data_type: double
+  - name: p_hrd
+    data_type: double
+  - name: hr_status
+    data_type: varchar
+  - name: hrd_type
+    data_type: varchar
+  - name: remarks_hr_status
+    data_type: varchar
+  - name: remarks_hrd_type
+    data_type: varchar

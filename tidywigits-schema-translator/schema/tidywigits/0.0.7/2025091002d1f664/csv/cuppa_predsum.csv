@@ -1,0 +1,12 @@
+input_id, varchar
+input_pfix, varchar
+output_id, varchar
+sample_id, varchar
+clf_group, varchar
+clf_name, varchar
+pred_class_rank, bigint
+pred_class, varchar
+pred_prob_rank, bigint
+pred_prob, double
+extra_info, varchar
+extra_info_format, varchar
