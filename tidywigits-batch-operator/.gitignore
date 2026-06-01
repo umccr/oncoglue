@@ -1,0 +1,6 @@
+.env
+manifest.csv
+
+# exclude any local data
+data/*
+!data/.gitkeep
