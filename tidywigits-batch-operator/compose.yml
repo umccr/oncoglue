@@ -1,0 +1,14 @@
+services:
+  tidywigits:
+    image: ${TIDYWIGITS_IMAGE_URL}:${TIDYWIGITS_IMAGE_TAG}
+    platform: linux/amd64
+    working_dir: /app
+    volumes:
+      - type: bind
+        source: ./data/input
+        target: /app/input
+        read_only: true
+      - type: bind
+        source: ./data/output
+        target: /app/output
+        read_only: false
