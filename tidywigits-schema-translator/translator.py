@@ -191,12 +191,14 @@ if __name__ == '__main__':
     schema_out_csv = schema_out_base + 'csv'
     schema_out_yml = schema_out_base + 'yml'
     schema_out_dcl = schema_out_base + 'dcl'
+    schema_out_view = schema_out_base + 'view'
 
     os.makedirs(schema_out_create, exist_ok=True)
     os.makedirs(schema_out_drop, exist_ok=True)
     os.makedirs(schema_out_csv, exist_ok=True)
     os.makedirs(schema_out_yml, exist_ok=True)
     os.makedirs(schema_out_dcl, exist_ok=True)
+    os.makedirs(schema_out_view, exist_ok=True)
 
     with open(metadata_json) as f:
         metadata = json.load(f)
@@ -217,7 +219,6 @@ if __name__ == '__main__':
         for file in par_files:
             tbl_name = file.get('tbl_name', file['tbl'])  # handle legacy
             tables.add(tbl_name)
-
             outpath = Path(base_dir, file.get('outpath', file['fout']))  # handle legacy
             s: pa.Schema = pq.read_schema(outpath)
             # print(s)
@@ -246,6 +247,15 @@ TBLPROPERTIES (
 
             with open(schema_out_create + '/' + tbl_name + '.sql', 'w') as fo:
                 fo.write(ddl_sql_create)
+
+            ddl_sql_view = f"""CREATE OR REPLACE VIEW {lz_dbname}.v_{tbl_name} AS
+SELECT *
+FROM {lz_dbname}.{tbl_name}
+WHERE regexp_like("$path", '{tbl_name}\\.parquet$')
+;
+"""
+            with open(schema_out_view + '/' + tbl_name + '.sql', 'w') as fov:
+                fov.write(ddl_sql_view)
 
             ddl_sql_drop = f"""DROP TABLE IF EXISTS {lz_dbname}.{tbl_name};"""
             # print(ddl_sql_drop)
