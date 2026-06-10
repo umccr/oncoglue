@@ -1,0 +1,8 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+gene, varchar
+chrom, varchar
+pos_start, double
+pos_end, double
+missed_var_likelihood, double

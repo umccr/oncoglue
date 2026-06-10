@@ -1,0 +1,47 @@
+models:
+- name: lilac_summary
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: allele
+    data_type: varchar
+  - name: ref_total
+    data_type: double
+  - name: ref_unique
+    data_type: double
+  - name: ref_shared
+    data_type: double
+  - name: ref_wild
+    data_type: double
+  - name: tumor_total
+    data_type: double
+  - name: tumor_unique
+    data_type: double
+  - name: tumor_shared
+    data_type: double
+  - name: tumor_wild
+    data_type: double
+  - name: rna_total
+    data_type: double
+  - name: rna_unique
+    data_type: double
+  - name: rna_shared
+    data_type: double
+  - name: rna_wild
+    data_type: double
+  - name: tumor_cn
+    data_type: double
+  - name: somatic_missense
+    data_type: double
+  - name: somatic_nonsense_or_frameshift
+    data_type: double
+  - name: somatic_splice
+    data_type: double
+  - name: somatic_synonymous
+    data_type: double
+  - name: somatic_inframe_indel
+    data_type: double

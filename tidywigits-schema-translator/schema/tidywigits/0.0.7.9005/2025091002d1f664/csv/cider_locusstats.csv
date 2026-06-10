@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+locus, varchar
+reads_used, double
+reads_total, double
+downsampled, varchar
+sequences, double
+sequences_pass, double

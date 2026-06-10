@@ -1,0 +1,47 @@
+models:
+- name: purple_cnvgenetsv
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: start
+    data_type: double
+  - name: end
+    data_type: double
+  - name: gene
+    data_type: varchar
+  - name: cn_min
+    data_type: double
+  - name: cn_max
+    data_type: double
+  - name: somatic_regions
+    data_type: double
+  - name: transcript_id
+    data_type: varchar
+  - name: is_canonical
+    data_type: varchar
+  - name: chrom_band
+    data_type: varchar
+  - name: regions_min
+    data_type: double
+  - name: start_region_min
+    data_type: double
+  - name: end_region_min
+    data_type: double
+  - name: start_region_min_support
+    data_type: varchar
+  - name: end_region_min_support
+    data_type: varchar
+  - name: region_min_method
+    data_type: varchar
+  - name: cn_minor_allele_min
+    data_type: double
+  - name: window_count_depth
+    data_type: double
+  - name: gc_content
+    data_type: double

@@ -1,0 +1,43 @@
+models:
+- name: cider_blastn
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: cdr3_seq
+    data_type: varchar
+  - name: cdr3_aa
+    data_type: varchar
+  - name: match_type
+    data_type: varchar
+  - name: gene
+    data_type: varchar
+  - name: functionality
+    data_type: varchar
+  - name: p_ident
+    data_type: double
+  - name: seq_length
+    data_type: double
+  - name: align_start
+    data_type: double
+  - name: align_end
+    data_type: double
+  - name: align_gaps
+    data_type: double
+  - name: align_evalue
+    data_type: double
+  - name: align_bitscore
+    data_type: double
+  - name: ref_strand
+    data_type: varchar
+  - name: ref_start
+    data_type: double
+  - name: ref_end
+    data_type: double
+  - name: ref_contig
+    data_type: varchar
+  - name: ref_seq
+    data_type: varchar

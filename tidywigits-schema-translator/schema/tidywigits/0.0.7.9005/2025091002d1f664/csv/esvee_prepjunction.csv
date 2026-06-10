@@ -1,0 +1,15 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+chrom, varchar
+position, double
+orientation, double
+junc_frags, double
+exact_support_frags, double
+other_support_frags, double
+low_map_qual_frags, double
+max_qual, double
+extra_info, double
+indel, varchar
+hotspot, varchar
+initial_read_id, varchar

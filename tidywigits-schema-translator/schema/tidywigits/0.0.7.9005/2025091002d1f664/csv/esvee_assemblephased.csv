@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+assembly_ids, varchar
+assembly_info, varchar
+merged, varchar
+sequence_length, double
+assembly_cigar, varchar
+full_sequence, varchar

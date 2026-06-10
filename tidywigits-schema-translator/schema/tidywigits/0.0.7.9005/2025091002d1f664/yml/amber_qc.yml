@@ -1,0 +1,17 @@
+models:
+- name: amber_qc
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: qc_status
+    data_type: varchar
+  - name: contamination
+    data_type: double
+  - name: consanguinity
+    data_type: double
+  - name: uniparental_disomy
+    data_type: varchar

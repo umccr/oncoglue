@@ -1,0 +1,56 @@
+version: 2
+models:
+- name: sat_linx_svs
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: vcf_id
+    data_type: varchar
+  - name: sv_id
+    data_type: varchar
+  - name: cluster_id
+    data_type: varchar
+  - name: cluster_reason
+    data_type: varchar
+  - name: fragile_site_start
+    data_type: varchar
+  - name: fragile_site_end
+    data_type: varchar
+  - name: is_foldback
+    data_type: varchar
+  - name: linetype_start
+    data_type: varchar
+  - name: linetype_end
+    data_type: varchar
+  - name: junction_cn_min
+    data_type: double
+  - name: junction_cn_max
+    data_type: double
+  - name: gene_start
+    data_type: varchar
+  - name: gene_end
+    data_type: varchar
+  - name: local_topology_id_start
+    data_type: varchar
+  - name: local_topology_id_end
+    data_type: varchar
+  - name: local_topology_start
+    data_type: varchar
+  - name: local_topology_end
+    data_type: varchar
+  - name: local_ti_count_start
+    data_type: double
+  - name: local_ti_count_end
+    data_type: double

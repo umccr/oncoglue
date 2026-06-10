@@ -1,0 +1,13 @@
+models:
+- name: bamtools_coverage
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: coverage
+    data_type: double
+  - name: count
+    data_type: double

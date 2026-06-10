@@ -1,0 +1,54 @@
+version: 2
+models:
+- name: sat_linx_neoepitope
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: gene_id_up
+    data_type: varchar
+  - name: gene_name_up
+    data_type: varchar
+  - name: chrom_up
+    data_type: varchar
+  - name: pos_up
+    data_type: double
+  - name: orientation_up
+    data_type: double
+  - name: sv_id_up
+    data_type: varchar
+  - name: gene_id_down
+    data_type: varchar
+  - name: gene_name_down
+    data_type: varchar
+  - name: chrom_down
+    data_type: varchar
+  - name: pos_down
+    data_type: double
+  - name: orientation_down
+    data_type: double
+  - name: sv_id_down
+    data_type: varchar
+  - name: junc_cn
+    data_type: double
+  - name: cn
+    data_type: double
+  - name: insert_seq
+    data_type: varchar
+  - name: chain_length
+    data_type: double
+  - name: transcripts_up
+    data_type: varchar
+  - name: transcripts_down
+    data_type: varchar

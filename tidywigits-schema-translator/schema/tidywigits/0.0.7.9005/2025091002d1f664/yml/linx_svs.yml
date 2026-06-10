@@ -1,0 +1,47 @@
+models:
+- name: linx_svs
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: vcf_id
+    data_type: varchar
+  - name: sv_id
+    data_type: varchar
+  - name: cluster_id
+    data_type: varchar
+  - name: cluster_reason
+    data_type: varchar
+  - name: fragile_site_start
+    data_type: varchar
+  - name: fragile_site_end
+    data_type: varchar
+  - name: is_foldback
+    data_type: varchar
+  - name: linetype_start
+    data_type: varchar
+  - name: linetype_end
+    data_type: varchar
+  - name: junction_cn_min
+    data_type: double
+  - name: junction_cn_max
+    data_type: double
+  - name: gene_start
+    data_type: varchar
+  - name: gene_end
+    data_type: varchar
+  - name: local_topology_id_start
+    data_type: varchar
+  - name: local_topology_id_end
+    data_type: varchar
+  - name: local_topology_start
+    data_type: varchar
+  - name: local_topology_end
+    data_type: varchar
+  - name: local_ti_count_start
+    data_type: double
+  - name: local_ti_count_end
+    data_type: double

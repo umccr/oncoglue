@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+cluster_id, varchar
+category, varchar
+synthetic, varchar
+resolved_type, varchar
+cluster_count, double
+cluster_desc, varchar

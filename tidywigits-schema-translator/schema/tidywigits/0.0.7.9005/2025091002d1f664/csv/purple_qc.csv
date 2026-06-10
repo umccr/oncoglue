@@ -1,0 +1,17 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+qc_status, varchar
+method, varchar
+cn_segments, bigint
+cn_segments_unsupported, bigint
+purity, double
+gender_amber, varchar
+gender_cobalt, varchar
+deleted_genes, bigint
+contamination, double
+germline_aberrations, varchar
+mean_depth_amber, double
+loh_percent, double
+tinc_level, double
+chimerism_percent, double

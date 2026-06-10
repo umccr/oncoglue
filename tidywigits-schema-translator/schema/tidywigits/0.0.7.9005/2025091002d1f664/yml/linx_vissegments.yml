@@ -1,0 +1,23 @@
+models:
+- name: linx_vissegments
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: cluster_id
+    data_type: varchar
+  - name: chain_id
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: pos_start
+    data_type: varchar
+  - name: pos_end
+    data_type: varchar
+  - name: link_ploidy
+    data_type: double
+  - name: in_double_minute
+    data_type: varchar

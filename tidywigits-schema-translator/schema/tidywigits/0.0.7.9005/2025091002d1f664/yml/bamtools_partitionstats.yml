@@ -1,0 +1,27 @@
+models:
+- name: bamtools_partitionstats
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: pos_start
+    data_type: double
+  - name: pos_end
+    data_type: double
+  - name: total_reads
+    data_type: double
+  - name: dup_reads
+    data_type: double
+  - name: chim_reads
+    data_type: double
+  - name: interpartition
+    data_type: double
+  - name: unmap_reads
+    data_type: double
+  - name: process_time
+    data_type: double

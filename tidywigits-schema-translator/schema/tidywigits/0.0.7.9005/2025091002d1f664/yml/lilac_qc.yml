@@ -1,0 +1,65 @@
+models:
+- name: lilac_qc
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: status
+    data_type: varchar
+  - name: score_margin
+    data_type: double
+  - name: next_solution_alleles
+    data_type: varchar
+  - name: median_base_quality
+    data_type: double
+  - name: hla_y_allele
+    data_type: varchar
+  - name: discarded_indels
+    data_type: double
+  - name: discarded_indel_max_frags
+    data_type: double
+  - name: discarded_alignment_fragments
+    data_type: double
+  - name: a_low_coverage_bases
+    data_type: double
+  - name: b_low_coverage_bases
+    data_type: double
+  - name: c_low_coverage_bases
+    data_type: double
+  - name: a_types
+    data_type: double
+  - name: b_types
+    data_type: double
+  - name: c_types
+    data_type: double
+  - name: total_fragments
+    data_type: double
+  - name: fitted_fragments
+    data_type: double
+  - name: unmatched_fragments
+    data_type: double
+  - name: uninformative_fragments
+    data_type: double
+  - name: hla_y_fragments
+    data_type: double
+  - name: percent_unique
+    data_type: double
+  - name: percent_shared
+    data_type: double
+  - name: percent_wildcard
+    data_type: double
+  - name: unused_amino_acids
+    data_type: double
+  - name: unused_amino_acid_max_frags
+    data_type: double
+  - name: unused_haplotypes
+    data_type: double
+  - name: unused_haplotype_max_frags
+    data_type: double
+  - name: somatic_variants_matched
+    data_type: double
+  - name: somatic_variants_unmatched
+    data_type: double

@@ -1,0 +1,35 @@
+models:
+- name: teal_tellength
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: sample_id
+    data_type: varchar
+  - name: type
+    data_type: varchar
+  - name: tel_length_raw
+    data_type: double
+  - name: tel_length_final
+    data_type: double
+  - name: fragments_full
+    data_type: double
+  - name: fragments_c_rich_partial
+    data_type: double
+  - name: fragments_g_rich_partial
+    data_type: double
+  - name: reads_telomeric_total
+    data_type: double
+  - name: purity
+    data_type: double
+  - name: ploidy
+    data_type: double
+  - name: dup_prop
+    data_type: double
+  - name: dp_read_mean
+    data_type: double
+  - name: dp_read_gc50
+    data_type: double

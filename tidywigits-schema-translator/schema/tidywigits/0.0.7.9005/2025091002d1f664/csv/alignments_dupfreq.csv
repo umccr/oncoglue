@@ -1,0 +1,5 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+duplicate_read_count, varchar
+frequency, double

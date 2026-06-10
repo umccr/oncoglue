@@ -1,0 +1,6 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+chrom, varchar
+median_ratio, double
+count, double

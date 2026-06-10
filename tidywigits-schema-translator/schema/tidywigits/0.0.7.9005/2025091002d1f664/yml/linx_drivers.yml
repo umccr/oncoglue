@@ -1,0 +1,15 @@
+models:
+- name: linx_drivers
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: cluster_id
+    data_type: varchar
+  - name: gene
+    data_type: varchar
+  - name: event_type
+    data_type: varchar

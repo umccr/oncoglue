@@ -1,0 +1,13 @@
+models:
+- name: cobalt_version
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: version
+    data_type: varchar
+  - name: date_build
+    data_type: varchar

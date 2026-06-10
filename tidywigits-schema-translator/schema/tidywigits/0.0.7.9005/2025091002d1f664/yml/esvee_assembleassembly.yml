@@ -1,0 +1,71 @@
+models:
+- name: esvee_assembleassembly
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: id
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: junc_position
+    data_type: double
+  - name: junc_orientation
+    data_type: double
+  - name: junc_type
+    data_type: varchar
+  - name: ext_base_length
+    data_type: double
+  - name: ref_base_position
+    data_type: double
+  - name: ref_base_length
+    data_type: double
+  - name: ref_base_cigar
+    data_type: varchar
+  - name: split_frags
+    data_type: double
+  - name: ref_split_frags
+    data_type: double
+  - name: disc_frags
+    data_type: double
+  - name: ref_disc_frags
+    data_type: double
+  - name: outcome
+    data_type: varchar
+  - name: phase_group_id
+    data_type: double
+  - name: phase_group_count
+    data_type: double
+  - name: phase_set_id
+    data_type: varchar
+  - name: phase_set_count
+    data_type: double
+  - name: split_links
+    data_type: varchar
+  - name: facing_links
+    data_type: varchar
+  - name: sv_type
+    data_type: varchar
+  - name: sv_length
+    data_type: double
+  - name: inserted_bases
+    data_type: varchar
+  - name: overlap_bases
+    data_type: varchar
+  - name: secondary_links
+    data_type: varchar
+  - name: junc_sequence
+    data_type: varchar
+  - name: ref_base_sequence
+    data_type: varchar
+  - name: insert_type
+    data_type: varchar
+  - name: ref_base_candidates
+    data_type: double
+  - name: unmapped_candidates
+    data_type: double
+  - name: assembly_info
+    data_type: varchar
