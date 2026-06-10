@@ -24,7 +24,7 @@ schema_out_base = f'schema/tidywigits/{TIDYWIGITS_IMAGE_TAG}/{RUN_ID}/'
 # Landing zone bucket structure - See https://github.com/umccr/infrastructure-unimelb/issues/4
 
 # Intentionally fixed bucket name as we share and keep track of the output schema in the public repo
-lz_bucket = 's3://s3-copy-cache-042906701326-ap-southeast-2-an'
+lz_bucket = 's3://derived-secondary-data-123456789123-ap-southeast-2-an'
 
 # Optional environment variables that could be overridden
 lz_dbname = os.getenv('LZ_DBNAME', 'tidywigits')
