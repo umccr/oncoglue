@@ -24,5 +24,12 @@ debug:
 check:
 	@aws glue get-database --name "$(LZ_DBNAME)"
 
+database:
+	@aws glue create-database \
+		--region "$(REGION_NAME)" \
+    	--database-input "{\"Name\":\"$(LZ_DBNAME)\"}"
+
+create: database
+
 run:
 	@python3 migrator.py
