@@ -1,0 +1,36 @@
+version: 2
+models:
+- name: sat_bamtools_partitionstats
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: chrom
+    data_type: varchar
+  - name: pos_start
+    data_type: double
+  - name: pos_end
+    data_type: double
+  - name: total_reads
+    data_type: double
+  - name: dup_reads
+    data_type: double
+  - name: chim_reads
+    data_type: double
+  - name: interpartition
+    data_type: double
+  - name: unmap_reads
+    data_type: double
+  - name: process_time
+    data_type: double

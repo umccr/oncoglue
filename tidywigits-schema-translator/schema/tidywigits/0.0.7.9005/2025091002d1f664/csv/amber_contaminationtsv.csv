@@ -1,0 +1,13 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+chrom, varchar
+pos, bigint
+ref, varchar
+alt, varchar
+dp_normal, bigint
+refsup_normal, bigint
+altsup_normal, bigint
+dp_tumor, bigint
+refsup_tumor, bigint
+altsup_tumor, bigint

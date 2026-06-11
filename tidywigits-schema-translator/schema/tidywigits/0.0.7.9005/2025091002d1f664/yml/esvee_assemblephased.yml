@@ -1,0 +1,21 @@
+models:
+- name: esvee_assemblephased
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: assembly_ids
+    data_type: varchar
+  - name: assembly_info
+    data_type: varchar
+  - name: merged
+    data_type: varchar
+  - name: sequence_length
+    data_type: double
+  - name: assembly_cigar
+    data_type: varchar
+  - name: full_sequence
+    data_type: varchar

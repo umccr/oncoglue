@@ -1,0 +1,54 @@
+version: 2
+models:
+- name: sat_esvee_assemblealignment
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: assembly_ids
+    data_type: varchar
+  - name: assembly_info
+    data_type: varchar
+  - name: ref_info
+    data_type: varchar
+  - name: raw_seq_coords
+    data_type: varchar
+  - name: adj_seq_coords
+    data_type: varchar
+  - name: map_qual
+    data_type: double
+  - name: cigar
+    data_type: varchar
+  - name: orientation
+    data_type: double
+  - name: aligned_bases
+    data_type: double
+  - name: score
+    data_type: double
+  - name: flags
+    data_type: double
+  - name: n_matches
+    data_type: double
+  - name: xa_tag
+    data_type: varchar
+  - name: md_tag
+    data_type: varchar
+  - name: calc_align_length
+    data_type: double
+  - name: mod_map_qual
+    data_type: double
+  - name: dropped_on_requery
+    data_type: varchar
+  - name: linked_alt_alignment
+    data_type: varchar

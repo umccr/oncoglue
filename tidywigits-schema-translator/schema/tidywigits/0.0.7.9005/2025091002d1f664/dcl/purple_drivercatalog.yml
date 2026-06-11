@@ -1,0 +1,52 @@
+version: 2
+models:
+- name: sat_purple_drivercatalog
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: chrom
+    data_type: varchar
+  - name: chrom_band
+    data_type: varchar
+  - name: gene
+    data_type: varchar
+  - name: transcript
+    data_type: varchar
+  - name: is_canonical
+    data_type: varchar
+  - name: driver
+    data_type: varchar
+  - name: category
+    data_type: varchar
+  - name: likelihood_method
+    data_type: varchar
+  - name: driver_likelihood
+    data_type: double
+  - name: missense
+    data_type: double
+  - name: nonsense
+    data_type: double
+  - name: splice
+    data_type: double
+  - name: inframe
+    data_type: double
+  - name: frameshift
+    data_type: double
+  - name: biallelic
+    data_type: varchar
+  - name: cn_min
+    data_type: double
+  - name: cn_max
+    data_type: double

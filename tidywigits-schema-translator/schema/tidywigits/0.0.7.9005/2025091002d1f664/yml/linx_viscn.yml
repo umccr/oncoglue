@@ -1,0 +1,19 @@
+models:
+- name: linx_viscn
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: start
+    data_type: double
+  - name: end
+    data_type: double
+  - name: cn
+    data_type: double
+  - name: baf
+    data_type: double

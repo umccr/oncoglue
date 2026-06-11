@@ -34,37 +34,81 @@ lz_base = f'{lz_bucket}/{lz_key_prefix}'
 # ---
 
 # depends on tidywigits version, metadata.json can be found in 2 locations
-metadata_json = Path(base_dir, '_metadata/metadata.json')
-if not metadata_json.exists():
+metadata_file = Path(base_dir, 'metadata.parquet')
+if not metadata_file.exists():
+    metadata_file = Path(base_dir, '_metadata/metadata.json')
+if not metadata_file.exists():
     # fallback to old location
-    metadata_json = Path(base_dir, 'metadata.json')
+    metadata_file = Path(base_dir, 'metadata.json')
 
 # ---
 
-type_map_ddl = {
-    pa.string(): "STRING",
-    pa.int32(): "INT",
-    pa.int64(): "BIGINT",
-    pa.float64(): "DOUBLE",
-    pa.float32(): "FLOAT",
-    pa.bool_(): "BOOLEAN",
-    pa.timestamp('ns'): "TIMESTAMP",
-    pa.date32(): "DATE",
-    pa.binary(): "BINARY"
-}
+def pyarrow_to_athena_type(dtype):
+    if pa.types.is_string(dtype):
+        return "STRING"
+    elif pa.types.is_int32(dtype):
+        return "INT"
+    elif pa.types.is_int64(dtype):
+        return "BIGINT"
+    elif pa.types.is_float32(dtype):
+        return "FLOAT"
+    elif pa.types.is_float64(dtype):
+        return "DOUBLE"
+    elif pa.types.is_boolean(dtype):
+        return "BOOLEAN"
+    elif pa.types.is_timestamp(dtype):
+        return "TIMESTAMP"
+    elif pa.types.is_date(dtype):
+        return "DATE"
+    elif pa.types.is_binary(dtype):
+        return "BINARY"
 
-type_map_dcl = {
-    pa.string(): "VARCHAR",
-    pa.int32(): "BIGINT",
-    pa.int64(): "BIGINT",
-    pa.float64(): "DOUBLE",
-    pa.float32(): "FLOAT",
-    pa.bool_(): "BOOLEAN",
-    pa.timestamp('ns'): "TIMESTAMP",
-    pa.date32(): "DATE",
-    pa.binary(): "BINARY"
-}
+    # ARRAY / LIST
+    elif pa.types.is_list(dtype):
+        element_type = pyarrow_to_athena_type(dtype.value_type)
+        return f"ARRAY<{element_type}>"
 
+    # STRUCT
+    elif pa.types.is_struct(dtype):
+        fields = [
+            f"{field.name}: {pyarrow_to_athena_type(field.type)}"
+            for field in dtype
+        ]
+        return f"STRUCT<{', '.join(fields)}>"
+
+    raise ValueError(f"Unsupported type: {dtype}")
+
+def pyarrow_to_dcl_type(dtype):
+    if pa.types.is_string(dtype):
+        return "VARCHAR"
+    elif pa.types.is_int32(dtype):
+        return "BIGINT"
+    elif pa.types.is_int64(dtype):
+        return "BIGINT"
+    elif pa.types.is_float32(dtype):
+        return "FLOAT"
+    elif pa.types.is_float64(dtype):
+        return "DOUBLE"
+    elif pa.types.is_boolean(dtype):
+        return "BOOLEAN"
+    elif pa.types.is_timestamp(dtype):
+        return "TIMESTAMP"
+    elif pa.types.is_date(dtype):
+        return "DATE"
+    elif pa.types.is_binary(dtype):
+        return "BINARY"
+
+    elif pa.types.is_list(dtype):
+        return f"ARRAY<{pyarrow_to_dcl_type(dtype.value_type)}>"
+
+    elif pa.types.is_struct(dtype):
+        fields = [
+            f"{field.name}: {pyarrow_to_dcl_type(field.type)}"
+            for field in dtype
+        ]
+        return f"STRUCT<{', '.join(fields)}>"
+
+    raise ValueError(f"Unsupported type: {dtype}")
 
 def pyarrow_to_athena(schema: pa.Schema):
     """Converts a pyarrow schema to a list of column definitions."""
@@ -72,7 +116,7 @@ def pyarrow_to_athena(schema: pa.Schema):
     cols = []
     for field in schema:
         # Handle complex types recursively if needed
-        dtype = type_map_ddl.get(field.type, "__STRING__")  # Default to string
+        dtype = pyarrow_to_athena_type(field.type)
         cols.append(f"`{field.name}` {dtype}")
 
     return ",\n  ".join(cols)
@@ -84,7 +128,7 @@ def pyarrow_to_csv(schema: pa.Schema):
     cols = []
     for field in schema:
         # Handle complex types recursively if needed
-        dtype = type_map_dcl.get(field.type, "__STRING__")  # Default to string
+        dtype = pyarrow_to_dcl_type(field.type)
         cols.append(f"{field.name}, {dtype.lower()}")
 
     return "\n".join(cols)
@@ -96,7 +140,7 @@ def pyarrow_to_dict(schema: pa.Schema, tbl_name: str):
     columns = []
     for field in schema:
         # Handle complex types recursively if needed
-        dtype = type_map_dcl.get(field.type, "__STRING__")  # Default to string
+        dtype = pyarrow_to_dcl_type(field.type)
 
         columns.append(
             {
@@ -158,11 +202,11 @@ def pyarrow_to_dcl(schema: pa.Schema, tbl_name: str):
 
     for field in schema:
         # skip fields
-        if field.name in ['input_id', 'input_pfix', 'output_id']:
+        if field.name in ['input_id', 'input_pfix', 'input_prefix', 'output_id']:
             continue
 
         # Handle complex types recursively if needed
-        dtype = type_map_dcl.get(field.type, "__STRING__")  # Default to string
+        dtype = pyarrow_to_dcl_type(field.type)
 
         columns.append(
             {
@@ -200,21 +244,25 @@ if __name__ == '__main__':
     os.makedirs(schema_out_dcl, exist_ok=True)
     os.makedirs(schema_out_view, exist_ok=True)
 
-    with open(metadata_json) as f:
-        metadata = json.load(f)
-        par_files = metadata['files']
+    with open(metadata_file) as f:
+
+        metadata_table = pq.read_table(metadata_file)
+        assert metadata_table.num_rows == 1, "Expected metadata table to have exactly one row"
+
+        metadata = metadata_table.to_pydict()
+        par_files = metadata['files'][0]  # only interested in the first row which contains the list of files
 
         tables = set()
 
         # Add metadata table
         # tables.add('metadata')
-        # par_files.append(
-        #     {
-        #         "tbl_name": "metadata",
-        #         "prefix": "metadata",
-        #         "outpath": "metadata.parquet"
-        #     }
-        # )
+        par_files.append(
+            {
+                "tbl": "metadata",
+                "prefix": "metadata",
+                "fout": "metadata.parquet",
+            }
+        )
 
         for file in par_files:
             tbl_name = file.get('tbl_name', file['tbl'])  # handle legacy

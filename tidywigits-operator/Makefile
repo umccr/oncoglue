@@ -19,7 +19,6 @@ dir:
 	@echo "./data/output/tidywigits/$(TIDYWIGITS_IMAGE_TAG)/$(RUN_ID)"
 	@mkdir -p "./data/input"
 	@mkdir -p "./data/output/tidywigits/$(TIDYWIGITS_IMAGE_TAG)/$(RUN_ID)"
-	@mkdir -p "./data/output/tidywigits/$(TIDYWIGITS_IMAGE_TAG)/$(RUN_ID)/_metadata"
 
 sync: dir
 	@aws s3 sync --no-progress $(ONCOANALYSER_WGTS_DNA_SRC) $(ONCOANALYSER_WGTS_DNA_DST) \
@@ -68,3 +67,5 @@ tidy: dir
 		-d ./input/$(RUN_ID) \
 		-o ./output/tidywigits/$(TIDYWIGITS_IMAGE_TAG)/$(RUN_ID) \
 		--ulid --prefix_include --input_id $(RUN_ID)
+
+run: tidy

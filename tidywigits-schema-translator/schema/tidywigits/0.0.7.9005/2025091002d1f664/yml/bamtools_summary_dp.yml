@@ -1,0 +1,13 @@
+models:
+- name: bamtools_summary_dp
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: dp
+    data_type: double
+  - name: pct
+    data_type: double

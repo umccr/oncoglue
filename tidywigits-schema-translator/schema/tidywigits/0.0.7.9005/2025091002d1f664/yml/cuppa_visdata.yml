@@ -1,0 +1,29 @@
+models:
+- name: cuppa_visdata
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: sample_id
+    data_type: varchar
+  - name: data_type
+    data_type: varchar
+  - name: clf_group
+    data_type: varchar
+  - name: clf_name
+    data_type: varchar
+  - name: feat_name
+    data_type: varchar
+  - name: feat_value
+    data_type: double
+  - name: cancer_type
+    data_type: varchar
+  - name: data_value
+    data_type: double
+  - name: rank
+    data_type: double
+  - name: rank_group
+    data_type: double

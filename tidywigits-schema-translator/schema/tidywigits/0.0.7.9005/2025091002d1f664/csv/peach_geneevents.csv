@@ -1,0 +1,6 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+gene, varchar
+event, varchar
+count, double

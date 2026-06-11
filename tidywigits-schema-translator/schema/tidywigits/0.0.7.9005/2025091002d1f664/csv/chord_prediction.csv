@@ -1,0 +1,11 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+sample_id, varchar
+p_brca1, double
+p_brca2, double
+p_hrd, double
+hr_status, varchar
+hrd_type, varchar
+remarks_hr_status, varchar
+remarks_hrd_type, varchar

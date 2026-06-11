@@ -1,0 +1,23 @@
+models:
+- name: amber_bafpcf
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: sampleid
+    data_type: varchar
+  - name: chrom
+    data_type: varchar
+  - name: arm
+    data_type: varchar
+  - name: start_pos
+    data_type: bigint
+  - name: end_pos
+    data_type: bigint
+  - name: n_probes
+    data_type: bigint
+  - name: mean
+    data_type: double

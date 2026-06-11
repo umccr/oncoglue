@@ -1,0 +1,59 @@
+models:
+- name: purple_puritytsv
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: purity
+    data_type: double
+  - name: norm_factor
+    data_type: double
+  - name: fit_score
+    data_type: double
+  - name: diploid_proportion
+    data_type: double
+  - name: ploidy
+    data_type: double
+  - name: gender
+    data_type: varchar
+  - name: status
+    data_type: varchar
+  - name: polyclonal_proportion
+    data_type: double
+  - name: purity_min
+    data_type: double
+  - name: purity_max
+    data_type: double
+  - name: ploidy_min
+    data_type: double
+  - name: ploidy_max
+    data_type: double
+  - name: diploid_proportion_min
+    data_type: double
+  - name: diploid_proportion_max
+    data_type: double
+  - name: somatic_penalty
+    data_type: double
+  - name: whole_genome_duplication
+    data_type: varchar
+  - name: ms_indels_per_mb
+    data_type: double
+  - name: ms_status
+    data_type: varchar
+  - name: tml
+    data_type: double
+  - name: tml_status
+    data_type: varchar
+  - name: tmb_per_mb
+    data_type: double
+  - name: tmb_status
+    data_type: varchar
+  - name: tmb_sv
+    data_type: double
+  - name: run_mode
+    data_type: varchar
+  - name: targeted
+    data_type: varchar

@@ -1,0 +1,44 @@
+version: 2
+models:
+- name: sat_esvee_prepdiscstats
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: tot_reads
+    data_type: double
+  - name: prep_reads
+    data_type: double
+  - name: translocation
+    data_type: double
+  - name: inv_lt_1k
+    data_type: double
+  - name: inv_1_to_5k
+    data_type: double
+  - name: inv_5_to_100k
+    data_type: double
+  - name: inv_gt_100k
+    data_type: double
+  - name: del_1_to_5k
+    data_type: double
+  - name: del_5_to_100k
+    data_type: double
+  - name: del_gt_100k
+    data_type: double
+  - name: dup_1_to_5k
+    data_type: double
+  - name: dup_5_to_100k
+    data_type: double
+  - name: dup_gt_100k
+    data_type: double

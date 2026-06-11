@@ -1,0 +1,13 @@
+models:
+- name: alignments_dupfreq
+  columns:
+  - name: input_id
+    data_type: varchar
+  - name: input_prefix
+    data_type: varchar
+  - name: output_id
+    data_type: varchar
+  - name: duplicate_read_count
+    data_type: varchar
+  - name: frequency
+    data_type: double

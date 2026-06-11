@@ -1,0 +1,12 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+chrom, varchar
+pos_start, double
+pos_end, double
+total_reads, double
+dup_reads, double
+chim_reads, double
+interpartition, double
+unmap_reads, double
+process_time, double

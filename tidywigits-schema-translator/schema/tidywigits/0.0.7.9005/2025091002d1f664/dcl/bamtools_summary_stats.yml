@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: sat_bamtools_summary_stats
+  columns:
+  - name: library_workflow_run_hk
+    data_type: varchar(64)
+  - name: load_date
+    data_type: date
+  - name: hash_diff
+    data_type: varchar(64)
+  - name: record_source
+    data_type: varchar(255)
+  - name: last_seen_datetime
+    data_type: timestamp
+  - name: batch_id
+    data_type: varchar(26)
+  - name: batch_date
+    data_type: date
+  - name: tot_region_bases
+    data_type: double
+  - name: tot_reads
+    data_type: double
+  - name: dup_reads
+    data_type: double
+  - name: dual_strand_reads
+    data_type: double
+  - name: cov_mean
+    data_type: double
+  - name: cov_sd
+    data_type: double
+  - name: cov_median
+    data_type: double
+  - name: cov_mad
+    data_type: double
+  - name: lowmapq_pct
+    data_type: double
+  - name: dup_pct
+    data_type: double
+  - name: unpaired_pct
+    data_type: double
+  - name: lowbaseq_pct
+    data_type: double
+  - name: overlap_read_pct
+    data_type: double
+  - name: cov_capped
+    data_type: double
