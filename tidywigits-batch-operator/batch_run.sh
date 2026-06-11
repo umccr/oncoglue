@@ -21,11 +21,37 @@ PYTHON="uv run --with python-ulid --with pyarrow --with python-dotenv python3"
 # Or activate a conda/venv env and use plain python3:
 # PYTHON="python3"
 
-RUN_IDS=(
-#  pragma: allowlist nextline secret
-  "20260116b1df9558" "2026011570ff5f9c" "20260115696ddf68" "20260114e6710ef8" "20260114beb03c89"
-)
 # =============================================================================
+
+# Usage: ./batch_run.sh [RUN_IDS_FILE]
+# RUN_IDS_FILE: one RUN_ID per line, blank lines and lines starting with # are ignored.
+# Defaults to ./run_ids.txt (see run_ids.example.txt).
+RUN_IDS_FILE="${1:-./run_ids.txt}"
+
+if [[ ! -f "$RUN_IDS_FILE" ]]; then
+    echo "ERROR: RUN_IDS file not found: $RUN_IDS_FILE" >&2
+    echo "Usage: $0 [RUN_IDS_FILE]" >&2
+    echo "Uses run_ids.txt by default, or pass a path explicitly." >&2
+    exit 1
+fi
+
+RUN_IDS=()
+while IFS= read -r run_id || [[ -n "$run_id" ]]; do
+    run_id="$(echo "$run_id" | xargs)"
+    [[ -z "$run_id" || "$run_id" == \#* ]] && continue
+    RUN_IDS+=("$run_id")
+done < "$RUN_IDS_FILE"
+
+if [[ ${#RUN_IDS[@]} -eq 0 ]]; then
+    echo "ERROR: no RUN_IDs found in $RUN_IDS_FILE" >&2
+    exit 1
+fi
+
+# echo "Found ${#RUN_IDS[@]} RUN_IDs to process:"
+# for run_id in "${RUN_IDS[@]}"; do
+#     echo "  - $run_id"
+# done
+# exit 0
 
 AUDIT_LOG="./batch_audit_$(date -u +%Y%m%dT%H%M%SZ).tsv"
 echo -e "timestamp\trun_id\tstatus\tnotes" > "$AUDIT_LOG"
