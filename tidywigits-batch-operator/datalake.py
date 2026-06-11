@@ -1,13 +1,10 @@
 import argparse
 import glob
-import io
-import json
 import os
 import subprocess
 import sys
 from pathlib import Path
 
-import pyarrow.json as paj
 from dotenv import load_dotenv
 from pyarrow import parquet as pq
 from ulid import ULID
@@ -20,22 +17,9 @@ TIDYWIGITS_OUTPUT_DIR = os.environ['TIDYWIGITS_OUTPUT_DIR']
 
 
 def process_directory(path: Path, execute: bool, verify: bool) -> str:
-    metadata_src = 'metadata.json'
-    metadata_dst = '_metadata/metadata.json'
-    metadata_par = 'metadata.parquet'
+    metadata_path = Path(path / 'metadata.parquet')
 
-    metadata_path_src = Path(path / metadata_src)
-    metadata_path_dst = Path(path / metadata_dst)
-    metadata_path_par = Path(path / metadata_par)
-
-    # FIXME Peter is simplifying to metadata.parquet
-    #  Update this when ready https://github.com/tidywf/tidywigits/issues/196
-    if not metadata_path_dst.exists():
-        metadata_path_dst.parent.mkdir(parents=True, exist_ok=True)
-        metadata_path_src.rename(metadata_path_dst)
-
-    with open(metadata_path_dst) as f:
-        metadata = json.load(f)
+    metadata = pq.read_table(metadata_path).to_pylist()[0]
 
     input_id = metadata['input_id']
     output_id = metadata['output_id']
@@ -58,13 +42,6 @@ def process_directory(path: Path, execute: bool, verify: bool) -> str:
             subprocess.run(sync_cmd, check=True)
     else:
         print(f"aws s3 sync --no-progress {path} {target_base}")
-
-    # FIXME convert to metadata.parquet if not done yet
-    #  https://github.com/tidywf/tidywigits/issues/196
-    if not metadata_path_par.exists():
-        single_line = json.dumps(metadata).encode("utf-8")
-        meta_table = paj.read_json(io.BytesIO(single_line))
-        pq.write_table(meta_table, metadata_path_par)
 
     return target_base
 
