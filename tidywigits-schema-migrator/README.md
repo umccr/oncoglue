@@ -33,10 +33,12 @@ aws sso login
 ```
 
 Create the database if it does not exist.
-> The prefer method is to log on to the AWS Athena console and create the database using the SQL script – [tidywigits.sql](../tidywigits-schema-translator/schema/tidywigits/0.0.7.9003/2025091002d1f664/tidywigits.sql).
 ```
 make check
+make create
 ```
+
+Alternatively, you can log on to the AWS Athena console and create the database using the SQL script – [tidywigits.sql](../tidywigits-schema-translator/schema/tidywigits/0.0.7.9005/2025091002d1f664/tidywigits.sql).
 
 Hit make run target to run the migration.
 ```

@@ -1,7 +1,6 @@
 services:
   tidywigits:
     image: ${TIDYWIGITS_IMAGE_URL}:${TIDYWIGITS_IMAGE_TAG}
-    platform: linux/amd64
     working_dir: /app
     volumes:
       - type: bind

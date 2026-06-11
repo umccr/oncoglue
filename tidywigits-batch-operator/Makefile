@@ -16,4 +16,3 @@ dir:
 	@echo "./data/output/tidywigits/$(TIDYWIGITS_IMAGE_TAG)/$(RUN_ID)"
 	@mkdir -p "./data/input"
 	@mkdir -p "./data/output/tidywigits/$(TIDYWIGITS_IMAGE_TAG)/$(RUN_ID)"
-	@mkdir -p "./data/output/tidywigits/$(TIDYWIGITS_IMAGE_TAG)/$(RUN_ID)/_metadata"

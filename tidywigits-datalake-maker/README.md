@@ -6,7 +6,7 @@ After you have processed (tidied up) the data into parquet files, you can use th
 
 Install the [requirements.txt](requirements.txt) dependencies.
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Configure the environment variables [.env.example](.env.example) and adjust it.
