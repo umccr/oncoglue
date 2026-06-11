@@ -12,10 +12,11 @@ There are multiple modules for operating tidywigits in this repo. The operation 
 Try in the following order. You can stop at any point of the exploration.
 
 * Episode 1: [tidywigits-operator](tidywigits-operator) _(I am just curious how tidywigits works.)_
-* Episode 2: [tidywigits-batch-operator](tidywigits-batch-operator) _(I have a couple of datasets to process.)_
-* Episode 3: [tidywigits-schema-translator](tidywigits-schema-translator) _(I want to keep track of schema and translate to other formats like Trino/Presto like Athena query engine, dbt, YAML, CSV formats.)_
-* Episode 4: [tidywigits-schema-migrator](tidywigits-schema-migrator) _(Run the tidywigits migration in bulk.)_
-* Episode 5: [tidywigits-datalake-maker](tidywigits-datalake-maker) _(I want to make datalake from tidywigits output.)_
+* Episode 2: [tidywigits-query-examples](tidywigits-query-examples) _(I want to query it over tidywigits output parquet files.)_
+* Episode 3: [tidywigits-batch-operator](tidywigits-batch-operator) _(I have a couple of datasets to process.)_
+* Episode 4: [tidywigits-schema-translator](tidywigits-schema-translator) _(I want to keep track of schema and translate to other formats like Trino/Presto like Athena query engine, dbt, YAML, CSV formats.)_
+* Episode 5: [tidywigits-schema-migrator](tidywigits-schema-migrator) _(Run the tidywigits migration in bulk.)_
+* Episode 6: [tidywigits-datalake-maker](tidywigits-datalake-maker) _(I want to make datalake from tidywigits output.)_
 
 Though the modules are written in mind with Cloud provider-agnostic, but there are subtle references to AWS S3 buckets. You can correlate to your Cloud environment storage counterpart.
 
