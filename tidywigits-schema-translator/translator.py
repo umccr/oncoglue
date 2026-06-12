@@ -4,10 +4,21 @@ from pathlib import Path
 
 import pyarrow as pa
 import pyarrow.parquet as pq
-import yaml
+from ruamel.yaml import YAML
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# ---
+
+# Initialize the YAML object
+yaml = YAML()
+yaml.default_flow_style = False
+yaml.sort_keys = False
+
+# Explicitly match pretty print format `yq -I2 -P '.' models/dcl/raw_vault/alignments/_schema.yml`
+# mapping indentation = 2, sequence (list) indentation = 4, dash offset = 2
+yaml.indent(mapping=2, sequence=4, offset=2)
 
 # ---
 
@@ -198,11 +209,23 @@ def pyarrow_to_dcl(schema: pa.Schema, tbl_name: str):
 
     columns = []
 
-    # Fixe DCL satellite structure
+    # Add the DCL satellite structure
+    _relationships = {
+        'relationships': {
+            'arguments': {
+                'to': "ref('link_library_workflow_run')",
+                'field': 'library_workflow_run_hk'
+            }
+        }
+    }
     dcl_sat_cols = [
         {
             'name': 'library_workflow_run_hk',
             'data_type': 'varchar(64)',
+            'data_tests': [
+                'not_null',
+                _relationships
+            ]
         },
         {
             'name': 'load_date',
@@ -252,6 +275,19 @@ def pyarrow_to_dcl(schema: pa.Schema, tbl_name: str):
         'models': [
             {
                 'name': 'sat_' + tbl_name,
+                'data_tests': [
+                    {
+                        'dbt_utils.unique_combination_of_columns': {
+                            'arguments': {
+                                'combination_of_columns': [
+                                    'library_workflow_run_hk',
+                                    'load_date',
+                                    'hash_diff',
+                                ]
+                            }
+                        }
+                    }
+                ],
                 'columns': columns
             }
         ]
@@ -329,10 +365,11 @@ WHERE regexp_like("$path", '{tbl_name}\\.parquet$')
             fs.write(pyarrow_to_csv(s))
 
         with open(schema_out_yml + '/' + tbl_name + '.yml', 'w') as fy:
-            yaml.dump(pyarrow_to_dict(s, tbl_name), fy, default_flow_style=False, sort_keys=False)
+            yaml.dump(pyarrow_to_dict(s, tbl_name), fy)
 
         with open(schema_out_dcl + '/' + tbl_name + '.yml', 'w') as fc:
-            yaml.dump(pyarrow_to_dcl(s, tbl_name), fc, default_flow_style=False, sort_keys=False)
+            fc.write("---\n")  # added yaml document divider between dumps
+            yaml.dump(pyarrow_to_dcl(s, tbl_name), fc)
 
     # print(len(tables))
     # print("-" * 32)

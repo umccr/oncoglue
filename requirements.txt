@@ -1,5 +1,5 @@
 pyarrow
-pyyaml
+ruamel.yaml
 python-dotenv
 boto3
 python-ulid
