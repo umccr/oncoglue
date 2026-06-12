@@ -1,21 +1,21 @@
 models:
-- name: linx_clusters
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: cluster_id
-    data_type: varchar
-  - name: category
-    data_type: varchar
-  - name: synthetic
-    data_type: varchar
-  - name: resolved_type
-    data_type: varchar
-  - name: cluster_count
-    data_type: double
-  - name: cluster_desc
-    data_type: varchar
+  - name: linx_clusters
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: cluster_id
+        data_type: varchar
+      - name: category
+        data_type: varchar
+      - name: synthetic
+        data_type: varchar
+      - name: resolved_type
+        data_type: varchar
+      - name: cluster_count
+        data_type: double
+      - name: cluster_desc
+        data_type: varchar

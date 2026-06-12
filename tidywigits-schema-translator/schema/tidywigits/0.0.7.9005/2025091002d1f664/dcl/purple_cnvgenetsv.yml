@@ -1,56 +1,70 @@
+---
 version: 2
 models:
-- name: sat_purple_cnvgenetsv
-  columns:
-  - name: library_workflow_run_hk
-    data_type: varchar(64)
-  - name: load_date
-    data_type: date
-  - name: hash_diff
-    data_type: varchar(64)
-  - name: record_source
-    data_type: varchar(255)
-  - name: last_seen_datetime
-    data_type: timestamp
-  - name: batch_id
-    data_type: varchar(26)
-  - name: batch_date
-    data_type: date
-  - name: chrom
-    data_type: varchar
-  - name: start
-    data_type: double
-  - name: end
-    data_type: double
-  - name: gene
-    data_type: varchar
-  - name: cn_min
-    data_type: double
-  - name: cn_max
-    data_type: double
-  - name: somatic_regions
-    data_type: double
-  - name: transcript_id
-    data_type: varchar
-  - name: is_canonical
-    data_type: varchar
-  - name: chrom_band
-    data_type: varchar
-  - name: regions_min
-    data_type: double
-  - name: start_region_min
-    data_type: double
-  - name: end_region_min
-    data_type: double
-  - name: start_region_min_support
-    data_type: varchar
-  - name: end_region_min_support
-    data_type: varchar
-  - name: region_min_method
-    data_type: varchar
-  - name: cn_minor_allele_min
-    data_type: double
-  - name: window_count_depth
-    data_type: double
-  - name: gc_content
-    data_type: double
+  - name: sat_purple_cnvgenetsv
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: chrom
+        data_type: varchar
+      - name: start
+        data_type: double
+      - name: end
+        data_type: double
+      - name: gene
+        data_type: varchar
+      - name: cn_min
+        data_type: double
+      - name: cn_max
+        data_type: double
+      - name: somatic_regions
+        data_type: double
+      - name: transcript_id
+        data_type: varchar
+      - name: is_canonical
+        data_type: varchar
+      - name: chrom_band
+        data_type: varchar
+      - name: regions_min
+        data_type: double
+      - name: start_region_min
+        data_type: double
+      - name: end_region_min
+        data_type: double
+      - name: start_region_min_support
+        data_type: varchar
+      - name: end_region_min_support
+        data_type: varchar
+      - name: region_min_method
+        data_type: varchar
+      - name: cn_minor_allele_min
+        data_type: double
+      - name: window_count_depth
+        data_type: double
+      - name: gc_content
+        data_type: double

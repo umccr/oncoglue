@@ -1,43 +1,43 @@
 models:
-- name: linx_links
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: cluster_id
-    data_type: varchar
-  - name: chain_id
-    data_type: varchar
-  - name: chain_index
-    data_type: varchar
-  - name: chain_count
-    data_type: double
-  - name: lower_sv_id
-    data_type: varchar
-  - name: upper_sv_id
-    data_type: varchar
-  - name: lower_breakend_is_start
-    data_type: varchar
-  - name: upper_breakend_is_start
-    data_type: varchar
-  - name: chrom
-    data_type: varchar
-  - name: arm
-    data_type: varchar
-  - name: assembled
-    data_type: varchar
-  - name: traversed_sv_count
-    data_type: double
-  - name: length
-    data_type: double
-  - name: junction_cn
-    data_type: double
-  - name: junction_cn_uncertainty
-    data_type: double
-  - name: pseudogene_info
-    data_type: varchar
-  - name: ecdna
-    data_type: varchar
+  - name: linx_links
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: cluster_id
+        data_type: varchar
+      - name: chain_id
+        data_type: varchar
+      - name: chain_index
+        data_type: varchar
+      - name: chain_count
+        data_type: double
+      - name: lower_sv_id
+        data_type: varchar
+      - name: upper_sv_id
+        data_type: varchar
+      - name: lower_breakend_is_start
+        data_type: varchar
+      - name: upper_breakend_is_start
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: arm
+        data_type: varchar
+      - name: assembled
+        data_type: varchar
+      - name: traversed_sv_count
+        data_type: double
+      - name: length
+        data_type: double
+      - name: junction_cn
+        data_type: double
+      - name: junction_cn_uncertainty
+        data_type: double
+      - name: pseudogene_info
+        data_type: varchar
+      - name: ecdna
+        data_type: varchar

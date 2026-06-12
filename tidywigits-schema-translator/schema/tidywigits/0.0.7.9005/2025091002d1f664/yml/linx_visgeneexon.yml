@@ -1,25 +1,25 @@
 models:
-- name: linx_visgeneexon
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: cluster_id
-    data_type: varchar
-  - name: gene
-    data_type: varchar
-  - name: transcript
-    data_type: varchar
-  - name: chrom
-    data_type: varchar
-  - name: annotation_type
-    data_type: varchar
-  - name: exon_rank
-    data_type: varchar
-  - name: exon_start
-    data_type: varchar
-  - name: exon_end
-    data_type: varchar
+  - name: linx_visgeneexon
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: cluster_id
+        data_type: varchar
+      - name: gene
+        data_type: varchar
+      - name: transcript
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: annotation_type
+        data_type: varchar
+      - name: exon_rank
+        data_type: varchar
+      - name: exon_start
+        data_type: varchar
+      - name: exon_end
+        data_type: varchar
