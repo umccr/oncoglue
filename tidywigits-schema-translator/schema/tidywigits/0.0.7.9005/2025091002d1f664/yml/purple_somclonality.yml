@@ -1,21 +1,21 @@
 models:
-- name: purple_somclonality
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: peak
-    data_type: double
-  - name: bucket
-    data_type: double
-  - name: bucket_weight
-    data_type: double
-  - name: peak_avg_weight
-    data_type: double
-  - name: is_valid
-    data_type: varchar
-  - name: is_subclonal
-    data_type: varchar
+  - name: purple_somclonality
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: peak
+        data_type: double
+      - name: bucket
+        data_type: double
+      - name: bucket_weight
+        data_type: double
+      - name: peak_avg_weight
+        data_type: double
+      - name: is_valid
+        data_type: varchar
+      - name: is_subclonal
+        data_type: varchar

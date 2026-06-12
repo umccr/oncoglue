@@ -1,15 +1,16 @@
 models:
-- name: metadata
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: input_dirs
-    data_type: array<varchar>
-  - name: output_dir
-    data_type: varchar
-  - name: pkg_versions
-    data_type: 'array<struct<name: varchar, version: varchar>>'
-  - name: files
-    data_type: 'array<struct<tbl: varchar, prefix: varchar, fout: varchar, fin: varchar>>'
+  - name: metadata
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: input_dirs
+        data_type: array<varchar>
+      - name: output_dir
+        data_type: varchar
+      - name: pkg_versions
+        data_type: 'array<struct<name: varchar, version: varchar>>'
+      - name: files
+        data_type: 'array<struct<tbl: varchar, prefix: varchar, fout: varchar, fin:
+          varchar>>'

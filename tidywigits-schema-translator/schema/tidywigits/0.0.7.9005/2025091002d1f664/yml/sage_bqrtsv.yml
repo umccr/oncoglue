@@ -1,23 +1,23 @@
 models:
-- name: sage_bqrtsv
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: alt
-    data_type: varchar
-  - name: ref
-    data_type: varchar
-  - name: context
-    data_type: varchar
-  - name: read_type
-    data_type: varchar
-  - name: count
-    data_type: double
-  - name: origq
-    data_type: double
-  - name: recalq
-    data_type: double
+  - name: sage_bqrtsv
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: alt
+        data_type: varchar
+      - name: ref
+        data_type: varchar
+      - name: context
+        data_type: varchar
+      - name: read_type
+        data_type: varchar
+      - name: count
+        data_type: double
+      - name: origq
+        data_type: double
+      - name: recalq
+        data_type: double

@@ -1,57 +1,57 @@
 models:
-- name: teal_breakend
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: chrom
-    data_type: varchar
-  - name: position
-    data_type: double
-  - name: orientation
-    data_type: double
-  - name: cg_rich
-    data_type: varchar
-  - name: filter
-    data_type: varchar
-  - name: in_tumor
-    data_type: varchar
-  - name: in_germline
-    data_type: varchar
-  - name: distance_to_telomere
-    data_type: double
-  - name: max_telomeric_length
-    data_type: double
-  - name: max_anchor_length
-    data_type: double
-  - name: tumor_sr_tel_dp_tel
-    data_type: double
-  - name: tumor_sr_tel_dp_no_tel
-    data_type: double
-  - name: tumor_sr_tel_no_dp
-    data_type: double
-  - name: tumor_sr_no_tel_dp_tel
-    data_type: double
-  - name: tumor_dp_tel_no_sr
-    data_type: double
-  - name: tumor_total_support
-    data_type: double
-  - name: tumor_mapq
-    data_type: double
-  - name: germ_sr_tel_dp_tel
-    data_type: double
-  - name: germ_sr_tel_dp_no_tel
-    data_type: double
-  - name: germ_sr_tel_no_dp
-    data_type: double
-  - name: germ_sr_no_tel_dp_tel
-    data_type: double
-  - name: germ_dp_tel_no_sr
-    data_type: double
-  - name: germ_total_support
-    data_type: double
-  - name: germ_mapq
-    data_type: double
+  - name: teal_breakend
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: position
+        data_type: double
+      - name: orientation
+        data_type: double
+      - name: cg_rich
+        data_type: varchar
+      - name: filter
+        data_type: varchar
+      - name: in_tumor
+        data_type: varchar
+      - name: in_germline
+        data_type: varchar
+      - name: distance_to_telomere
+        data_type: double
+      - name: max_telomeric_length
+        data_type: double
+      - name: max_anchor_length
+        data_type: double
+      - name: tumor_sr_tel_dp_tel
+        data_type: double
+      - name: tumor_sr_tel_dp_no_tel
+        data_type: double
+      - name: tumor_sr_tel_no_dp
+        data_type: double
+      - name: tumor_sr_no_tel_dp_tel
+        data_type: double
+      - name: tumor_dp_tel_no_sr
+        data_type: double
+      - name: tumor_total_support
+        data_type: double
+      - name: tumor_mapq
+        data_type: double
+      - name: germ_sr_tel_dp_tel
+        data_type: double
+      - name: germ_sr_tel_dp_no_tel
+        data_type: double
+      - name: germ_sr_tel_no_dp
+        data_type: double
+      - name: germ_sr_no_tel_dp_tel
+        data_type: double
+      - name: germ_dp_tel_no_sr
+        data_type: double
+      - name: germ_total_support
+        data_type: double
+      - name: germ_mapq
+        data_type: double

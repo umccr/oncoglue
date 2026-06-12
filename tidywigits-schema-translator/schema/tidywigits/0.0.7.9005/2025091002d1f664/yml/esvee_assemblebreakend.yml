@@ -1,93 +1,93 @@
 models:
-- name: esvee_assemblebreakend
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: id
-    data_type: varchar
-  - name: phase_group_id
-    data_type: varchar
-  - name: phase_set_id
-    data_type: varchar
-  - name: assembly_id
-    data_type: varchar
-  - name: mate_id
-    data_type: varchar
-  - name: assembly_info
-    data_type: varchar
-  - name: type
-    data_type: varchar
-  - name: chrom
-    data_type: varchar
-  - name: position
-    data_type: double
-  - name: orientation
-    data_type: double
-  - name: mate_chr
-    data_type: varchar
-  - name: mate_pos
-    data_type: double
-  - name: mate_orient
-    data_type: double
-  - name: length
-    data_type: double
-  - name: inserted_bases
-    data_type: varchar
-  - name: homology
-    data_type: varchar
-  - name: confidence_interval
-    data_type: varchar
-  - name: inexact_offset
-    data_type: varchar
-  - name: qual
-    data_type: double
-  - name: split_fragments
-    data_type: double
-  - name: ref_split_fragments
-    data_type: double
-  - name: disc_fragments
-    data_type: double
-  - name: ref_disc_fragments
-    data_type: double
-  - name: forward_reads
-    data_type: double
-  - name: reverse_reads
-    data_type: double
-  - name: sequence_length
-    data_type: double
-  - name: segment_count
-    data_type: double
-  - name: segment_index
-    data_type: double
-  - name: sequence_index
-    data_type: double
-  - name: aligned_bases
-    data_type: double
-  - name: map_qual
-    data_type: double
-  - name: score
-    data_type: double
-  - name: adj_aligned_bases
-    data_type: double
-  - name: avg_fragment_length
-    data_type: double
-  - name: incomplete_fragments
-    data_type: double
-  - name: breakend_qual
-    data_type: double
-  - name: facing_breakend_ids
-    data_type: varchar
-  - name: alt_alignments
-    data_type: varchar
-  - name: insertion_type
-    data_type: varchar
-  - name: unique_frag_pos
-    data_type: double
-  - name: closest_assembly
-    data_type: varchar
-  - name: non_primary_frags
-    data_type: double
+  - name: esvee_assemblebreakend
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: id
+        data_type: varchar
+      - name: phase_group_id
+        data_type: varchar
+      - name: phase_set_id
+        data_type: varchar
+      - name: assembly_id
+        data_type: varchar
+      - name: mate_id
+        data_type: varchar
+      - name: assembly_info
+        data_type: varchar
+      - name: type
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: position
+        data_type: double
+      - name: orientation
+        data_type: double
+      - name: mate_chr
+        data_type: varchar
+      - name: mate_pos
+        data_type: double
+      - name: mate_orient
+        data_type: double
+      - name: length
+        data_type: double
+      - name: inserted_bases
+        data_type: varchar
+      - name: homology
+        data_type: varchar
+      - name: confidence_interval
+        data_type: varchar
+      - name: inexact_offset
+        data_type: varchar
+      - name: qual
+        data_type: double
+      - name: split_fragments
+        data_type: double
+      - name: ref_split_fragments
+        data_type: double
+      - name: disc_fragments
+        data_type: double
+      - name: ref_disc_fragments
+        data_type: double
+      - name: forward_reads
+        data_type: double
+      - name: reverse_reads
+        data_type: double
+      - name: sequence_length
+        data_type: double
+      - name: segment_count
+        data_type: double
+      - name: segment_index
+        data_type: double
+      - name: sequence_index
+        data_type: double
+      - name: aligned_bases
+        data_type: double
+      - name: map_qual
+        data_type: double
+      - name: score
+        data_type: double
+      - name: adj_aligned_bases
+        data_type: double
+      - name: avg_fragment_length
+        data_type: double
+      - name: incomplete_fragments
+        data_type: double
+      - name: breakend_qual
+        data_type: double
+      - name: facing_breakend_ids
+        data_type: varchar
+      - name: alt_alignments
+        data_type: varchar
+      - name: insertion_type
+        data_type: varchar
+      - name: unique_frag_pos
+        data_type: double
+      - name: closest_assembly
+        data_type: varchar
+      - name: non_primary_frags
+        data_type: double

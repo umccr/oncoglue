@@ -1,41 +1,41 @@
 models:
-- name: purple_cnvsomtsv
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: chrom
-    data_type: varchar
-  - name: start
-    data_type: double
-  - name: end
-    data_type: double
-  - name: cn
-    data_type: double
-  - name: baf_count
-    data_type: double
-  - name: baf_observed
-    data_type: double
-  - name: baf
-    data_type: double
-  - name: start_segment_support
-    data_type: varchar
-  - name: end_segment_support
-    data_type: varchar
-  - name: method
-    data_type: varchar
-  - name: window_count_depth
-    data_type: double
-  - name: gc_content
-    data_type: double
-  - name: start_min
-    data_type: double
-  - name: start_max
-    data_type: double
-  - name: cn_minor_allele
-    data_type: double
-  - name: cn_major_allele
-    data_type: double
+  - name: purple_cnvsomtsv
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: start
+        data_type: double
+      - name: end
+        data_type: double
+      - name: cn
+        data_type: double
+      - name: baf_count
+        data_type: double
+      - name: baf_observed
+        data_type: double
+      - name: baf
+        data_type: double
+      - name: start_segment_support
+        data_type: varchar
+      - name: end_segment_support
+        data_type: varchar
+      - name: method
+        data_type: varchar
+      - name: window_count_depth
+        data_type: double
+      - name: gc_content
+        data_type: double
+      - name: start_min
+        data_type: double
+      - name: start_max
+        data_type: double
+      - name: cn_minor_allele
+        data_type: double
+      - name: cn_major_allele
+        data_type: double

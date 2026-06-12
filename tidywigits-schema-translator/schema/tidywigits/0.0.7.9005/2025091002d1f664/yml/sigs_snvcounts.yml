@@ -1,13 +1,13 @@
 models:
-- name: sigs_snvcounts
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: bucket_name
-    data_type: varchar
-  - name: count
-    data_type: bigint
+  - name: sigs_snvcounts
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: bucket_name
+        data_type: varchar
+      - name: count
+        data_type: bigint

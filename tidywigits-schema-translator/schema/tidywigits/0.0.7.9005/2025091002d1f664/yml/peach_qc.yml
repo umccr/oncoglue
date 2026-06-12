@@ -1,13 +1,13 @@
 models:
-- name: peach_qc
-  columns:
-  - name: input_id
-    data_type: varchar
-  - name: input_prefix
-    data_type: varchar
-  - name: output_id
-    data_type: varchar
-  - name: gene
-    data_type: varchar
-  - name: status
-    data_type: varchar
+  - name: peach_qc
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: gene
+        data_type: varchar
+      - name: status
+        data_type: varchar

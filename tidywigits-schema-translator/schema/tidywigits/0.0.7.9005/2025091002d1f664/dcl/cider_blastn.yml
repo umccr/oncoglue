@@ -1,52 +1,66 @@
+---
 version: 2
 models:
-- name: sat_cider_blastn
-  columns:
-  - name: library_workflow_run_hk
-    data_type: varchar(64)
-  - name: load_date
-    data_type: date
-  - name: hash_diff
-    data_type: varchar(64)
-  - name: record_source
-    data_type: varchar(255)
-  - name: last_seen_datetime
-    data_type: timestamp
-  - name: batch_id
-    data_type: varchar(26)
-  - name: batch_date
-    data_type: date
-  - name: cdr3_seq
-    data_type: varchar
-  - name: cdr3_aa
-    data_type: varchar
-  - name: match_type
-    data_type: varchar
-  - name: gene
-    data_type: varchar
-  - name: functionality
-    data_type: varchar
-  - name: p_ident
-    data_type: double
-  - name: seq_length
-    data_type: double
-  - name: align_start
-    data_type: double
-  - name: align_end
-    data_type: double
-  - name: align_gaps
-    data_type: double
-  - name: align_evalue
-    data_type: double
-  - name: align_bitscore
-    data_type: double
-  - name: ref_strand
-    data_type: varchar
-  - name: ref_start
-    data_type: double
-  - name: ref_end
-    data_type: double
-  - name: ref_contig
-    data_type: varchar
-  - name: ref_seq
-    data_type: varchar
+  - name: sat_cider_blastn
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: cdr3_seq
+        data_type: varchar
+      - name: cdr3_aa
+        data_type: varchar
+      - name: match_type
+        data_type: varchar
+      - name: gene
+        data_type: varchar
+      - name: functionality
+        data_type: varchar
+      - name: p_ident
+        data_type: double
+      - name: seq_length
+        data_type: double
+      - name: align_start
+        data_type: double
+      - name: align_end
+        data_type: double
+      - name: align_gaps
+        data_type: double
+      - name: align_evalue
+        data_type: double
+      - name: align_bitscore
+        data_type: double
+      - name: ref_strand
+        data_type: varchar
+      - name: ref_start
+        data_type: double
+      - name: ref_end
+        data_type: double
+      - name: ref_contig
+        data_type: varchar
+      - name: ref_seq
+        data_type: varchar
