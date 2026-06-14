@@ -5,7 +5,7 @@ set -uo pipefail
 # CONFIG — all variables in one place
 # =============================================================================
 TIDYWIGITS_IMAGE_URL="ghcr.io/tidywf/tidywigits"
-TIDYWIGITS_IMAGE_TAG="0.0.7.9003"
+TIDYWIGITS_IMAGE_TAG="0.0.7.9005"
 
 # Datalake destination
 DATALAKE_BUCKET="s3-copy-cache-042906701326-ap-southeast-2-an"
@@ -72,7 +72,7 @@ for RUN_ID in "${RUN_IDS[@]}"; do
     echo "=========================================="
 
     OUTPUT_DIR="${OUTPUT_BASE}/${RUN_ID}"
-    mkdir -p "$OUTPUT_DIR/_metadata"
+    mkdir -p "$OUTPUT_DIR"
 
     echo "Running tidywigits"
     # Step 1: tidy
