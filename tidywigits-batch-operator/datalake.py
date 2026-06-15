@@ -64,3 +64,4 @@ if __name__ == '__main__':
             path = Path(directory)
             if path.is_dir():
                 process_directory(path, args.execute, args.verify)
+
