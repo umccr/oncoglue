@@ -23,6 +23,17 @@ ls $BASE
 
 The followings are demonstration for EDA (exploratory data analysis) style notebooks. Something to try as a kick-starter.
 
+Set up the Python environment and run the notebook like so:
+
+```
+conda create -n oncoglue python=3.13
+conda activate oncoglue
+
+pip install notebook
+cd tidywigits-query-examples
+jupyter notebook
+```
+
 * [notebook_duckdb.ipynb](notebook_duckdb.ipynb)
 
 ## parquet-cli
