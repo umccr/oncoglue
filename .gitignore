@@ -12,3 +12,5 @@ nogit/
 # exclude any local data
 tidywigits-operator/data/*
 !tidywigits-operator/data/.gitkeep
+
+.ipynb_checkpoints/
