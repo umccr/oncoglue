@@ -20,20 +20,101 @@ dir:
 	@mkdir -p "./data/input"
 	@mkdir -p "./data/output/tidywigits/$(TIDYWIGITS_IMAGE_TAG)/$(RUN_ID)"
 
+# sync only files tidywigits parses (~20 Mb)
 sync: dir
 	@aws s3 sync --no-progress $(ONCOANALYSER_WGTS_DNA_SRC) $(ONCOANALYSER_WGTS_DNA_DST) \
-		--exclude "*.bam" \
-		--exclude "*.bam.bai" \
-		--exclude "*.vcf.gz" \
-		--exclude "*.vcf.gz.tbi" \
-		--exclude "*.vcf" \
-		--exclude "*.circos" \
-		--exclude "*.png" \
-		--exclude "*.err" \
-		--exclude "*.out" \
-		--exclude "*.run" \
-		--exclude "*.sh" \
-		--exclude ".nextflow/*"
+		--exclude "*" \
+		--include "*alignments/*.duplicate_freq.tsv" \
+		--include "*alignments/*md.metrics" \
+		--include "*amber/amber.version" \
+		--include "*amber/*.amber.contamination.tsv" \
+		--include "*amber/*.amber.qc" \
+		--include "*amber/*.amber.homozygousregion.tsv" \
+		--include "*bamtools/*.wgsmetrics" \
+		--include "*bamtools/*.bam_metric.coverage.tsv" \
+		--include "*bamtools/*.bam_metric.exon_medians.tsv" \
+		--include "*bamtools/*.bam_metric.flag_counts.tsv" \
+		--include "*bamtools/*.bam_metric.frag_length.tsv" \
+		--include "*bamtools/*.bam_metric.gene_coverage.tsv" \
+		--include "*bamtools/*.bam_metric.partition_stats.tsv" \
+		--include "*bamtools/*.bam_metric.summary.tsv" \
+		--include "*chord/*mutation_contexts*" \
+		--include "*chord/*prediction*" \
+		--include "*chord/*signatures*" \
+		--include "*cider/*.cider.blastn_match.tsv.gz" \
+		--include "*cider/*.cider.locus_stats.tsv" \
+		--include "*cider/*.cider.vdj.tsv.gz" \
+		--include "*cobalt/cobalt.version" \
+		--include "*cobalt/*.cobalt.gc.median.tsv" \
+		--include "*cobalt/*.cobalt.ratio.pcf" \
+		--include "*cobalt/*.cobalt.ratio.median.tsv" \
+		--include "*cuppa/*.cuppa_data.tsv.gz" \
+		--include "*cuppa/*.cuppa.pred_summ.tsv" \
+		--include "*cuppa/*.cuppa.vis_data.tsv" \
+		--include "*cuppa/*.cup.data.csv" \
+		--include "*cuppa/*.cuppa.conclusion.txt" \
+		--include "*.flagstat" \
+		--include "*isofox/*.isf.alt_splice_junc.csv" \
+		--include "*isofox/*.isf.fusions.csv" \
+		--include "*isofox/*.isf.gene_collection.csv" \
+		--include "*isofox/*.isf.gene_data.csv" \
+		--include "*isofox/*.isf.pass_fusions.csv" \
+		--include "*isofox/*.isf.retained_intron.csv" \
+		--include "*isofox/*.isf.summary.csv" \
+		--include "*isofox/*.isf.transcript_data.csv" \
+		--include "*lilac/*.lilac.candidates.coverage.tsv" \
+		--include "*lilac/*.lilac.qc.tsv" \
+		--include "*lilac/*.lilac.tsv" \
+		--include "*linx/*.linx.germline.breakend.tsv" \
+		--include "*linx/*.linx.germline.clusters.tsv" \
+		--include "*linx/*.linx.germline.disruption.tsv" \
+		--include "*linx/*.linx.germline.driver.catalog.tsv" \
+		--include "*linx/*.linx.germline.links.tsv" \
+		--include "*linx/*.linx.germline.svs.tsv" \
+		--include "*linx/*linx.version" \
+		--include "*linx/*.linx.breakend.tsv" \
+		--include "*linx/*.linx.clusters.tsv" \
+		--include "*linx/*.linx.driver.catalog.tsv" \
+		--include "*linx/*.linx.drivers.tsv" \
+		--include "*linx/*.linx.fusion.tsv" \
+		--include "*linx/*.linx.links.tsv" \
+		--include "*linx/*.linx.neoepitope.tsv" \
+		--include "*linx/*.linx.svs.tsv" \
+		--include "*linx/*.linx.vis_copy_number.tsv" \
+		--include "*linx/*.linx.vis_fusion.tsv" \
+		--include "*linx/*.linx.vis_gene_exon.tsv" \
+		--include "*linx/*.linx.vis_protein_domain.tsv" \
+		--include "*linx/*.linx.vis_segments.tsv" \
+		--include "*linx/*.linx.vis_sv_data.tsv" \
+		--include "*neo/*.neo.neo_data.tsv" \
+		--include "*neo/*.neo.neoepitope.tsv" \
+		--include "*peach/*.peach.events.tsv" \
+		--include "*peach/*.peach.gene.events.tsv" \
+		--include "*peach/*.peach.haplotypes.all.tsv" \
+		--include "*peach/*.peach.haplotypes.best.tsv" \
+		--include "*peach/*.peach.qc.tsv" \
+		--include "*purple/*.purple.cnv.gene.tsv" \
+		--include "*purple/*.purple.cnv.somatic.tsv" \
+		--include "*purple/*.purple.driver.catalog.germline.tsv" \
+		--include "*purple/*.purple.driver.catalog.somatic.tsv" \
+		--include "*purple/*.purple.germline.deletion.tsv" \
+		--include "*purple/*.purple.purity.range.tsv" \
+		--include "*purple/*.purple.purity.tsv" \
+		--include "*purple/*.purple.qc" \
+		--include "*purple/*.purple.somatic.clonality.tsv" \
+		--include "*purple/*.purple.somatic.hist.tsv" \
+		--include "purple/plot/*" \
+		--exclude "purple/plot/*somatic_data.tsv" \
+		--include "*purple/purple.version" \
+		--include "*sage*/*.sage.bqr.tsv" \
+		--include "*sage*/*.sage.exon.medians.tsv" \
+		--include "*sage*/*.sage.gene.coverage.tsv" \
+		--include "*sigs/*.sig.allocation.tsv" \
+		--include "*sigs/*.sig.snv_counts.csv" \
+		--include "*teal/*.teal.breakend.tsv.gz" \
+		--include "*teal/*.teal.tellength.tsv" \
+		--include "*virusbreakend/*.virusbreakend.vcf.summary.tsv" \
+		--include "*virusinterpreter/*.virus.annotated.tsv"
 
 pull:
 	@docker compose pull
