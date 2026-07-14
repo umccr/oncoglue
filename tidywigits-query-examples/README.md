@@ -1,6 +1,6 @@
 # TidyWigits Query Examples
   
-Depends on the hat you are wearing (Systems Engineer, Data Scientist, Data Engineer), querying parquet files can go from mild setup to more involving platform setup. This module demonstrates and provides quick starter examples for querying tidywigits output parquet files using some popular tools such as duckdb, pyarrow, etc. It also facilitates an operator to make a glimpse into parquet files after a tidy process is performed using the [operator module](../tidywigits-operator).
+Depending on the hat you are wearing (Systems Engineer, Data Scientist, Data Engineer), querying parquet files can go from a mild setup to a more involved platform setup. This module demonstrates and provides quick starter examples for querying parquet files output by tidywigits using some popular tools such as duckdb, pyarrow, etc. It also facilitates an operator to glimpse into parquet files after a tidy process is performed using the [operator module](../tidywigits-operator).
 
 <!-- TOC -->
 * [TidyWigits Query Examples](#tidywigits-query-examples)
@@ -21,7 +21,7 @@ ls $BASE
 
 ## notebooks
 
-The followings are demonstration for EDA (exploratory data analysis) style notebooks. Something to try as a kick-starter.
+The following are a demonstration for EDA (exploratory data analysis) style notebooks. Something to try as a kick-starter.
 
 Set up the Python environment and run the notebook like so:
 
