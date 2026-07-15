@@ -1,8 +1,8 @@
 # Tidywigits Batch Operator
 
-You might find the [tidywigits-operator](../tidywigits-operator) is organised into processing one run at a time. That is the intentional. The main use case for the [tidywigits-operator](../tidywigits-operator) is to keep track of the scheme.
+The [tidywigits-operator](../tidywigits-operator) processes one run at a time. That is the intention. The main use case for the [tidywigits-operator](../tidywigits-operator) is to keep track of the scheme.
 
-For the use case of where you would like to "batch" process a couple of runs (often a cohort dataset), you can adapt to the instructions below.
+When you want to "batch" process several runs (often a cohort dataset), you can use the instructions below.
 
 ## Steps
 
@@ -11,9 +11,9 @@ Install [requirements.txt](requirements.txt).
 pip install -r requirements.txt
 ```
 
-Use Data Mart to prepare the manifest. See the [manifest.example.csv](manifest.example.csv). 
+Use the Data Mart to prepare the manifest. See the [manifest.example.csv](manifest.example.csv).
 
-This could go from a simple lookup query to a complex query depends on precisely which data you want to process.
+This could go from a simple lookup query to a complex query depending on which data you want to process.
 
 Here are the starter examples:
 ```sql
@@ -22,7 +22,7 @@ select * from mart.output where prefix like '%/oncoanalyser-wgts-dna/%' and coho
 select * from mart.output where prefix like '%/oncoanalyser-wgts-dna/%' and bucket = '<FILL>';
 ```
 
-Prepare the environment variables and adjust it.
+Prepare the environment variables and adjust where needed.
 ```
 cp -v .env.example .env
 cp -v manifest.example.csv manifest.csv
