@@ -7,7 +7,7 @@
   use("tibble", "as_tibble_col")
   use("dplyr")
   use("glue", "glue")
-  use("purrr", c("map", "map_chr"))
+  use("processx", "run")
 }
 
 # load .env into avail env vars
@@ -23,21 +23,31 @@ meta_parquet <- "metadata.parquet"
 # - output_id for batch_date + batch_id
 dir_ls(TIDYWIGITS_OUTPUT_DIR, type = "directory") |>
   as_tibble_col("input_dir") |>
+  rowwise() |>
   mutate(
     metafile = path(.data$input_dir, meta_parquet),
-    meta = map(metafile, \(x) arrow::read_parquet(x)),
-    input_id = map_chr(.data$meta, "input_id"),
-    input_id_match = stopifnot(basename(.data$input_dir) == .data$input_id),
-    output_id = map_chr(.data$meta, "output_id"),
-    batch_date = map_chr(.data$output_id, \(x) {
-      as.Date(ulid::unmarshal(x)$ts, tz = "UTC") |> as.character()
-    }),
+    meta = list(read_parquet(.data$metafile)),
+    input_id = meta[["input_id"]],
+    input_id_match = stopifnot(
+      "input_id mismatch" = basename(input_dir) == .data$input_id
+    ),
+    output_id = meta[["output_id"]],
+    batch_date = as.character(as.Date(
+      unmarshal(.data$output_id)$ts,
+      tz = "UTC"
+    )),
     s3_target = glue(
       "s3://{DATALAKE_BUCKET}/{DATALAKE_PREFIX}/",
       "batch_date={.data$batch_date}/",
       "portal_run_id={.data$input_id}/",
       "batch_id={.data$output_id}"
     ),
-    cmd = glue("aws s3 sync --no-progress {.data$input_dir} {.data$s3_target}"),
-    cmd_run = map(cmd, system)
-  )
+    cmd_run = list(
+      processx::run(
+        "aws",
+        c("s3", "sync", "--no-progress", .data$input_dir, .data$s3_target),
+        echo = TRUE
+      )
+    )
+  ) |>
+  ungroup()
