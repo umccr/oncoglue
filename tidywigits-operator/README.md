@@ -1,7 +1,7 @@
 # Tidywigits Operator
 
-The following step-by-step guide to operating the Tidywigits Operator.
-https://github.com/tidywf/tidywigits
+The following is a step-by-step guide to operating the [tidywigits](https://github.com/tidywf/tidywigits) Operator.
+
 
 ## Prerequisites
 

@@ -1,0 +1,104 @@
+---
+title: "tidywigits demo"
+format: html
+---
+
+Let us explore a set of directories with tidywigits parquet outputs.
+
+```{r}
+#| label: pkg_load
+use("duckplyr")
+use("duckdb")
+use("fs")
+use("here", "here")
+use("glue", "glue")
+use("ggplot2")
+set.seed(123)
+```
+
+
+```{r}
+#| label: list_files
+dir1 <- here("tidywigits-operator/data/output/tidywigits/0.0.7.9005")
+fs::dir_ls(dir1) |> basename()
+fs::dir_info(path(dir1, "20260710fa7e2802")) |>
+  dplyr::slice_sample(n = 10) |>
+  dplyr::select("path", "size")
+```
+
+Specify patterns to all files:
+
+```{r}
+#| label: tbl_pattern_setup
+tbl_metadata <- glue("{dir1}/*/metadata.parquet")
+tbl_purple_qc <- glue("{dir1}/*/*_purple_qc.parquet")
+tbl_purple_version <- glue("{dir1}/*/*_purple_version.parquet")
+tbl_alignments_dupfreq <- glue("{dir1}/*/*_alignments_dupfreq.parquet")
+tbl_neo_predictions <- glue("{dir1}/*/*_neo_predictions.parquet")
+```
+
+Note how _all_ files get read:
+
+```{r}
+#| label: ppl_qc
+duckdb::sql_query(glue(
+  'SELECT DISTINCT input_id, input_prefix FROM read_parquet("{tbl_purple_qc}") limit 10'
+)) |>
+  str()
+```
+
+```{r}
+#| label: meta
+duckdb::sql_query(glue(
+  'SELECT input_id, pkg_versions FROM read_parquet("{tbl_metadata}")'
+)) |>
+  str()
+```
+
+```{r}
+#| label: query3
+duckdb::sql_query(glue(
+  'SELECT DISTINCT row_group_id, compression FROM parquet_metadata("{tbl_metadata}")'
+))
+```
+
+
+```{r}
+#| label: read_parquet
+r <- duckplyr::read_parquet_duckdb(tbl_alignments_dupfreq)
+r |> dplyr::count(input_id)
+```
+
+```{r}
+#| label: ppl_version
+duckdb::sql_query(glue(
+  'SELECT input_id, output_id, version AS purple_version ',
+  'FROM read_parquet("{tbl_purple_version}") '
+))
+```
+
+```{r}
+#| label: neo_predictions
+pep_n <- 500
+duckdb::sql_query(glue(
+  'SELECT input_id, input_prefix, ne_id, variant_type, variant_info, gene_name, peptide_count ',
+  'FROM read_parquet("{tbl_neo_predictions}") ',
+  'WHERE peptide_count > {pep_n}'
+))
+```
+
+
+```{r}
+#| label: neo_plot1
+neo1 <- duckplyr::read_parquet_duckdb(tbl_neo_predictions) |>
+  dplyr::filter(peptide_count > pep_n)
+ggplot(neo1, aes(x = peptide_count, y = gene_name)) +
+  geom_point() +
+  theme_bw()
+```
+
+```{r}
+duckdb::sql_query(glue(
+  'DESCRIBE "{tbl_alignments_dupfreq}"'
+))
+```
