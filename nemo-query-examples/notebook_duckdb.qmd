@@ -1,9 +1,9 @@
 ---
-title: "tidywigits demo"
+title: "nemo demo"
 format: html
 ---
 
-Let us explore a set of directories with tidywigits parquet outputs.
+Let us explore a set of directories with nemo parquet outputs.
 
 ```{r}
 #| label: pkg_load
@@ -19,9 +19,9 @@ set.seed(123)
 
 ```{r}
 #| label: list_files
-dir1 <- here("tidywigits-operator/data/output/tidywigits/0.0.7.9005")
+dir1 <- here("nemo-operator/data/output/nemo/0.1.1")
 fs::dir_ls(dir1) |> basename()
-fs::dir_info(path(dir1, "20260710fa7e2802")) |>
+fs::dir_info(path(dir1, "202610214dcf2129")) |>
   dplyr::slice_sample(n = 10) |>
   dplyr::select("path", "size")
 ```
