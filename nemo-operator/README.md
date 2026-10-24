@@ -1,6 +1,6 @@
-# Tidywigits Operator
+# Nemo Operator
 
-The following is a step-by-step guide to operating the [tidywigits](https://github.com/tidywf/tidywigits) Operator.
+The following is a step-by-step guide to operating the [nemo](https://github.com/tidywf/nemo) Operator.
 
 
 ## Prerequisites
@@ -27,6 +27,11 @@ Make the directory layout.
 make dir
 ```
 
+Pull [nemo-image](https://github.com/tidywf/nemo-image) (bundles nemo + tidywigits + tidydragen).
+```
+make pull
+```
+
 We need an authenticated AWS session. 
 Use your usual way of AWS CLI setup to authenticate.
 
@@ -36,14 +41,16 @@ export AWS_PROFILE=umccr-prod-operator
 aws sso login
 ```
 
-Sync the data.
+Sync the data via `nemo sync` in the container.
+
 ```
 make sync
 ```
 
-Pull tidywigits image.
+Preview what would be synced, or print the include/exclude patterns.
 ```
-make pull
+make sync-dryrun
+make sync-patterns
 ```
 
 Run diagnostics targets.
@@ -52,28 +59,28 @@ make pwd
 make ls
 ```
 
-Check tidywigits version and help.
+Check nemo version and help.
 ```
 make version
 make help
 ```
 
-Make a call to the tidywigits list for parsable file listing.
+Make a call to the nemo list for parsable file listing (`wigits` workflow).
 ```
 make list
 ```
 
 Redirect the parsable file list to a file.
 ```
-make list > tidywigits_parsable_file_list.tsv
+make list > nemo_parsable_file_list.tsv
 ```
 
-Run tidywigits tidy.
+Run nemo tidy (`wigits` workflow).
 ```
 make tidy
 ```
 
 ## Next
 
-* You change the `.env` that points to another `RUN_ID` and/or choose a different tidywigits version.
+* You change the `.env` that points to another `RUN_ID` and/or choose a different nemo-image version (`NEMO_IMAGE_TAG`).
 * You can delete anything under `./data` and start over.

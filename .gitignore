@@ -10,7 +10,7 @@ nogit/
 *.log
 
 # exclude any local data
-tidywigits-operator/data/*
-!tidywigits-operator/data/.gitkeep
+nemo-operator/data/*
+!nemo-operator/data/.gitkeep
 
 .ipynb_checkpoints/

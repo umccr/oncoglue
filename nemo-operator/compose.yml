@@ -1,6 +1,6 @@
 services:
-  tidywigits:
-    image: ${TIDYWIGITS_IMAGE_URL}:${TIDYWIGITS_IMAGE_TAG}
+  nemo:
+    image: ${NEMO_IMAGE_URL}:${NEMO_IMAGE_TAG}
     working_dir: /app
     volumes:
       - type: bind
@@ -10,4 +10,27 @@ services:
       - type: bind
         source: ./data/output
         target: /app/output
+        read_only: false
+
+  # `nemo.R sync` runs `aws s3 sync` in the container: needs a writable input
+  # and the host AWS config. ~/.aws is writable so the CLI can refresh its
+  # SSO/credential caches (~/.aws/sso/cache, ~/.aws/cli/cache).
+  nemo-sync:
+    image: ${NEMO_IMAGE_URL}:${NEMO_IMAGE_TAG}
+    working_dir: /app
+    environment:
+      - AWS_PROFILE
+      - AWS_REGION
+      - AWS_DEFAULT_REGION
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_SESSION_TOKEN
+    volumes:
+      - type: bind
+        source: ./data/input
+        target: /app/input
+        read_only: false
+      - type: bind
+        source: ${HOME}/.aws
+        target: /root/.aws
         read_only: false
