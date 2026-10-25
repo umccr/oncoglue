@@ -65,7 +65,7 @@ make version
 make help
 ```
 
-Make a call to the nemo list for parsable file listing (`wigits` workflow).
+Make a call to the nemo list for parsable file listing (`NEMO_WORKFLOW`: `wigits` or `dragen`).
 ```
 make list
 ```
@@ -75,7 +75,7 @@ Redirect the parsable file list to a file.
 make list > nemo_parsable_file_list.tsv
 ```
 
-Run nemo tidy (`wigits` workflow).
+Run nemo tidy (`NEMO_WORKFLOW`: `wigits` or `dragen`).
 ```
 make tidy
 ```
