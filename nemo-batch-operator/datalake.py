@@ -13,7 +13,7 @@ load_dotenv()
 
 DATALAKE_BUCKET = os.environ['DATALAKE_BUCKET']
 DATALAKE_PREFIX = os.environ['DATALAKE_PREFIX']
-TIDYWIGITS_OUTPUT_DIR = os.environ['TIDYWIGITS_OUTPUT_DIR']
+NEMO_OUTPUT_DIR = os.environ['NEMO_OUTPUT_DIR']
 
 
 def process_directory(path: Path, execute: bool, verify: bool) -> str:
@@ -47,20 +47,20 @@ def process_directory(path: Path, execute: bool, verify: bool) -> str:
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Push tidywigits output to datalake')
-    parser.add_argument('--run-id', help='Process single RUN_ID directory only (default: all dirs in TIDYWIGITS_OUTPUT_DIR)')
+    parser = argparse.ArgumentParser(description='Push nemo output to datalake')
+    parser.add_argument('--run-id', help='Process single RUN_ID directory only (default: all dirs in NEMO_OUTPUT_DIR)')
     parser.add_argument('--execute', action='store_true', help='Execute aws s3 sync (default: dry-run print only)')
     parser.add_argument('--verify', action='store_true', help='Run sync a second time to verify completeness')
     args = parser.parse_args()
 
     if args.run_id:
-        directory = Path(TIDYWIGITS_OUTPUT_DIR) / args.run_id
+        directory = Path(NEMO_OUTPUT_DIR) / args.run_id
         if not directory.is_dir():
             print(f"ERROR: directory not found: {directory}", file=sys.stderr)
             sys.exit(1)
         process_directory(directory, args.execute, args.verify)
     else:
-        for directory in glob.glob(f'{TIDYWIGITS_OUTPUT_DIR}/*'):
+        for directory in glob.glob(f'{NEMO_OUTPUT_DIR}/*'):
             path = Path(directory)
             if path.is_dir():
                 process_directory(path, args.execute, args.verify)

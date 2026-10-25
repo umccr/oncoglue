@@ -4,15 +4,17 @@ set -uo pipefail
 # =============================================================================
 # CONFIG — all variables in one place
 # =============================================================================
-TIDYWIGITS_IMAGE_URL="ghcr.io/tidywf/tidywigits"
-TIDYWIGITS_IMAGE_TAG="0.0.7.9005"
+# nemo workflow: wigits or dragen
+NEMO_WORKFLOW="wigits"
+NEMO_IMAGE_URL="ghcr.io/tidywf/nemo-image"
+NEMO_IMAGE_TAG="0.1.1"
 
 # Datalake destination
 DATALAKE_BUCKET="s3-copy-cache-042906701326-ap-southeast-2-an"
 DATALAKE_PREFIX="tidywigits/v1"
 
-# Input: mountpoint-s3 must be mounted at ./data/input before running this script
-OUTPUT_BASE="./data/output/tidywigits/${TIDYWIGITS_IMAGE_TAG}"
+# Input: mountpoint-s3 must be mounted at ./data/input/${NEMO_WORKFLOW} before running this script
+OUTPUT_BASE="./data/output/nemo/${NEMO_IMAGE_TAG}/${NEMO_WORKFLOW}"
 DATALAKE_SCRIPT="./datalake.py"
 
 # Python interpreter — must have: python-ulid pyarrow python-dotenv
@@ -22,6 +24,11 @@ PYTHON="uv run --with python-ulid --with pyarrow --with python-dotenv python3"
 # PYTHON="python3"
 
 # =============================================================================
+
+if [[ "$NEMO_WORKFLOW" != "wigits" && "$NEMO_WORKFLOW" != "dragen" ]]; then
+    echo "ERROR: NEMO_WORKFLOW must be one of: wigits, dragen (got '$NEMO_WORKFLOW')" >&2
+    exit 1
+fi
 
 # Usage: ./batch_run.sh [RUN_IDS_FILE]
 # RUN_IDS_FILE: one RUN_ID per line, blank lines and lines starting with # are ignored.
@@ -63,7 +70,7 @@ log_audit() {
     echo -e "$line" | tee -a "$AUDIT_LOG"
 }
 
-export TIDYWIGITS_IMAGE_URL TIDYWIGITS_IMAGE_TAG
+export NEMO_IMAGE_URL NEMO_IMAGE_TAG
 
 for RUN_ID in "${RUN_IDS[@]}"; do
     echo ""
@@ -74,23 +81,23 @@ for RUN_ID in "${RUN_IDS[@]}"; do
     OUTPUT_DIR="${OUTPUT_BASE}/${RUN_ID}"
     mkdir -p "$OUTPUT_DIR"
 
-    echo "Running tidywigits"
+    echo "Running nemo tidy (${NEMO_WORKFLOW})"
     # Step 1: tidy
-    if ! time docker compose run -q --rm tidywigits tidywigits.R tidy \
+    if ! time docker compose run -q --rm nemo tidy -w "$NEMO_WORKFLOW" \
         -f parquet \
-        -d ./input/"$RUN_ID" \
-        -o ./output/tidywigits/"$TIDYWIGITS_IMAGE_TAG"/"$RUN_ID" \
+        -d ./input/"$NEMO_WORKFLOW"/"$RUN_ID" \
+        -o ./output/nemo/"$NEMO_IMAGE_TAG"/"$NEMO_WORKFLOW"/"$RUN_ID" \
         --ulid --prefix_include --input_id "$RUN_ID"; then
         log_audit "$RUN_ID" "FAILED" "tidy step"
         continue
     fi
-    echo "Tidywigits complete. Output at: $OUTPUT_DIR"
+    echo "nemo tidy complete. Output at: $OUTPUT_DIR"
 
     echo "Syncing to datalake and verifying"
     # Step 2: datalake sync + verify
     if ! DATALAKE_BUCKET="$DATALAKE_BUCKET" \
          DATALAKE_PREFIX="$DATALAKE_PREFIX" \
-         TIDYWIGITS_OUTPUT_DIR="$OUTPUT_BASE" \
+         NEMO_OUTPUT_DIR="$OUTPUT_BASE" \
          $PYTHON "$DATALAKE_SCRIPT" --run-id "$RUN_ID" --execute --verify; then
         log_audit "$RUN_ID" "FAILED" "datalake sync/verify"
         continue
