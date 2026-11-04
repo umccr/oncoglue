@@ -1,6 +1,5 @@
 .env
 manifest.csv
-gen_sync.sh
 
 # exclude any local data
 data/*

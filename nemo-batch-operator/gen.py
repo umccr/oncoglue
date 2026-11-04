@@ -12,7 +12,12 @@ NEMO_IMAGE_TAG = os.environ['NEMO_IMAGE_TAG']
 # nemo workflow per analysis type, matched against the manifest `prefix`
 WORKFLOWS = {
     'oncoanalyser-wgts-dna': 'wigits',
+    'oncoanalyser-wgts-rna': 'wigits',
+    'oncoanalyser-wgts-dna-rna': 'wigits',
     'dragen-wgts-dna': 'dragen',
+    'dragen-wgts-rna': 'dragen',
+    'dragen-tso500-ctdna': 'dragen',
+    'bclconvert-interop-qc': 'dragen',
 }
 
 

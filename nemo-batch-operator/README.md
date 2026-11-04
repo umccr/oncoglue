@@ -31,6 +31,21 @@ where (prefix like '%/oncoanalyser-wgts-dna/%' or prefix like '%/dragen-wgts-dna
   and bucket = '<FILL>';
 ```
 
+All workflows supported by [gen.py](gen.py):
+```sql
+select * from mart.output
+where (
+    prefix like '%/bclconvert-interop-qc/%'
+    or prefix like '%/dragen-tso500-ctdna/%'
+    or prefix like '%/dragen-wgts-dna/%'
+    or prefix like '%/dragen-wgts-rna/%'
+    or prefix like '%/oncoanalyser-wgts-dna-rna/%'
+    or prefix like '%/oncoanalyser-wgts-dna/%'
+    or prefix like '%/oncoanalyser-wgts-rna/%'
+  )
+  and portal_run_id like '202610%';
+```
+
 Prepare the environment variables and adjust where needed.
 ```
 cp -v .env.example .env
@@ -54,8 +69,8 @@ aws sso login
 ```
 
 Run the generator script. The nemo workflow is derived from each manifest row's `prefix`
-(`oncoanalyser-wgts-dna` → `wigits`, `dragen-wgts-dna` → `dragen`; see `WORKFLOWS` in [gen.py](gen.py)),
-so one manifest can mix both. For each row, `gen.sh` runs `nemo sync` (stages only the files nemo parses,
+(`oncoanalyser-*` → `wigits`; `dragen-*` and `bclconvert-interop-qc` → `dragen`; see `WORKFLOWS` in [gen.py](gen.py)),
+so one manifest can mix them. For each row, `gen.sh` runs `nemo sync` (stages only the files nemo parses,
 from `s3://<bucket>/<prefix>` into `./data/input/<workflow>/<portal_run_id>/`) and then `nemo tidy`
 into `./data/output/nemo/<NEMO_IMAGE_TAG>/<workflow>/<portal_run_id>/`.
 ```
