@@ -1,4 +1,3 @@
-import json
 import os
 from pathlib import Path
 
@@ -23,12 +22,8 @@ yaml.indent(mapping=2, sequence=4, offset=2)
 # ---
 
 # Mandatory environment variables
-RUN_ID = os.environ['RUN_ID']
-TIDYWIGITS_IMAGE_TAG = os.environ['TIDYWIGITS_IMAGE_TAG']
-
-# Intentional fixed structure to tidywigits-operator output convention
-base_dir = f'../tidywigits-operator/data/output/tidywigits/{TIDYWIGITS_IMAGE_TAG}/{RUN_ID}/'
-schema_out_base = f'schema/tidywigits/{TIDYWIGITS_IMAGE_TAG}/{RUN_ID}/'
+NEMO_IMAGE_TAG = os.environ['NEMO_IMAGE_TAG']
+NEMO_WORKFLOW = os.getenv('NEMO_WORKFLOW', 'wigits')
 
 # ---
 
@@ -37,32 +32,34 @@ schema_out_base = f'schema/tidywigits/{TIDYWIGITS_IMAGE_TAG}/{RUN_ID}/'
 # Intentionally fixed bucket name as we share and keep track of the output schema in the public repo
 lz_bucket = 's3://derived-secondary-data-123456789123-ap-southeast-2-an'
 
+# One database and key prefix per workflow, matching the batch operator datalake prefixes. Keeping
+# them separate also avoids a clash, as both workflows produce a `metadata` table.
+LANDING_ZONES = {
+    'wigits': {'dbname': 'tidywigits', 'key_prefix': 'tidywigits/v1'},
+    'dragen': {'dbname': 'tidydragen', 'key_prefix': 'tidydragen/v1'},
+}
+assert NEMO_WORKFLOW in LANDING_ZONES, f"NEMO_WORKFLOW must be one of: {', '.join(LANDING_ZONES)} (got '{NEMO_WORKFLOW}')"
+
 # Optional environment variables that could be overridden
-lz_dbname = os.getenv('LZ_DBNAME', 'tidywigits')
-lz_key_prefix = os.getenv('LZ_KEY_PREFIX', 'tidywigits/v1')
+lz_dbname = os.getenv('LZ_DBNAME', LANDING_ZONES[NEMO_WORKFLOW]['dbname'])
+lz_key_prefix = os.getenv('LZ_KEY_PREFIX', LANDING_ZONES[NEMO_WORKFLOW]['key_prefix'])
 lz_base = f'{lz_bucket}/{lz_key_prefix}'
+
+# Intentional fixed structure to nemo-batch-operator output convention
+base_dir = Path(f'../nemo-batch-operator/data/output/nemo/{NEMO_IMAGE_TAG}/{NEMO_WORKFLOW}')
+schema_out_base = f'schema/{lz_dbname}/{NEMO_IMAGE_TAG}/'
+
 
 # ---
 
-# depends on tidywigits version, support loading metadata file from different locations
-metadata_file = Path(base_dir, 'metadata.json')
-if not metadata_file.exists():
-    metadata_file = Path(base_dir, '_metadata/metadata.json')
-if not metadata_file.exists():
-    # fallback location
-    metadata_file = Path(base_dir, 'metadata.parquet')
-if not metadata_file.exists():
-    # exhaustive fallback
-    assert False, f"metadata file not found: {metadata_file}"
+def load_par_files(run_dir: Path) -> list[dict]:
+    """Lists the parquet files of a run, from its metadata file."""
 
-# check metadata file is parquet or json
-par_files = []
-if metadata_file.suffix == '.parquet':
+    metadata_file = Path(run_dir, 'metadata.parquet')
     arrow_tbl = pq.read_table(metadata_file).to_pylist()
-    assert len(arrow_tbl) == 1, f"expected 1 row in metadata.parquet, got {len(arrow_tbl)}"
-    metadata = arrow_tbl[0]
+    assert len(arrow_tbl) == 1, f"expected 1 row in {metadata_file}, got {len(arrow_tbl)}"
 
-    par_files = metadata['files']
+    par_files = arrow_tbl[0]['files']
 
     # Add metadata table
     par_files.append(
@@ -73,13 +70,24 @@ if metadata_file.suffix == '.parquet':
         }
     )
 
-elif metadata_file.suffix == '.json':
-    with open(metadata_file) as f:
-        metadata = json.load(f)
-        par_files = metadata['files']
+    return par_files
 
-if len(par_files) == 0:
-    assert False, f"no parquet files found in {metadata_file}"
+
+def collect_schemas(runs_dir: Path) -> dict[str, pa.Schema]:
+    """Builds one schema per table across all runs, as no single run has every table or column."""
+
+    run_dirs = sorted(d for d in runs_dir.glob('*') if d.is_dir())
+    assert len(run_dirs) > 0, f"no runs found in {runs_dir}"
+
+    tbl_schemas = {}
+    for run_dir in run_dirs:
+        for file in load_par_files(run_dir):
+            tbl_name = file.get('tbl_name', file.get('tbl'))  # handle legacy
+            outpath = Path(run_dir, file.get('outpath', file.get('fout')))  # handle legacy
+            tbl_schemas.setdefault(tbl_name, []).append(pq.read_schema(outpath))
+
+    # column order is first seen, a type conflict between runs raises an error
+    return {tbl: pa.unify_schemas(schemas) for tbl, schemas in tbl_schemas.items()}
 
 
 # ---
@@ -312,13 +320,11 @@ if __name__ == '__main__':
     os.makedirs(schema_out_dcl, exist_ok=True)
     os.makedirs(schema_out_view, exist_ok=True)
 
-    tables = set()
+    tbl_schemas = collect_schemas(base_dir)
+    tables = sorted(tbl_schemas)
 
-    for file in par_files:
-        tbl_name = file.get('tbl_name', file.get('tbl'))  # handle legacy
-        tables.add(tbl_name)
-        outpath = Path(base_dir, file.get('outpath', file.get('fout')))  # handle legacy
-        s: pa.Schema = pq.read_schema(outpath)
+    for tbl_name in tables:
+        s: pa.Schema = tbl_schemas[tbl_name]
         # print(s)
 
         ddl_columns = pyarrow_to_athena(s)
@@ -374,12 +380,12 @@ WHERE regexp_like("$path", '{tbl_name}\\.parquet$')
     # print(len(tables))
     # print("-" * 32)
 
-    for tbl in sorted(tables):
+    for tbl in tables:
         print(tbl)
 
-    with open(schema_out_base + '/' + 'tables.txt', 'w') as fot:
-        fot.write("\n".join(sorted(tables)))
+    with open(schema_out_base + 'tables.txt', 'w') as fot:
+        fot.write("\n".join(tables))
 
     sql_create_db = f"CREATE DATABASE IF NOT EXISTS {lz_dbname};"
-    with open(schema_out_base + '/' + lz_dbname + '.sql', 'w') as fon:
+    with open(schema_out_base + lz_dbname + '.sql', 'w') as fon:
         fon.write(sql_create_db)

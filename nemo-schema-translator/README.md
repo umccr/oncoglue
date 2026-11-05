@@ -1,12 +1,12 @@
-# Tidywigits Schema Translator
+# Nemo Schema Translator
 
-This module auto-translates (generates) the tidywigits parquet output into [Athena EXTERNAL TABLE schema](schema) and dbt model schema for downstream data warehouse to consume.
+This module auto-translates (generates) the nemo parquet output into [Athena EXTERNAL TABLE schema](schema) and dbt model schema for downstream data warehouse to consume.
 
 It makes table semantics for Athena query engine or any compatible query engine like Trino, Presto, Redshift, etc.
 
 ## Prerequisites
 
-* Requires one to run on a tidywigits output using the [operator module](../tidywigits-operator) and parquet files are being generated.
+* Requires parquet output from the [batch operator module](../nemo-batch-operator). The schema is built from every run under `data/output/nemo/{NEMO_IMAGE_TAG}/{NEMO_WORKFLOW}/`, as no single run has all the tables or columns. Include each type of run you want covered.
 
 ## Usage
 
@@ -25,7 +25,17 @@ Run diagnostics debug target.
 make debug
 ```
 
-Hit make run target to run the translator.
+Hit make run target to run the translator, once per workflow.
 ```
-make run
+make run NEMO_WORKFLOW=wigits
+make run NEMO_WORKFLOW=dragen
 ```
+
+Each workflow has its own Athena database, and output goes to `schema/{database}/{NEMO_IMAGE_TAG}/`:
+
+| Workflow | Database     | Key prefix      |
+| -------- | ------------ | --------------- |
+| `wigits` | `tidywigits` | `tidywigits/v1` |
+| `dragen` | `tidydragen` | `tidydragen/v1` |
+
+Table names come from the run metadata, not from the parquet file names, so sample prefixes (`L2600743_`) aren't part of them. If a column has different types across runs, the translator stops with an error.
