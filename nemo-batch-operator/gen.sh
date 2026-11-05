@@ -5,7 +5,7 @@ set -euo pipefail
 date
 echo ----------------
 echo
-mkdir -p ./data/output/nemo/0.1.2/dragen/202610065f553aa6
+mkdir -p ./data/output/nemo/0.1.2/dragen/197010065f553aa6
 time docker compose run -q --rm nemo-sync sync -w dragen -s s3://pipeline-prod-cache-503977275616-ap-southeast-2/byob-icav2/production/analysis/dragen-wgts-dna/197010065f553aa6/ -d ./input/dragen/197010065f553aa6
 time docker compose run -q --rm nemo tidy -w dragen -f parquet -d ./input/dragen/197010065f553aa6 -o ./output/nemo/0.1.2/dragen/197010065f553aa6 --ulid --prefix_include --input_id 197010065f553aa6
 echo
