@@ -1,1 +1,0 @@
-DROP TABLE IF EXISTS tidywigits.linx_clusters;

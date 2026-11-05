@@ -1,1 +1,0 @@
-DROP TABLE IF EXISTS tidywigits.neo_candidates;

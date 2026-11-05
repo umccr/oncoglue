@@ -31,11 +31,11 @@ make run NEMO_WORKFLOW=wigits
 make run NEMO_WORKFLOW=dragen
 ```
 
-Each workflow has its own Athena database, and output goes to `schema/{database}/{NEMO_IMAGE_TAG}/`:
+Each workflow has its own Athena database, and output goes to `schema/{package}/{package version}/`, e.g. `schema/tidywigits/0.2.1/`. The version comes from the run metadata, as the package defines the tables and columns, not the nemo-image tag. All runs must have the same package version.
 
-| Workflow | Database     | Key prefix      |
-| -------- | ------------ | --------------- |
-| `wigits` | `tidywigits` | `tidywigits/v1` |
-| `dragen` | `tidydragen` | `tidydragen/v1` |
+| Workflow | Package and database | Key prefix      |
+| -------- | -------------------- | --------------- |
+| `wigits` | `tidywigits`         | `tidywigits/v1` |
+| `dragen` | `tidydragen`         | `tidydragen/v1` |
 
 Table names come from the run metadata, not from the parquet file names, so sample prefixes (`L2600743_`) aren't part of them. If a column has different types across runs, the translator stops with an error.
