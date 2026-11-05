@@ -1,0 +1,68 @@
+---
+version: 2
+models:
+  - name: sat_dragentso_fusions
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: sample
+        data_type: varchar
+      - name: name
+        data_type: varchar
+      - name: chr1
+        data_type: varchar
+      - name: pos1
+        data_type: double
+      - name: chr2
+        data_type: varchar
+      - name: pos2
+        data_type: double
+      - name: direction
+        data_type: varchar
+      - name: alt_depth
+        data_type: double
+      - name: bp1_depth
+        data_type: double
+      - name: bp2_depth
+        data_type: double
+      - name: total_depth
+        data_type: double
+      - name: vaf
+        data_type: double
+      - name: gene1
+        data_type: varchar
+      - name: gene2
+        data_type: varchar
+      - name: contig
+        data_type: varchar
+      - name: filter
+        data_type: varchar
+      - name: is_cosmic_genepair
+        data_type: varchar
+      - name: fusion_directionality_known
+        data_type: varchar

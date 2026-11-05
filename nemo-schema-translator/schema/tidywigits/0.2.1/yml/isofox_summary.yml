@@ -1,0 +1,41 @@
+models:
+  - name: isofox_summary
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: sample_id
+        data_type: varchar
+      - name: qc_status
+        data_type: varchar
+      - name: frag_tot
+        data_type: double
+      - name: frag_dup
+        data_type: double
+      - name: frag_spliced_pct
+        data_type: double
+      - name: frag_unspliced_pct
+        data_type: double
+      - name: frag_alt_pct
+        data_type: double
+      - name: frag_chimeric_pct
+        data_type: double
+      - name: spliced_gene_count
+        data_type: double
+      - name: read_length
+        data_type: double
+      - name: frag_length_5th
+        data_type: double
+      - name: frag_length_50th
+        data_type: double
+      - name: frag_length_95th
+        data_type: double
+      - name: enriched_gene_pct
+        data_type: double
+      - name: median_gc_ratio
+        data_type: double
+      - name: forward_strand_pct
+        data_type: double

@@ -1,0 +1,130 @@
+---
+version: 2
+models:
+  - name: sat_dragenmap_umimain
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: reads_tot
+        data_type: double
+      - name: reads_umi_valid_correctable
+        data_type: double
+      - name: reads_umi_valid_correctable_pct
+        data_type: double
+      - name: reads_discarded_families
+        data_type: double
+      - name: reads_discarded_families_pct
+        data_type: double
+      - name: reads_filtered_out
+        data_type: double
+      - name: reads_filtered_out_pct
+        data_type: double
+      - name: reads_filtered_out_all_g_umis
+        data_type: double
+      - name: reads_filtered_out_all_g_umis_pct
+        data_type: double
+      - name: reads_uncorrectable_umis
+        data_type: double
+      - name: reads_uncorrectable_umis_pct
+        data_type: double
+      - name: families_tot
+        data_type: double
+      - name: families_contextually_corrected
+        data_type: double
+      - name: families_contextually_corrected_pct
+        data_type: double
+      - name: families_shifted
+        data_type: double
+      - name: families_shifted_pct
+        data_type: double
+      - name: families_discarded_tot
+        data_type: double
+      - name: families_discarded_tot_pct
+        data_type: double
+      - name: families_discarded_minsupportreads
+        data_type: double
+      - name: families_discarded_minsupportreads_pct
+        data_type: double
+      - name: families_discarded_duplexsimplex
+        data_type: double
+      - name: families_discarded_duplexsimplex_pct
+        data_type: double
+      - name: families_ambiguous_correction
+        data_type: double
+      - name: families_ambiguous_correction_pct
+        data_type: double
+      - name: duplex_families
+        data_type: double
+      - name: duplex_families_pct
+        data_type: double
+      - name: consensus_pairs_emitted
+        data_type: double
+      - name: avg_family_depth
+        data_type: double
+      - name: collapsible_regions_tot
+        data_type: double
+      - name: collapsible_region_size_min
+        data_type: double
+      - name: collapsible_region_size_max
+        data_type: double
+      - name: collapsible_region_size_mean
+        data_type: double
+      - name: collapsible_region_size_sd
+        data_type: double
+      - name: reads_tot_ontarget
+        data_type: double
+      - name: reads_umi_valid_correctable_ontarget
+        data_type: double
+      - name: reads_umi_valid_correctable_ontarget_pct
+        data_type: double
+      - name: reads_discarded_families_ontarget
+        data_type: double
+      - name: reads_discarded_families_ontarget_pct
+        data_type: double
+      - name: duplex_families_ontarget
+        data_type: double
+      - name: duplex_families_ontarget_pct
+        data_type: double
+      - name: avg_family_depth_ontarget
+        data_type: double
+      - name: families_discarded_tot_ontarget
+        data_type: double
+      - name: families_discarded_tot_ontarget_pct
+        data_type: double
+      - name: families_discarded_minsupportreads_ontarget
+        data_type: double
+      - name: families_discarded_minsupportreads_ontarget_pct
+        data_type: double
+      - name: families_discarded_duplexsimplex_ontarget
+        data_type: double
+      - name: families_discarded_duplexsimplex_ontarget_pct
+        data_type: double
+      - name: families_ambiguous_correction_ontarget
+        data_type: double
+      - name: families_ambiguous_correction_ontarget_pct
+        data_type: double

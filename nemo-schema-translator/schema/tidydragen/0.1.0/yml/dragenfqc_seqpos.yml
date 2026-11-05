@@ -1,0 +1,17 @@
+models:
+  - name: dragenfqc_seqpos
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: mate
+        data_type: varchar
+      - name: seq
+        data_type: varchar
+      - name: bp
+        data_type: bigint
+      - name: starts
+        data_type: double

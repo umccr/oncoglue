@@ -35,8 +35,8 @@ lz_bucket = 's3://derived-secondary-data-123456789123-ap-southeast-2-an'
 # One database and key prefix per workflow, matching the batch operator datalake prefixes. Keeping
 # them separate also avoids a clash, as both workflows produce a `metadata` table.
 LANDING_ZONES = {
-    'wigits': {'dbname': 'tidywigits', 'key_prefix': 'tidywigits/v1'},
-    'dragen': {'dbname': 'tidydragen', 'key_prefix': 'tidydragen/v1'},
+    'wigits': {'pkg': 'tidywigits', 'dbname': 'tidywigits', 'key_prefix': 'tidywigits/v1'},
+    'dragen': {'pkg': 'tidydragen', 'dbname': 'tidydragen', 'key_prefix': 'tidydragen/v1'},
 }
 assert NEMO_WORKFLOW in LANDING_ZONES, f"NEMO_WORKFLOW must be one of: {', '.join(LANDING_ZONES)} (got '{NEMO_WORKFLOW}')"
 
@@ -47,22 +47,25 @@ lz_base = f'{lz_bucket}/{lz_key_prefix}'
 
 # Intentional fixed structure to nemo-batch-operator output convention
 base_dir = Path(f'../nemo-batch-operator/data/output/nemo/{NEMO_IMAGE_TAG}/{NEMO_WORKFLOW}')
-schema_out_base = f'schema/{lz_dbname}/{NEMO_IMAGE_TAG}/'
+
+# Parsing package of the workflow. Output is versioned by this, as it defines the tables and
+# columns; the nemo-image tag can change without any change to them.
+PKG = LANDING_ZONES[NEMO_WORKFLOW]['pkg']
 
 
 # ---
 
-def load_par_files(run_dir: Path) -> list[dict]:
-    """Lists the parquet files of a run, from its metadata file."""
+def load_metadata(run_dir: Path) -> dict:
+    """Reads the metadata of a run, with the metadata table itself added to its parquet files."""
 
     metadata_file = Path(run_dir, 'metadata.parquet')
     arrow_tbl = pq.read_table(metadata_file).to_pylist()
     assert len(arrow_tbl) == 1, f"expected 1 row in {metadata_file}, got {len(arrow_tbl)}"
 
-    par_files = arrow_tbl[0]['files']
+    metadata = arrow_tbl[0]
 
     # Add metadata table
-    par_files.append(
+    metadata['files'].append(
         {
             "tbl": "metadata",
             "prefix": "metadata",
@@ -70,24 +73,33 @@ def load_par_files(run_dir: Path) -> list[dict]:
         }
     )
 
-    return par_files
+    return metadata
 
 
-def collect_schemas(runs_dir: Path) -> dict[str, pa.Schema]:
-    """Builds one schema per table across all runs, as no single run has every table or column."""
+def collect_schemas(runs_dir: Path) -> tuple[str, dict[str, pa.Schema]]:
+    """Builds one schema per table across all runs, as no single run has every table or column.
+
+    Returns the package version of the runs too, which must be the same for all of them.
+    """
 
     run_dirs = sorted(d for d in runs_dir.glob('*') if d.is_dir())
     assert len(run_dirs) > 0, f"no runs found in {runs_dir}"
 
+    versions = set()
     tbl_schemas = {}
     for run_dir in run_dirs:
-        for file in load_par_files(run_dir):
+        metadata = load_metadata(run_dir)
+        versions.update(p['version'] for p in metadata['pkg_versions'] if p['name'] == PKG)
+
+        for file in metadata['files']:
             tbl_name = file.get('tbl_name', file.get('tbl'))  # handle legacy
             outpath = Path(run_dir, file.get('outpath', file.get('fout')))  # handle legacy
             tbl_schemas.setdefault(tbl_name, []).append(pq.read_schema(outpath))
 
+    assert len(versions) == 1, f"expected one {PKG} version in {runs_dir}, got {sorted(versions)}"
+
     # column order is first seen, a type conflict between runs raises an error
-    return {tbl: pa.unify_schemas(schemas) for tbl, schemas in tbl_schemas.items()}
+    return versions.pop(), {tbl: pa.unify_schemas(schemas) for tbl, schemas in tbl_schemas.items()}
 
 
 # ---
@@ -306,6 +318,10 @@ def pyarrow_to_dcl(schema: pa.Schema, tbl_name: str):
 
 if __name__ == '__main__':
 
+    pkg_version, tbl_schemas = collect_schemas(base_dir)
+    tables = sorted(tbl_schemas)
+
+    schema_out_base = f'schema/{PKG}/{pkg_version}/'
     schema_out_create = schema_out_base + 'create'
     schema_out_drop = schema_out_base + 'drop'
     schema_out_csv = schema_out_base + 'csv'
@@ -319,9 +335,6 @@ if __name__ == '__main__':
     os.makedirs(schema_out_yml, exist_ok=True)
     os.makedirs(schema_out_dcl, exist_ok=True)
     os.makedirs(schema_out_view, exist_ok=True)
-
-    tbl_schemas = collect_schemas(base_dir)
-    tables = sorted(tbl_schemas)
 
     for tbl_name in tables:
         s: pa.Schema = tbl_schemas[tbl_name]

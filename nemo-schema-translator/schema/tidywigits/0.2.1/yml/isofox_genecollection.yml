@@ -1,0 +1,39 @@
+models:
+  - name: isofox_genecollection
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: gene_set_id
+        data_type: varchar
+      - name: gene_count
+        data_type: double
+      - name: chrom
+        data_type: varchar
+      - name: range_start
+        data_type: double
+      - name: range_end
+        data_type: double
+      - name: total_frags
+        data_type: double
+      - name: duplicates
+        data_type: double
+      - name: supporting_trans
+        data_type: double
+      - name: unspliced
+        data_type: double
+      - name: alt_sj
+        data_type: double
+      - name: chimeric
+        data_type: double
+      - name: low_map_qual
+        data_type: double
+      - name: fwd_strand
+        data_type: double
+      - name: rev_strand
+        data_type: double
+      - name: genes
+        data_type: varchar

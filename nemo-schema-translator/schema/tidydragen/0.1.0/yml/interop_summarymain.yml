@@ -1,0 +1,25 @@
+models:
+  - name: interop_summarymain
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: level
+        data_type: varchar
+      - name: yield
+        data_type: double
+      - name: yield_projected
+        data_type: double
+      - name: aligned_pct
+        data_type: double
+      - name: error_rate
+        data_type: double
+      - name: intensity_c1
+        data_type: double
+      - name: pct_q30
+        data_type: double
+      - name: pct_occupied
+        data_type: double

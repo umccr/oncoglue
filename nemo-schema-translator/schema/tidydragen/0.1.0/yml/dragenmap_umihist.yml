@@ -1,0 +1,15 @@
+models:
+  - name: dragenmap_umihist
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: hist_type
+        data_type: varchar
+      - name: bin
+        data_type: bigint
+      - name: count
+        data_type: double

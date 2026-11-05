@@ -1,0 +1,13 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+sample_id, varchar
+data_type, varchar
+clf_group, varchar
+clf_name, varchar
+feat_name, varchar
+feat_value, double
+cancer_type, varchar
+data_value, double
+rank, double
+rank_group, double

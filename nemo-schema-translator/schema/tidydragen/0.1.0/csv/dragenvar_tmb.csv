@@ -1,0 +1,10 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+vars_tot_input, double
+vars_tot_input_tmbregion, double
+vars_filt, double
+vars_filt_nonsyn, double
+region_eligible_mb, double
+tmb, double
+tmb_nonsyn, double

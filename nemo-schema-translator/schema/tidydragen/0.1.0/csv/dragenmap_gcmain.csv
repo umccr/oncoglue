@@ -1,0 +1,15 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+window_size, bigint
+windows_valid, double
+windows_discarded, double
+gc_ref_avg, double
+cov_global_mean, double
+cov_norm_gc_0_19, double
+cov_norm_gc_20_39, double
+cov_norm_gc_40_59, double
+cov_norm_gc_60_79, double
+cov_norm_gc_80_100, double
+at_dropout, double
+gc_dropout, double

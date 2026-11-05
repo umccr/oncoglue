@@ -1,0 +1,21 @@
+models:
+  - name: neo_isofusions
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: ne_id
+        data_type: bigint
+      - name: variant_type
+        data_type: varchar
+      - name: variant_info
+        data_type: varchar
+      - name: fragment_count
+        data_type: bigint
+      - name: base_depth_up
+        data_type: bigint
+      - name: base_depth_down
+        data_type: bigint

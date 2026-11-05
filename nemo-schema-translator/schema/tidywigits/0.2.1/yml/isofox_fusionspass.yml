@@ -1,0 +1,67 @@
+models:
+  - name: isofox_fusionspass
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: fusion_id
+        data_type: varchar
+      - name: valid
+        data_type: varchar
+      - name: chr_up
+        data_type: varchar
+      - name: pos_up
+        data_type: double
+      - name: orient_up
+        data_type: double
+      - name: gene_id_up
+        data_type: varchar
+      - name: gene_name_up
+        data_type: varchar
+      - name: strand_up
+        data_type: double
+      - name: junc_type_up
+        data_type: varchar
+      - name: coverage_up
+        data_type: double
+      - name: max_anchor_length_up
+        data_type: double
+      - name: chr_down
+        data_type: varchar
+      - name: pos_down
+        data_type: double
+      - name: orient_down
+        data_type: double
+      - name: gene_id_down
+        data_type: varchar
+      - name: gene_name_down
+        data_type: varchar
+      - name: strand_down
+        data_type: double
+      - name: junc_type_down
+        data_type: varchar
+      - name: coverage_down
+        data_type: double
+      - name: max_anchor_length_down
+        data_type: double
+      - name: sv_type
+        data_type: varchar
+      - name: total_frags
+        data_type: double
+      - name: split_frags
+        data_type: double
+      - name: realigned_frags
+        data_type: double
+      - name: discordant_frags
+        data_type: double
+      - name: related_spliced_ids
+        data_type: varchar
+      - name: cohort_count
+        data_type: double
+      - name: filter
+        data_type: varchar
+      - name: known_fusion_type
+        data_type: varchar

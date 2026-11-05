@@ -1,0 +1,45 @@
+models:
+  - name: isofox_transdata
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: gene_id
+        data_type: varchar
+      - name: gene_name
+        data_type: varchar
+      - name: transcript_id
+        data_type: varchar
+      - name: transcript_name
+        data_type: varchar
+      - name: exon_count
+        data_type: bigint
+      - name: transcript_length
+        data_type: bigint
+      - name: effective_length
+        data_type: bigint
+      - name: fitted_fragments
+        data_type: double
+      - name: raw_fitted_fragments
+        data_type: double
+      - name: tpm_adj
+        data_type: double
+      - name: tpm_raw
+        data_type: double
+      - name: transcript_bases_covered
+        data_type: double
+      - name: sj_supported
+        data_type: double
+      - name: sj_supported_unique
+        data_type: double
+      - name: sj_fragments_unique
+        data_type: double
+      - name: non_sj_fragments_unique
+        data_type: double
+      - name: fragments_discordant
+        data_type: double
+      - name: low_map_quality_fragments
+        data_type: double

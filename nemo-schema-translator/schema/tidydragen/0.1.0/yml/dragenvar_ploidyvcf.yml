@@ -1,0 +1,19 @@
+models:
+  - name: dragenvar_ploidyvcf
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: qual
+        data_type: double
+      - name: filter
+        data_type: varchar
+      - name: dc
+        data_type: double
+      - name: ndc
+        data_type: double

@@ -1,0 +1,19 @@
+models:
+  - name: dragenvar_ploidymain
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: cov_auto_pctile
+        data_type: double
+      - name: cov_x_pctile
+        data_type: double
+      - name: cov_y_pctile
+        data_type: double
+      - name: cov_skewness
+        data_type: double
+      - name: ploidy_est
+        data_type: varchar

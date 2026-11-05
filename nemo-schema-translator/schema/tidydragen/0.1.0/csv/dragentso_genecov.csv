@@ -1,0 +1,10 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+chrom, varchar
+start, bigint
+end, bigint
+gene, varchar
+mean, double
+min, double
+max, double

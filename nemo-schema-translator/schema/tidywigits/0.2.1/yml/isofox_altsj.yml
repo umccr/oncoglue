@@ -1,0 +1,45 @@
+models:
+  - name: isofox_altsj
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: gene_id
+        data_type: varchar
+      - name: gene_name
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: sj_start
+        data_type: double
+      - name: sj_end
+        data_type: double
+      - name: type
+        data_type: varchar
+      - name: frag_count
+        data_type: double
+      - name: dp_start
+        data_type: double
+      - name: dp_end
+        data_type: double
+      - name: region_start
+        data_type: varchar
+      - name: region_end
+        data_type: varchar
+      - name: bases_start
+        data_type: varchar
+      - name: bases_end
+        data_type: varchar
+      - name: trans_start
+        data_type: varchar
+      - name: trans_end
+        data_type: varchar
+      - name: nearest_start_exon
+        data_type: double
+      - name: nearest_end_exon
+        data_type: double
+      - name: init_read_id
+        data_type: varchar

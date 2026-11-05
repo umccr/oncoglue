@@ -1,0 +1,43 @@
+models:
+  - name: dragencov_metricsmain
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: bases_aligned_tot
+        data_type: double
+      - name: bases_aligned_in_region
+        data_type: double
+      - name: bases_aligned_in_region_pct
+        data_type: double
+      - name: cov_alignment_avg
+        data_type: double
+      - name: cov_uniformity_pct_gt02mean
+        data_type: double
+      - name: cov_uniformity_pct_gt04mean
+        data_type: double
+      - name: cov_x_median_ign0
+        data_type: double
+      - name: cov_y_median_ign0
+        data_type: double
+      - name: cov_mt_avg
+        data_type: double
+      - name: cov_auto_avg
+        data_type: double
+      - name: cov_auto_median
+        data_type: double
+      - name: cov_mean_median_auto_ratio
+        data_type: double
+      - name: reads_aligned_tot
+        data_type: double
+      - name: reads_aligned_in_region
+        data_type: double
+      - name: reads_aligned_in_region_pct
+        data_type: double
+      - name: cov_x_avg
+        data_type: double
+      - name: cov_y_avg
+        data_type: double

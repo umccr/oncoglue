@@ -1,0 +1,14 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+gene, varchar
+chrom, varchar
+pos, bigint
+ref, varchar
+alt, varchar
+vaf, double
+dp, double
+pdot, varchar
+cdot, varchar
+consequence, varchar
+exons, varchar

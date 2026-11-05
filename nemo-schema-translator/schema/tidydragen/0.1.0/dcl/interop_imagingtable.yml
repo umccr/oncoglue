@@ -1,0 +1,130 @@
+---
+version: 2
+models:
+  - name: sat_interop_imagingtable
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: lane
+        data_type: bigint
+      - name: tile
+        data_type: bigint
+      - name: cycle
+        data_type: bigint
+      - name: read
+        data_type: bigint
+      - name: cycle_within_read
+        data_type: bigint
+      - name: density
+        data_type: double
+      - name: density_pf
+        data_type: double
+      - name: cluster_count
+        data_type: double
+      - name: cluster_count_pf
+        data_type: double
+      - name: pct_pass_filter
+        data_type: double
+      - name: aligned_pct
+        data_type: double
+      - name: legacy_phasing_rate
+        data_type: double
+      - name: legacy_prephasing_rate
+        data_type: double
+      - name: error_rate
+        data_type: double
+      - name: pct_q20
+        data_type: double
+      - name: pct_q30
+        data_type: double
+      - name: p90_red
+        data_type: double
+      - name: p90_green
+        data_type: double
+      - name: pct_no_calls
+        data_type: double
+      - name: pct_base_a
+        data_type: double
+      - name: pct_base_c
+        data_type: double
+      - name: pct_base_g
+        data_type: double
+      - name: pct_base_t
+        data_type: double
+      - name: fwhm_red
+        data_type: double
+      - name: fwhm_green
+        data_type: double
+      - name: corrected_a
+        data_type: double
+      - name: corrected_c
+        data_type: double
+      - name: corrected_g
+        data_type: double
+      - name: corrected_t
+        data_type: double
+      - name: called_a
+        data_type: double
+      - name: called_c
+        data_type: double
+      - name: called_g
+        data_type: double
+      - name: called_t
+        data_type: double
+      - name: signal_to_noise
+        data_type: double
+      - name: phasing_weight
+        data_type: double
+      - name: prephasing_weight
+        data_type: double
+      - name: phasing_slope
+        data_type: double
+      - name: phasing_offset
+        data_type: double
+      - name: prephasing_slope
+        data_type: double
+      - name: prephasing_offset
+        data_type: double
+      - name: min_contrast_red
+        data_type: double
+      - name: min_contrast_green
+        data_type: double
+      - name: max_contrast_red
+        data_type: double
+      - name: max_contrast_green
+        data_type: double
+      - name: surface
+        data_type: bigint
+      - name: swath
+        data_type: bigint
+      - name: tile_number
+        data_type: bigint
+      - name: cluster_count_occupied
+        data_type: double
+      - name: pct_occupied
+        data_type: double

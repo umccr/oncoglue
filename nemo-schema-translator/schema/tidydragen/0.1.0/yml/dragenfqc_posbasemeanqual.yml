@@ -1,0 +1,17 @@
+models:
+  - name: dragenfqc_posbasemeanqual
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: mate
+        data_type: varchar
+      - name: pos
+        data_type: bigint
+      - name: base
+        data_type: varchar
+      - name: avg_qual
+        data_type: double

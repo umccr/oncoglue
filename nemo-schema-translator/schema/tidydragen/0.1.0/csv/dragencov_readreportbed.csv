@@ -1,0 +1,11 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+chrom, varchar
+start, bigint
+end, bigint
+name, varchar
+gene_id, varchar
+total_cvg, double
+read1_cvg, double
+read2_cvg, double

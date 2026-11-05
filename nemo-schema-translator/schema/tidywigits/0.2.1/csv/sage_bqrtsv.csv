@@ -1,0 +1,10 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+alt, varchar
+ref, varchar
+context, varchar
+read_type, varchar
+count, double
+origq, double
+recalq, double

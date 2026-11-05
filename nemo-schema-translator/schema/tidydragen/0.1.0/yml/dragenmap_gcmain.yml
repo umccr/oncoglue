@@ -1,0 +1,33 @@
+models:
+  - name: dragenmap_gcmain
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: window_size
+        data_type: bigint
+      - name: windows_valid
+        data_type: double
+      - name: windows_discarded
+        data_type: double
+      - name: gc_ref_avg
+        data_type: double
+      - name: cov_global_mean
+        data_type: double
+      - name: cov_norm_gc_0_19
+        data_type: double
+      - name: cov_norm_gc_20_39
+        data_type: double
+      - name: cov_norm_gc_40_59
+        data_type: double
+      - name: cov_norm_gc_60_79
+        data_type: double
+      - name: cov_norm_gc_80_100
+        data_type: double
+      - name: at_dropout
+        data_type: double
+      - name: gc_dropout
+        data_type: double

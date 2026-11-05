@@ -1,0 +1,6 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+fusions_all_unfiltered, double
+fusions_final_passing, double
+fusions_unique_passing, double

@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+ne_id, bigint
+variant_type, varchar
+variant_info, varchar
+fragment_count, bigint
+base_depth_up, bigint
+base_depth_down, bigint

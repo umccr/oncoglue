@@ -1,0 +1,21 @@
+models:
+  - name: dragenvar_hethom
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: section
+        data_type: varchar
+      - name: rg
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: het
+        data_type: double
+      - name: hom
+        data_type: double
+      - name: het_hom_ratio
+        data_type: double

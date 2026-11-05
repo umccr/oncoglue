@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+cluster_id, varchar
+transcript, varchar
+chrom, varchar
+start, varchar
+end, varchar
+info, varchar

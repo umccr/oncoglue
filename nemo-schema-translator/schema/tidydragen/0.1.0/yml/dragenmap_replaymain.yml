@@ -1,0 +1,23 @@
+models:
+  - name: dragenmap_replaymain
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: dragen_version
+        data_type: varchar
+      - name: nodename
+        data_type: varchar
+      - name: kernel_release
+        data_type: varchar
+      - name: ht_sw_version
+        data_type: varchar
+      - name: hash_table_version
+        data_type: varchar
+      - name: ht_command_line
+        data_type: varchar
+      - name: command_line
+        data_type: varchar

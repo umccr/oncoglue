@@ -1,0 +1,8 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+cov_auto_pctile, double
+cov_x_pctile, double
+cov_y_pctile, double
+cov_skewness, double
+ploidy_est, varchar

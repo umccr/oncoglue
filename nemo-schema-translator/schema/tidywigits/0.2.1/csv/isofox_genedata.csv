@@ -1,0 +1,16 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+gene_id, varchar
+gene_name, varchar
+chrom, varchar
+gene_length, bigint
+intronic_length, bigint
+transcript_count, bigint
+gene_set_id, varchar
+spliced_fragments, bigint
+unspliced_fragments, bigint
+tpm_adj, double
+tpm_raw, double
+fit_residuals, double
+low_map_quality_fragments, double

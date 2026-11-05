@@ -1,0 +1,7 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+gc_window, bigint
+windows, double
+pct, double
+cov_norm, double

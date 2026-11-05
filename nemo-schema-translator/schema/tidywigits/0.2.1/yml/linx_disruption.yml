@@ -1,0 +1,89 @@
+models:
+  - name: linx_disruption
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: sv_id
+        data_type: varchar
+      - name: vcf_id
+        data_type: varchar
+      - name: chromosome_start
+        data_type: varchar
+      - name: chromosome_end
+        data_type: varchar
+      - name: position_start
+        data_type: double
+      - name: position_end
+        data_type: double
+      - name: orient_start
+        data_type: double
+      - name: orient_end
+        data_type: double
+      - name: type
+        data_type: varchar
+      - name: filter
+        data_type: varchar
+      - name: event
+        data_type: varchar
+      - name: qual_score
+        data_type: double
+      - name: homology_sequence_start
+        data_type: varchar
+      - name: homology_sequence_end
+        data_type: varchar
+      - name: inexact_homology_start
+        data_type: double
+      - name: inexact_homology_end
+        data_type: double
+      - name: junction_cn
+        data_type: double
+      - name: adjusted_af_start
+        data_type: double
+      - name: adjusted_af_end
+        data_type: double
+      - name: adjusted_copy_number_start
+        data_type: double
+      - name: adjusted_copy_number_end
+        data_type: double
+      - name: adjusted_copy_number_change_start
+        data_type: double
+      - name: adjusted_copy_number_change_end
+        data_type: double
+      - name: germline_fragments
+        data_type: double
+      - name: germline_reference_fragments_start
+        data_type: double
+      - name: germline_reference_fragments_end
+        data_type: double
+      - name: tumor_fragments
+        data_type: double
+      - name: tumor_reference_fragments_start
+        data_type: double
+      - name: tumor_reference_fragments_end
+        data_type: double
+      - name: insert_sequence
+        data_type: varchar
+      - name: insert_sequence_alignments
+        data_type: varchar
+      - name: insert_sequence_repeat_class
+        data_type: varchar
+      - name: insert_sequence_repeat_type
+        data_type: varchar
+      - name: gene
+        data_type: varchar
+      - name: cluster_id
+        data_type: varchar
+      - name: cluster_count
+        data_type: double
+      - name: resolved_type
+        data_type: varchar
+      - name: linked_by_start
+        data_type: double
+      - name: linked_by_end
+        data_type: double
+      - name: cohort_frequency
+        data_type: double

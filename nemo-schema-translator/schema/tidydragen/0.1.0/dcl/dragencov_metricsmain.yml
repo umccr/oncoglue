@@ -1,0 +1,66 @@
+---
+version: 2
+models:
+  - name: sat_dragencov_metricsmain
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: bases_aligned_tot
+        data_type: double
+      - name: bases_aligned_in_region
+        data_type: double
+      - name: bases_aligned_in_region_pct
+        data_type: double
+      - name: cov_alignment_avg
+        data_type: double
+      - name: cov_uniformity_pct_gt02mean
+        data_type: double
+      - name: cov_uniformity_pct_gt04mean
+        data_type: double
+      - name: cov_x_median_ign0
+        data_type: double
+      - name: cov_y_median_ign0
+        data_type: double
+      - name: cov_mt_avg
+        data_type: double
+      - name: cov_auto_avg
+        data_type: double
+      - name: cov_auto_median
+        data_type: double
+      - name: cov_mean_median_auto_ratio
+        data_type: double
+      - name: reads_aligned_tot
+        data_type: double
+      - name: reads_aligned_in_region
+        data_type: double
+      - name: reads_aligned_in_region_pct
+        data_type: double
+      - name: cov_x_avg
+        data_type: double
+      - name: cov_y_avg
+        data_type: double

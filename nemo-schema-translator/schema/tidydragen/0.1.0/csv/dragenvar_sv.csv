@@ -1,0 +1,12 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+total_pass, double
+del, double
+del_pct, double
+ins, double
+ins_pct, double
+dup, double
+dup_pct, double
+bnd, double
+bnd_pct, double

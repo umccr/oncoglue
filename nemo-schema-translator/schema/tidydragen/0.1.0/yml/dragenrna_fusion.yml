@@ -1,0 +1,15 @@
+models:
+  - name: dragenrna_fusion
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: fusions_all_unfiltered
+        data_type: double
+      - name: fusions_final_passing
+        data_type: double
+      - name: fusions_unique_passing
+        data_type: double

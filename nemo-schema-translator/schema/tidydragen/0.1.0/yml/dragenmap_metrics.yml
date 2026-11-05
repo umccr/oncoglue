@@ -1,0 +1,293 @@
+models:
+  - name: dragenmap_metrics
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: section
+        data_type: varchar
+      - name: rg
+        data_type: varchar
+      - name: reads_tot_input
+        data_type: double
+      - name: reads_tot_input_pct
+        data_type: double
+      - name: reads_num_dupmarked
+        data_type: double
+      - name: reads_num_dupmarked_pct
+        data_type: double
+      - name: reads_num_dupmarked_mate_reads_removed
+        data_type: double
+      - name: reads_num_uniq
+        data_type: double
+      - name: reads_num_uniq_pct
+        data_type: double
+      - name: reads_w_mate_seq
+        data_type: double
+      - name: reads_w_mate_seq_pct
+        data_type: double
+      - name: reads_wo_mate_seq
+        data_type: double
+      - name: reads_wo_mate_seq_pct
+        data_type: double
+      - name: reads_qcfail
+        data_type: double
+      - name: reads_qcfail_pct
+        data_type: double
+      - name: reads_mapped
+        data_type: double
+      - name: reads_mapped_pct
+        data_type: double
+      - name: reads_mapped_r1
+        data_type: double
+      - name: reads_mapped_r1_pct
+        data_type: double
+      - name: reads_mapped_r2
+        data_type: double
+      - name: reads_mapped_r2_pct
+        data_type: double
+      - name: reads_mapped_pai
+        data_type: double
+      - name: reads_mapped_pai_pct
+        data_type: double
+      - name: reads_mapped_nrd
+        data_type: double
+      - name: reads_mapped_nrd_pct
+        data_type: double
+      - name: reads_mapped_pai_nrd
+        data_type: double
+      - name: reads_mapped_pai_nrd_pct
+        data_type: double
+      - name: reads_mapped_rna_rrna_filt
+        data_type: double
+      - name: reads_mapped_rna_chrm_excl
+        data_type: double
+      - name: reads_mapped_incl_refext_filt_excl
+        data_type: double
+      - name: reads_mapped_incl_refext_filt_excl_pct
+        data_type: double
+      - name: reads_unmapped
+        data_type: double
+      - name: reads_unmapped_pct
+        data_type: double
+      - name: reads_unmapped_minus_refext
+        data_type: double
+      - name: reads_unmapped_minus_refext_pct
+        data_type: double
+      - name: reads_unmapped_minus_filt
+        data_type: double
+      - name: reads_unmapped_minus_filt_pct
+        data_type: double
+      - name: reads_unmapped_minus_excl
+        data_type: double
+      - name: reads_unmapped_minus_excl_pct
+        data_type: double
+      - name: reads_unmapped_minus_refext_filt_excl
+        data_type: double
+      - name: reads_unmapped_minus_refext_filt_excl_pct
+        data_type: double
+      - name: reads_singleton
+        data_type: double
+      - name: reads_singleton_pct
+        data_type: double
+      - name: reads_paired
+        data_type: double
+      - name: reads_paired_pct
+        data_type: double
+      - name: reads_paired_proper
+        data_type: double
+      - name: reads_paired_proper_pct
+        data_type: double
+      - name: reads_discordant
+        data_type: double
+      - name: reads_discordant_pct
+        data_type: double
+      - name: reads_paired_mapped_diff_chrom
+        data_type: double
+      - name: reads_paired_mapped_diff_chrom_pct
+        data_type: double
+      - name: reads_paired_mapped_diff_chrom_mapq10
+        data_type: double
+      - name: reads_paired_mapped_diff_chrom_mapq10_pct
+        data_type: double
+      - name: reads_map_multiloc
+        data_type: double
+      - name: reads_map_multiloc_pct
+        data_type: double
+      - name: reads_mapq_40_inf
+        data_type: double
+      - name: reads_mapq_40_inf_pct
+        data_type: double
+      - name: reads_mapq_30_40
+        data_type: double
+      - name: reads_mapq_30_40_pct
+        data_type: double
+      - name: reads_mapq_20_30
+        data_type: double
+      - name: reads_mapq_20_30_pct
+        data_type: double
+      - name: reads_mapq_10_20
+        data_type: double
+      - name: reads_mapq_10_20_pct
+        data_type: double
+      - name: reads_mapq_0_10
+        data_type: double
+      - name: reads_mapq_0_10_pct
+        data_type: double
+      - name: reads_mapq_na_unmapped
+        data_type: double
+      - name: reads_mapq_na_unmapped_pct
+        data_type: double
+      - name: reads_indel_r1
+        data_type: double
+      - name: reads_indel_r1_pct
+        data_type: double
+      - name: reads_indel_r2
+        data_type: double
+      - name: reads_indel_r2_pct
+        data_type: double
+      - name: reads_splicejunc
+        data_type: double
+      - name: bases_tot
+        data_type: double
+      - name: bases_tot_r1
+        data_type: double
+      - name: bases_tot_r2
+        data_type: double
+      - name: bases_mapped
+        data_type: double
+      - name: bases_mapped_r1
+        data_type: double
+      - name: bases_mapped_r2
+        data_type: double
+      - name: bases_softclip
+        data_type: double
+      - name: bases_softclip_pct
+        data_type: double
+      - name: bases_softclip_r1
+        data_type: double
+      - name: bases_softclip_r1_pct
+        data_type: double
+      - name: bases_softclip_r2
+        data_type: double
+      - name: bases_softclip_r2_pct
+        data_type: double
+      - name: bases_hardclip
+        data_type: double
+      - name: bases_hardclip_pct
+        data_type: double
+      - name: bases_hardclip_r1
+        data_type: double
+      - name: bases_hardclip_r1_pct
+        data_type: double
+      - name: bases_hardclip_r2
+        data_type: double
+      - name: bases_hardclip_r2_pct
+        data_type: double
+      - name: bases_mismatched_r1
+        data_type: double
+      - name: bases_mismatched_r1_pct
+        data_type: double
+      - name: bases_mismatched_r2
+        data_type: double
+      - name: bases_mismatched_r2_pct
+        data_type: double
+      - name: bases_mismatched_r1_noindels
+        data_type: double
+      - name: bases_mismatched_r1_noindels_pct
+        data_type: double
+      - name: bases_mismatched_r2_noindels
+        data_type: double
+      - name: bases_mismatched_r2_noindels_pct
+        data_type: double
+      - name: bases_q30
+        data_type: double
+      - name: bases_q30_pct
+        data_type: double
+      - name: bases_q30_r1
+        data_type: double
+      - name: bases_q30_r1_pct
+        data_type: double
+      - name: bases_q30_r2
+        data_type: double
+      - name: bases_q30_r2_pct
+        data_type: double
+      - name: bases_q30_nodups_noclipped
+        data_type: double
+      - name: alignments_tot
+        data_type: double
+      - name: alignments_secondary
+        data_type: double
+      - name: alignments_secondary_pct
+        data_type: double
+      - name: alignments_chimeric
+        data_type: double
+      - name: alignments_chimeric_pct
+        data_type: double
+      - name: alignments_linked_proxaware_map
+        data_type: double
+      - name: alignments_remapped_proxaware_map
+        data_type: double
+      - name: read_len
+        data_type: double
+      - name: reads_removed_downsamp
+        data_type: double
+      - name: bases_removed_downsamp
+        data_type: double
+      - name: reads_tot_input_fracsamp
+        data_type: double
+      - name: reads_kept_fracsamp_pct
+        data_type: double
+      - name: bases_in_ref_genome
+        data_type: double
+      - name: bases_in_target_bed_genome_pct
+        data_type: double
+      - name: bases_input_div_refgenome_size
+        data_type: double
+      - name: bases_input_div_targetbed_size
+        data_type: double
+      - name: insert_len_mean
+        data_type: double
+      - name: insert_len_median
+        data_type: double
+      - name: insert_len_std_dev
+        data_type: double
+      - name: ploidy_sex_chrom_provided
+        data_type: double
+      - name: contamination_est
+        data_type: double
+      - name: contamination_stderr_est
+        data_type: double
+      - name: mapping_rate_dragen_milreads_per_sec
+        data_type: double
+      - name: reads_tot_rg
+        data_type: double
+      - name: reads_tot_rg_pct
+        data_type: double
+      - name: reads_mapped_adjfilt
+        data_type: double
+      - name: reads_mapped_adjfilt_pct
+        data_type: double
+      - name: reads_num_uniq_mapped
+        data_type: double
+      - name: reads_num_uniq_mapped_pct
+        data_type: double
+      - name: reads_unmapped_adjfilt
+        data_type: double
+      - name: reads_unmapped_adjfilt_pct
+        data_type: double
+      - name: reads_match_nonref_decoys_adj
+        data_type: double
+      - name: reads_match_nonref_decoys_adj_pct
+        data_type: double
+      - name: bases_in_target_bed_genome_pct_pct
+        data_type: double
+      - name: reads_mapped_rna_rrna_filt_pct
+        data_type: double
+      - name: reads_splicejunc_pct
+        data_type: double
+      - name: reads_kept_fracsamp_pct_pct
+        data_type: double

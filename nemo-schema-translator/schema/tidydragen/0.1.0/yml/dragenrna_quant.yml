@@ -1,0 +1,75 @@
+models:
+  - name: dragenrna_quant
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: library_orientation
+        data_type: varchar
+      - name: genes_tot
+        data_type: double
+      - name: transcripts_tot
+        data_type: double
+      - name: genes_coding
+        data_type: double
+      - name: transcript_cv_cov_median
+        data_type: double
+      - name: cov_bias_5prime_median
+        data_type: double
+      - name: cov_bias_3prime_median
+        data_type: double
+      - name: genes_cov_gt1x
+        data_type: double
+      - name: genes_cov_gt1x_pct
+        data_type: double
+      - name: genes_cov_gt10x
+        data_type: double
+      - name: genes_cov_gt10x_pct
+        data_type: double
+      - name: genes_cov_gt30x
+        data_type: double
+      - name: genes_cov_gt30x_pct
+        data_type: double
+      - name: genes_cov_gt100x
+        data_type: double
+      - name: genes_cov_gt100x_pct
+        data_type: double
+      - name: frags_fwd_transcript
+        data_type: double
+      - name: frags_fwd_transcript_pct
+        data_type: double
+      - name: frags_rev_transcript
+        data_type: double
+      - name: frags_rev_transcript_pct
+        data_type: double
+      - name: frags_strand_mismatch
+        data_type: double
+      - name: frags_strand_mismatch_pct
+        data_type: double
+      - name: frags_strand_ambiguous
+        data_type: double
+      - name: frags_strand_ambiguous_pct
+        data_type: double
+      - name: frags_unknown_transcript
+        data_type: double
+      - name: frags_unknown_transcript_pct
+        data_type: double
+      - name: frags_intron
+        data_type: double
+      - name: frags_intron_pct
+        data_type: double
+      - name: frags_intergenic
+        data_type: double
+      - name: frags_intergenic_pct
+        data_type: double
+      - name: cov_fold_exons_all
+        data_type: double
+      - name: cov_fold_introns
+        data_type: double
+      - name: cov_fold_intergenic
+        data_type: double
+      - name: cov_fold_exons_coding
+        data_type: double

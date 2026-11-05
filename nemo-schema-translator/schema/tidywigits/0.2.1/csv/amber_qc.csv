@@ -1,0 +1,7 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+qc_status, varchar
+contamination, double
+consanguinity, double
+uniparental_disomy, varchar

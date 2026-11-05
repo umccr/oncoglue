@@ -1,0 +1,23 @@
+models:
+  - name: interop_indexsummarymain
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: lane
+        data_type: bigint
+      - name: reads_tot
+        data_type: double
+      - name: reads_pf
+        data_type: double
+      - name: pct_identified
+        data_type: double
+      - name: cv
+        data_type: double
+      - name: pct_identified_min
+        data_type: double
+      - name: pct_identified_max
+        data_type: double

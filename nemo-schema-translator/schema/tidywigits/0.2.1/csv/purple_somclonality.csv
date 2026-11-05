@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+peak, double
+bucket, double
+bucket_weight, double
+peak_avg_weight, double
+is_valid, varchar
+is_subclonal, varchar

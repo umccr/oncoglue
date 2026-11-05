@@ -1,0 +1,25 @@
+models:
+  - name: dragentso_exoncov
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: start
+        data_type: bigint
+      - name: end
+        data_type: bigint
+      - name: gene
+        data_type: varchar
+      - name: mean
+        data_type: double
+      - name: median
+        data_type: double
+      - name: min
+        data_type: double
+      - name: max
+        data_type: double

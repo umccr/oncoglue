@@ -1,0 +1,13 @@
+models:
+  - name: dragenvar_nuctrans
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: transition
+        data_type: varchar
+      - name: value
+        data_type: double
