@@ -5,3 +5,5 @@
 "19701007162c0dc4","production","pipeline-prod-cache-503977275616-ap-southeast-2","byob-icav2/production/analysis/oncoanalyser-wgts-dna/19701007162c0dc4/","244","*","*"
 "19701007193c0726","production","pipeline-prod-cache-503977275616-ap-southeast-2","byob-icav2/production/analysis/oncoanalyser-wgts-dna/19701007193c0726/","214","*","*"
 "1970100723876db8","production","pipeline-prod-cache-503977275616-ap-southeast-2","byob-icav2/production/analysis/oncoanalyser-wgts-dna-rna/1970100723876db8/","28","*","*"
+"197010088bc8aee5","production","pipeline-prod-cache-503977275616-ap-southeast-2","byob-icav2/production/primary/261007_A01052_0328_BHCLJGDSXG/197010088bc8aee5/","115","*","*"
+"197010071ebf137f","production","pipeline-prod-cache-503977275616-ap-southeast-2","byob-icav2/production/analysis/bclconvert-interop-qc/197010071ebf137f/","47","*","*"

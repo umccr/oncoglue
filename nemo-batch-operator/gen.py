@@ -18,6 +18,8 @@ WORKFLOWS = {
     'dragen-wgts-rna': 'dragen',
     'dragen-tso500-ctdna': 'dragen',
     'bclconvert-interop-qc': 'dragen',
+    # bclconvert: lives under primary/<run_name>/<prid>/, no analysis name in path
+    'primary': 'dragen',
 }
 
 
@@ -41,7 +43,7 @@ def tidy_cmds(prid: str, workflow: str, src: str) -> list[str]:
     indir = f'input/{workflow}/{prid}'
     outdir = f'output/nemo/{NEMO_IMAGE_TAG}/{workflow}/{prid}'
     # container paths are relative to working_dir /app; host paths to ./data (see compose.yml)
-    sync = f'time docker compose run -q --rm nemo-sync sync -w {workflow} -s {src} -d ./{indir}'
+    sync = f'time docker compose run -q --rm nemo-sync s3sync -w {workflow} -s {src} -d ./{indir}'
     tidy = f'time docker compose run -q --rm nemo tidy -w {workflow} -f parquet -d ./{indir} -o ./{outdir} --ulid --prefix_include --input_id {prid}'
     return [f'mkdir -p ./data/{outdir}', sync, tidy]
 
