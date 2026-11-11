@@ -1,6 +1,6 @@
 # Nemo Batch Operator
 
-The [nemo-operator](../nemo-operator) processes one run at a time. When you want
+The [01-nemo-operator](../01-nemo-operator) processes one run at a time. When you want
 to "batch" process several runs (often a cohort dataset), you can use the
 instructions below.
 

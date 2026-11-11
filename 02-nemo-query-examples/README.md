@@ -1,6 +1,6 @@
 # Nemo Query Examples
   
-Depending on the hat you are wearing (Systems Engineer, Data Scientist, Data Engineer), querying parquet files can go from a mild setup to a more involved platform setup. This module demonstrates and provides quick starter examples for querying parquet files output by nemo (wigits workflow) using some popular tools such as duckdb, pyarrow, etc. It also facilitates an operator to glimpse into parquet files after a tidy process is performed using the [operator module](../nemo-operator).
+Depending on the hat you are wearing (Systems Engineer, Data Scientist, Data Engineer), querying parquet files can go from a mild setup to a more involved platform setup. This module demonstrates and provides quick starter examples for querying parquet files output by nemo (wigits workflow) using some popular tools such as duckdb, pyarrow, etc. It also facilitates an operator to glimpse into parquet files after a tidy process is performed using the [operator module](../01-nemo-operator).
 
 <!-- TOC -->
 * [Nemo Query Examples](#nemo-query-examples)
@@ -13,8 +13,8 @@ Depending on the hat you are wearing (Systems Engineer, Data Scientist, Data Eng
 ## base
 
 ```
-# match NEMO_IMAGE_TAG and RUN_ID in your nemo-operator .env
-export BASE=../nemo-operator/data/output/nemo/0.1.2
+# match NEMO_IMAGE_TAG and RUN_ID in your 01-nemo-operator .env
+export BASE=../01-nemo-operator/data/output/nemo/0.1.2
 export RUN_ID=202610214dcf2129
 
 ls $BASE
@@ -32,7 +32,7 @@ conda create -n oncoglue python=3.13
 conda activate oncoglue
 
 pip install notebook
-cd nemo-query-examples
+cd 02-nemo-query-examples
 jupyter notebook
 ```
 
@@ -88,7 +88,7 @@ duckdb -c "SELECT count(1) FROM '$BASE/$RUN_ID/*_purple_cnvgenetsv.parquet'"
 ```
 duckdb -c "DESCRIBE TABLE '$BASE/$RUN_ID/*_purple_qc.parquet'"
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ ../nemo-operator/data/output/nemo/0.1.2/202610214dcf2129/*_purple_qc.parquet │
+│ ../01-nemo-operator/data/output/nemo/0.1.2/202610214dcf2129/*_purple_qc.parquet │
 │                                                                              │
 │ input_id                                                             varchar │
 │ input_prefix                                                         varchar │

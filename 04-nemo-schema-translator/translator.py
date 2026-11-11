@@ -45,8 +45,8 @@ lz_dbname = os.getenv('LZ_DBNAME', LANDING_ZONES[NEMO_WORKFLOW]['dbname'])
 lz_key_prefix = os.getenv('LZ_KEY_PREFIX', LANDING_ZONES[NEMO_WORKFLOW]['key_prefix'])
 lz_base = f'{lz_bucket}/{lz_key_prefix}'
 
-# Intentional fixed structure to nemo-batch-operator output convention
-base_dir = Path(f'../nemo-batch-operator/data/output/nemo/{NEMO_IMAGE_TAG}/{NEMO_WORKFLOW}')
+# Intentional fixed structure to 03-nemo-batch-operator output convention
+base_dir = Path(f'../03-nemo-batch-operator/data/output/nemo/{NEMO_IMAGE_TAG}/{NEMO_WORKFLOW}')
 
 # Parsing package of the workflow. Output is versioned by this, as it defines the tables and
 # columns; the nemo-image tag can change without any change to them.

@@ -6,7 +6,7 @@ It makes table semantics for Athena query engine or any compatible query engine 
 
 ## Prerequisites
 
-* Requires parquet output from the [batch operator module](../nemo-batch-operator). The schema is built from every run under `data/output/nemo/{NEMO_IMAGE_TAG}/{NEMO_WORKFLOW}/`, as no single run has all the tables or columns. Include each type of run you want covered.
+* Requires parquet output from the [batch operator module](../03-nemo-batch-operator). The schema is built from every run under `data/output/nemo/{NEMO_IMAGE_TAG}/{NEMO_WORKFLOW}/`, as no single run has all the tables or columns. Include each type of run you want covered.
 
 ## Usage
 
