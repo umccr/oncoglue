@@ -1,0 +1,62 @@
+---
+version: 2
+models:
+  - name: sat_dragenbcl_runinfo
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: run_id
+        data_type: varchar
+      - name: run_number
+        data_type: bigint
+      - name: flowcell
+        data_type: varchar
+      - name: instrument
+        data_type: varchar
+      - name: date
+        data_type: varchar
+      - name: read1_cycles
+        data_type: bigint
+      - name: read2_cycles
+        data_type: bigint
+      - name: index1_cycles
+        data_type: bigint
+      - name: index2_cycles
+        data_type: bigint
+      - name: lane_count
+        data_type: bigint
+      - name: surface_count
+        data_type: bigint
+      - name: swath_count
+        data_type: bigint
+      - name: tile_count
+        data_type: bigint
+      - name: flowcell_side
+        data_type: bigint
+      - name: tile_naming_convention
+        data_type: varchar

@@ -1,0 +1,17 @@
+models:
+  - name: dragentso_sarswds
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: name
+        data_type: varchar
+      - name: version
+        data_type: varchar
+      - name: description
+        data_type: varchar
+      - name: release_date
+        data_type: varchar

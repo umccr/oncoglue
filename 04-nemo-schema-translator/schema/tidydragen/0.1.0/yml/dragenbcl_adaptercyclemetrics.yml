@@ -1,0 +1,25 @@
+models:
+  - name: dragenbcl_adaptercyclemetrics
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: lane
+        data_type: bigint
+      - name: sampleid
+        data_type: varchar
+      - name: index
+        data_type: varchar
+      - name: index2
+        data_type: varchar
+      - name: read
+        data_type: bigint
+      - name: cycle
+        data_type: bigint
+      - name: cluster_n
+        data_type: double
+      - name: cluster_pct
+        data_type: double

@@ -1,3 +1,13 @@
+dragenbcl_adaptercyclemetrics
+dragenbcl_adaptermetrics
+dragenbcl_demultiplexstats
+dragenbcl_demultiplextilestats
+dragenbcl_fastqlist
+dragenbcl_indexhoppingcounts
+dragenbcl_qualitymetrics
+dragenbcl_qualitytilemetrics
+dragenbcl_runinfo
+dragenbcl_topunknownbarcodes
 dragencov_contigmean
 dragencov_finehist
 dragencov_metricsbins
@@ -29,6 +39,13 @@ dragenrna_quant
 dragentso_exoncov
 dragentso_fusions
 dragentso_genecov
+dragentso_sarcnv
+dragentso_sarmain
+dragentso_sarqc
+dragentso_sarqcthr
+dragentso_sarsnv
+dragentso_sarsw
+dragentso_sarswds
 dragentso_smallvariants
 dragentso_tmbmsaf
 dragentso_tmbtrace

@@ -1,0 +1,25 @@
+models:
+  - name: dragentso_sarsw
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: software_display_name
+        data_type: varchar
+      - name: software_name
+        data_type: varchar
+      - name: software_version
+        data_type: varchar
+      - name: genome_build
+        data_type: varchar
+      - name: instance_name
+        data_type: varchar
+      - name: nirvana_software_version
+        data_type: varchar
+      - name: genome_assembly
+        data_type: varchar
+      - name: refseq_version
+        data_type: varchar

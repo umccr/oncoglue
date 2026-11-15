@@ -1,0 +1,23 @@
+models:
+  - name: dragenbcl_indexhoppingcounts
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: lane
+        data_type: bigint
+      - name: sampleid
+        data_type: varchar
+      - name: index
+        data_type: varchar
+      - name: index2
+        data_type: varchar
+      - name: reads_n
+        data_type: double
+      - name: hopped_reads_pct
+        data_type: double
+      - name: all_reads_pct
+        data_type: double

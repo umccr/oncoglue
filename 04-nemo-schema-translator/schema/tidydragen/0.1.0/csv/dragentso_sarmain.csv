@@ -1,0 +1,12 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+sample_id, varchar
+analysis_date, varchar
+analysis_time, varchar
+analysis_run_name, varchar
+analysis_name, varchar
+schema_version, varchar
+library_type, varchar
+library_id, varchar
+analysis_completed, varchar

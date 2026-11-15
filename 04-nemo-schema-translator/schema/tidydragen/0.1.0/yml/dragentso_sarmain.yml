@@ -1,0 +1,27 @@
+models:
+  - name: dragentso_sarmain
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: sample_id
+        data_type: varchar
+      - name: analysis_date
+        data_type: varchar
+      - name: analysis_time
+        data_type: varchar
+      - name: analysis_run_name
+        data_type: varchar
+      - name: analysis_name
+        data_type: varchar
+      - name: schema_version
+        data_type: varchar
+      - name: library_type
+        data_type: varchar
+      - name: library_id
+        data_type: varchar
+      - name: analysis_completed
+        data_type: varchar

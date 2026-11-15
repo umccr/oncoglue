@@ -1,0 +1,65 @@
+models:
+  - name: dragentso_sarsnv
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: pos
+        data_type: double
+      - name: ref
+        data_type: varchar
+      - name: alt
+        data_type: varchar
+      - name: af
+        data_type: double
+      - name: qual
+        data_type: double
+      - name: dp_tot
+        data_type: double
+      - name: dp_alt
+        data_type: double
+      - name: variant_type
+        data_type: varchar
+      - name: hgvsg
+        data_type: varchar
+      - name: transcript
+        data_type: varchar
+      - name: source
+        data_type: varchar
+      - name: biotype
+        data_type: varchar
+      - name: codons
+        data_type: varchar
+      - name: aminoacids
+        data_type: varchar
+      - name: cdnapos
+        data_type: varchar
+      - name: cdspos
+        data_type: varchar
+      - name: exons
+        data_type: varchar
+      - name: proteinpos
+        data_type: varchar
+      - name: geneid
+        data_type: varchar
+      - name: hgnc
+        data_type: varchar
+      - name: consequence
+        data_type: varchar
+      - name: hgvsc
+        data_type: varchar
+      - name: hgvsp
+        data_type: varchar
+      - name: iscanonical
+        data_type: varchar
+      - name: proteinid
+        data_type: varchar
+      - name: introns
+        data_type: varchar
+      - name: isjunctionpreserving
+        data_type: varchar

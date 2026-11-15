@@ -1,0 +1,10 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+lane, bigint
+sampleid, varchar
+index, varchar
+index2, varchar
+reads_n, double
+hopped_reads_pct, double
+all_reads_pct, double

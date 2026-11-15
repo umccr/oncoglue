@@ -1,0 +1,39 @@
+models:
+  - name: dragenbcl_runinfo
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: run_id
+        data_type: varchar
+      - name: run_number
+        data_type: bigint
+      - name: flowcell
+        data_type: varchar
+      - name: instrument
+        data_type: varchar
+      - name: date
+        data_type: varchar
+      - name: read1_cycles
+        data_type: bigint
+      - name: read2_cycles
+        data_type: bigint
+      - name: index1_cycles
+        data_type: bigint
+      - name: index2_cycles
+        data_type: bigint
+      - name: lane_count
+        data_type: bigint
+      - name: surface_count
+        data_type: bigint
+      - name: swath_count
+        data_type: bigint
+      - name: tile_count
+        data_type: bigint
+      - name: flowcell_side
+        data_type: bigint
+      - name: tile_naming_convention
+        data_type: varchar

@@ -1,0 +1,25 @@
+models:
+  - name: dragenbcl_adaptermetrics
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: lane
+        data_type: bigint
+      - name: sampleid
+        data_type: varchar
+      - name: index
+        data_type: varchar
+      - name: index2
+        data_type: varchar
+      - name: read
+        data_type: bigint
+      - name: adapter_bases
+        data_type: double
+      - name: sample_bases
+        data_type: double
+      - name: adapter_bases_pct
+        data_type: double

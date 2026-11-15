@@ -1,0 +1,13 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+lane, bigint
+sampleid, varchar
+index, varchar
+index2, varchar
+read, bigint
+yield, double
+yield_q30, double
+qscore_sum, double
+qscore_mean_pf, double
+q30_pct, double

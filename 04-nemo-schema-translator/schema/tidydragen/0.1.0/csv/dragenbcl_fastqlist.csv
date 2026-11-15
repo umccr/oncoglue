@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+rgid, varchar
+rgsm, varchar
+rglb, varchar
+lane, bigint
+read, bigint
+filepath, varchar

@@ -1,0 +1,50 @@
+---
+version: 2
+models:
+  - name: sat_dragentso_sarmain
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: sample_id
+        data_type: varchar
+      - name: analysis_date
+        data_type: varchar
+      - name: analysis_time
+        data_type: varchar
+      - name: analysis_run_name
+        data_type: varchar
+      - name: analysis_name
+        data_type: varchar
+      - name: schema_version
+        data_type: varchar
+      - name: library_type
+        data_type: varchar
+      - name: library_id
+        data_type: varchar
+      - name: analysis_completed
+        data_type: varchar
