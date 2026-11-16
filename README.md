@@ -21,13 +21,13 @@ you follow the modules.
 
 Try in the following order. You can stop at any point of the exploration.
 
-- Episode 1: [nemo-operator](nemo-operator) _(I am just curious how nemo
+- Episode 1: [01-nemo-operator](01-nemo-operator) _(I am just curious how nemo
   works.)_
-- Episode 2: [nemo-query-examples](nemo-query-examples) _(I want to query it
+- Episode 2: [02-nemo-query-examples](02-nemo-query-examples) _(I want to query it
   over nemo output parquet files.)_
-- Episode 3: [nemo-batch-operator](nemo-batch-operator) _(I have a couple of
+- Episode 3: [03-nemo-batch-operator](03-nemo-batch-operator) _(I have a couple of
   datasets to process.)_
-- Episode 4: [nemo-schema-translator](nemo-schema-translator) _(I want to keep
+- Episode 4: [04-nemo-schema-translator](04-nemo-schema-translator) _(I want to keep
   track of schema and translate to other formats like Trino/Presto/Athena query
   engine, dbt, YAML, CSV formats.)_
 - Episode 5: [nemo-schema-migrator](nemo-schema-migrator) _(Run the nemo
