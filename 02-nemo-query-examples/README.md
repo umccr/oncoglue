@@ -14,7 +14,7 @@ Depending on the hat you are wearing (Systems Engineer, Data Scientist, Data Eng
 
 ```
 # match NEMO_IMAGE_TAG and RUN_ID in your 01-nemo-operator .env
-export BASE=../01-nemo-operator/data/output/nemo/0.1.2
+export BASE=../01-nemo-operator/data/output/nemo/0.1.6
 export RUN_ID=202610214dcf2129
 
 ls $BASE
@@ -88,7 +88,7 @@ duckdb -c "SELECT count(1) FROM '$BASE/$RUN_ID/*_purple_cnvgenetsv.parquet'"
 ```
 duckdb -c "DESCRIBE TABLE '$BASE/$RUN_ID/*_purple_qc.parquet'"
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ ../01-nemo-operator/data/output/nemo/0.1.2/202610214dcf2129/*_purple_qc.parquet │
+│ ../01-nemo-operator/data/output/nemo/0.1.6/202610214dcf2129/*_purple_qc.parquet │
 │                                                                              │
 │ input_id                                                             varchar │
 │ input_prefix                                                         varchar │

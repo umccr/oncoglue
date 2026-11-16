@@ -30,10 +30,8 @@ Try in the following order. You can stop at any point of the exploration.
 - Episode 4: [04-nemo-schema-translator](04-nemo-schema-translator) _(I want to keep
   track of schema and translate to other formats like Trino/Presto/Athena query
   engine, dbt, YAML, CSV formats.)_
-- Episode 5: [nemo-schema-migrator](nemo-schema-migrator) _(Run the nemo
+- Episode 5: [05-nemo-schema-migrator](05-nemo-schema-migrator) _(Run the nemo
   migration in bulk.)_
-- Episode 6: [nemo-datalake-maker](nemo-datalake-maker) _(I want to make
-  datalake from nemo output.)_
 
 Although the modules are written to be Cloud provider-agnostic, there are subtle
 references to AWS S3 buckets. You can map these to your own Cloud environment's

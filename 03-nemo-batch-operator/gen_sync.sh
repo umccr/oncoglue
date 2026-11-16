@@ -17,6 +17,9 @@ DATALAKE_PREFIX=tidywigits/v1 NEMO_OUTPUT_DIR=./data/output/nemo/0.1.6/wigits py
 echo
 DATALAKE_PREFIX=tidywigits/v1 NEMO_OUTPUT_DIR=./data/output/nemo/0.1.6/wigits python datalake.py --run-id 1970100723876db8 --execute --verify
 echo
+DATALAKE_PREFIX=tidydragen/v1 NEMO_OUTPUT_DIR=./data/output/nemo/0.1.6/dragen python datalake.py --run-id 197010088bc8aee5 --execute --verify
+echo
+DATALAKE_PREFIX=tidydragen/v1 NEMO_OUTPUT_DIR=./data/output/nemo/0.1.6/dragen python datalake.py --run-id 197010071ebf137f --execute --verify
 echo
 echo ----------------
 date

@@ -41,7 +41,7 @@ export AWS_PROFILE=umccr-prod-operator
 aws sso login
 ```
 
-Sync the data via `nemo sync` in the container.
+Sync the data via `nemo s3sync` in the container.
 
 ```
 make sync

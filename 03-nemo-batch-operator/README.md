@@ -86,7 +86,7 @@ aws sso login
 Run the generator script. The nemo workflow is derived from each manifest row's
 `prefix` (`oncoanalyser-*` → `wigits`; `dragen-*` and `bclconvert-interop-qc` →
 `dragen`; see `WORKFLOWS` in [gen.py](gen.py)), so one manifest can mix them.
-For each row, `gen.sh` runs `nemo sync` (stages only the files nemo parses, from
+For each row, `gen.sh` runs `nemo s3sync` (stages only the files nemo parses, from
 `s3://<bucket>/<prefix>` into `./data/input/<workflow>/<portal_run_id>/`) and
 then `nemo tidy` into
 `./data/output/nemo/<NEMO_IMAGE_TAG>/<workflow>/<portal_run_id>/`.

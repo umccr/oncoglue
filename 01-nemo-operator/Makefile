@@ -27,16 +27,16 @@ dir:
 
 # sync only files nemo parses; patterns are derived from the workflow's tool schemas
 sync: dir
-	@docker compose run -q --rm nemo-sync sync -w $(NEMO_WORKFLOW) \
+	@docker compose run -q --rm nemo-sync s3sync -w $(NEMO_WORKFLOW) \
 		-s $(NEMO_S3_INPUT) -d ./input/$(RUN_ID)
 
 sync-dryrun: dir
-	@docker compose run -q --rm nemo-sync sync -w $(NEMO_WORKFLOW) \
+	@docker compose run -q --rm nemo-sync s3sync -w $(NEMO_WORKFLOW) \
 		-s $(NEMO_S3_INPUT) -d ./input/$(RUN_ID) --dryrun
 
 # print the include/exclude patterns nemo passes to `aws s3 sync`
 sync-patterns:
-	@docker compose run -q -T --rm nemo-sync sync -w $(NEMO_WORKFLOW) \
+	@docker compose run -q -T --rm nemo-sync s3sync -w $(NEMO_WORKFLOW) \
 		-s $(NEMO_S3_INPUT) -d ./input/$(RUN_ID) --show_patterns -q
 
 pull:
