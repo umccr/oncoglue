@@ -1,0 +1,17 @@
+models:
+  - name: dragenfqc_posqual
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: mate
+        data_type: varchar
+      - name: pos
+        data_type: bigint
+      - name: pct
+        data_type: bigint
+      - name: qv
+        data_type: double

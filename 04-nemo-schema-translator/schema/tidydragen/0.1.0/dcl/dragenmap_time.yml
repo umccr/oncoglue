@@ -1,0 +1,104 @@
+---
+version: 2
+models:
+  - name: sat_dragenmap_time
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: total_runtime
+        data_type: double
+      - name: time_loading_reference
+        data_type: double
+      - name: time_aligning_reads
+        data_type: double
+      - name: time_duplicate_marking
+        data_type: double
+      - name: time_sorting_and_marking_duplicates
+        data_type: double
+      - name: time_dragstr_calibration
+        data_type: double
+      - name: time_saving_map_align_output
+        data_type: double
+      - name: time_processing_depth_of_coverage
+        data_type: double
+      - name: time_variant_calling
+        data_type: double
+      - name: time_partitioning
+        data_type: double
+      - name: time_umi_read_collapsing_and_remapping
+        data_type: double
+      - name: time_sorting
+        data_type: double
+      - name: time_partial_reconfiguration
+        data_type: double
+      - name: time_calculating_target_counts
+        data_type: double
+      - name: time_normalizing_case_sample
+        data_type: double
+      - name: time_performing_segmentation
+        data_type: double
+      - name: time_generating_cnv_calls
+        data_type: double
+      - name: time_generating_cnv_track_files
+        data_type: double
+      - name: time_structural_variant_calling
+        data_type: double
+      - name: time_calculating_tmb
+        data_type: double
+      - name: time_performing_hrd_segment_merging
+        data_type: double
+      - name: time_calculating_hrd_score
+        data_type: double
+      - name: time_correcting_gc_bias
+        data_type: double
+      - name: time_generating_cnv_model_input
+        data_type: double
+      - name: time_fitting_cnv_model
+        data_type: double
+      - name: time_annotating_outputs
+        data_type: double
+      - name: time_running_msi
+        data_type: double
+      - name: time_running_targeted_caller
+        data_type: double
+      - name: time_running_targeted_vcf_reporter
+        data_type: double
+      - name: time_loading_gene_annotations
+        data_type: double
+      - name: time_aligning_anchored_reads
+        data_type: double
+      - name: time_merging_anchored_reads
+        data_type: double
+      - name: time_running_gene_fusion_event_generation
+        data_type: double
+      - name: time_running_gene_fusion_filter
+        data_type: double
+      - name: time_collecting_rna_counts
+        data_type: double
+      - name: time_optimizing_rna_quantification
+        data_type: double

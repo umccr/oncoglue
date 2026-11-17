@@ -1,0 +1,27 @@
+models:
+  - name: dragenvar_sv
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: total_pass
+        data_type: double
+      - name: del
+        data_type: double
+      - name: del_pct
+        data_type: double
+      - name: ins
+        data_type: double
+      - name: ins_pct
+        data_type: double
+      - name: dup
+        data_type: double
+      - name: dup_pct
+        data_type: double
+      - name: bnd
+        data_type: double
+      - name: bnd_pct
+        data_type: double

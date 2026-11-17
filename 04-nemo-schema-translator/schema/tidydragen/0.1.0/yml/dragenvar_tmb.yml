@@ -1,0 +1,23 @@
+models:
+  - name: dragenvar_tmb
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: vars_tot_input
+        data_type: double
+      - name: vars_tot_input_tmbregion
+        data_type: double
+      - name: vars_filt
+        data_type: double
+      - name: vars_filt_nonsyn
+        data_type: double
+      - name: region_eligible_mb
+        data_type: double
+      - name: tmb
+        data_type: double
+      - name: tmb_nonsyn
+        data_type: double

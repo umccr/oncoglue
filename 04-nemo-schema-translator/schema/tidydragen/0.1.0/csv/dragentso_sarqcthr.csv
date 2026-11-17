@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+group, varchar
+metric, varchar
+value, double
+uom, varchar
+lsl, double
+usl, double

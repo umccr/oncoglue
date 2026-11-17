@@ -1,0 +1,10 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+sites_assessed, double
+sites_unstable, double
+pct_unstable, double
+result_valid, varchar
+result_message, varchar
+sum_distance, double
+sum_jsd, double

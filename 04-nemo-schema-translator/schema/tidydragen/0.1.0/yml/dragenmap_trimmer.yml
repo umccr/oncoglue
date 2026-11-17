@@ -1,0 +1,115 @@
+models:
+  - name: dragenmap_trimmer
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: reads_tot_input
+        data_type: double
+      - name: bases_tot
+        data_type: double
+      - name: bases_r1
+        data_type: double
+      - name: bases_r2
+        data_type: double
+      - name: read_len_avg
+        data_type: double
+      - name: reads_trim_tot
+        data_type: double
+      - name: reads_trim_tot_pct
+        data_type: double
+      - name: bases_trim_tot
+        data_type: double
+      - name: bases_trim_tot_pct
+        data_type: double
+      - name: bases_trim_avg_per_read
+        data_type: double
+      - name: bases_trim_avg_per_trimread
+        data_type: double
+      - name: polygkmers3r1_remaining
+        data_type: double
+      - name: polygkmers3r1_remaining_pct
+        data_type: double
+      - name: polygkmers3r2_remaining
+        data_type: double
+      - name: polygkmers3r2_remaining_pct
+        data_type: double
+      - name: polyg_soft_trim_reads_unfilt_5r1
+        data_type: double
+      - name: polyg_soft_trim_reads_unfilt_5r1_pct
+        data_type: double
+      - name: polyg_soft_trim_reads_unfilt_3r1
+        data_type: double
+      - name: polyg_soft_trim_reads_unfilt_3r1_pct
+        data_type: double
+      - name: polyg_soft_trim_reads_unfilt_5r2
+        data_type: double
+      - name: polyg_soft_trim_reads_unfilt_5r2_pct
+        data_type: double
+      - name: polyg_soft_trim_reads_unfilt_3r2
+        data_type: double
+      - name: polyg_soft_trim_reads_unfilt_3r2_pct
+        data_type: double
+      - name: polyg_soft_trim_reads_filt_5r1
+        data_type: double
+      - name: polyg_soft_trim_reads_filt_5r1_pct
+        data_type: double
+      - name: polyg_soft_trim_reads_filt_3r1
+        data_type: double
+      - name: polyg_soft_trim_reads_filt_3r1_pct
+        data_type: double
+      - name: polyg_soft_trim_reads_filt_5r2
+        data_type: double
+      - name: polyg_soft_trim_reads_filt_5r2_pct
+        data_type: double
+      - name: polyg_soft_trim_reads_filt_3r2
+        data_type: double
+      - name: polyg_soft_trim_reads_filt_3r2_pct
+        data_type: double
+      - name: polyg_soft_trim_bases_unfilt_5r1
+        data_type: double
+      - name: polyg_soft_trim_bases_unfilt_5r1_pct
+        data_type: double
+      - name: polyg_soft_trim_bases_unfilt_3r1
+        data_type: double
+      - name: polyg_soft_trim_bases_unfilt_3r1_pct
+        data_type: double
+      - name: polyg_soft_trim_bases_unfilt_5r2
+        data_type: double
+      - name: polyg_soft_trim_bases_unfilt_5r2_pct
+        data_type: double
+      - name: polyg_soft_trim_bases_unfilt_3r2
+        data_type: double
+      - name: polyg_soft_trim_bases_unfilt_3r2_pct
+        data_type: double
+      - name: polyg_soft_trim_bases_filt_5r1
+        data_type: double
+      - name: polyg_soft_trim_bases_filt_5r1_pct
+        data_type: double
+      - name: polyg_soft_trim_bases_filt_3r1
+        data_type: double
+      - name: polyg_soft_trim_bases_filt_3r1_pct
+        data_type: double
+      - name: polyg_soft_trim_bases_filt_5r2
+        data_type: double
+      - name: polyg_soft_trim_bases_filt_5r2_pct
+        data_type: double
+      - name: polyg_soft_trim_bases_filt_3r2
+        data_type: double
+      - name: polyg_soft_trim_bases_filt_3r2_pct
+        data_type: double
+      - name: reads_tot_filt
+        data_type: double
+      - name: reads_tot_filt_pct
+        data_type: double
+      - name: reads_filt_minreadlenr1
+        data_type: double
+      - name: reads_filt_minreadlenr1_pct
+        data_type: double
+      - name: reads_filt_minreadlenr2
+        data_type: double
+      - name: reads_filt_minreadlenr2_pct
+        data_type: double

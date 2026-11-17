@@ -1,0 +1,13 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+library, varchar
+unpaired_reads_examined, double
+read_pairs_examined, double
+secondary_or_supplementary_reads, double
+unmapped_reads, double
+unpaired_read_duplicates, double
+read_pair_duplicates, double
+read_pair_optical_duplicates, double
+percent_duplication, double
+estimated_library_size, double

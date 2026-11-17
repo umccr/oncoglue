@@ -1,0 +1,45 @@
+models:
+  - name: dragentso_fusions
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: sample
+        data_type: varchar
+      - name: name
+        data_type: varchar
+      - name: chr1
+        data_type: varchar
+      - name: pos1
+        data_type: double
+      - name: chr2
+        data_type: varchar
+      - name: pos2
+        data_type: double
+      - name: direction
+        data_type: varchar
+      - name: alt_depth
+        data_type: double
+      - name: bp1_depth
+        data_type: double
+      - name: bp2_depth
+        data_type: double
+      - name: total_depth
+        data_type: double
+      - name: vaf
+        data_type: double
+      - name: gene1
+        data_type: varchar
+      - name: gene2
+        data_type: varchar
+      - name: contig
+        data_type: varchar
+      - name: filter
+        data_type: varchar
+      - name: is_cosmic_genepair
+        data_type: varchar
+      - name: fusion_directionality_known
+        data_type: varchar

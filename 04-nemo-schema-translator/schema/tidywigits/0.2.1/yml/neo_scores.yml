@@ -1,0 +1,47 @@
+models:
+  - name: neo_scores
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: ne_ids
+        data_type: varchar
+      - name: variant_type
+        data_type: varchar
+      - name: variant_info
+        data_type: varchar
+      - name: gene
+        data_type: varchar
+      - name: allele
+        data_type: varchar
+      - name: peptide
+        data_type: varchar
+      - name: flank_up
+        data_type: varchar
+      - name: flank_down
+        data_type: varchar
+      - name: score
+        data_type: double
+      - name: rank
+        data_type: double
+      - name: likelihood
+        data_type: double
+      - name: likelihood_rank
+        data_type: double
+      - name: exp_likelihood
+        data_type: double
+      - name: exp_likelihood_rank
+        data_type: double
+      - name: tpm_effective
+        data_type: double
+      - name: recog_sim
+        data_type: double
+      - name: other_allele_recog_sim
+        data_type: double
+      - name: allele_cn
+        data_type: double
+      - name: allele_disrupted
+        data_type: varchar

@@ -1,1 +1,0 @@
-DROP TABLE IF EXISTS tidywigits.cider_blastn;

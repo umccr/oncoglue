@@ -1,0 +1,88 @@
+---
+version: 2
+models:
+  - name: sat_dragentso_tmbmsaf
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: max_somatic_af
+        data_type: double
+      - name: chrom
+        data_type: varchar
+      - name: pos
+        data_type: double
+      - name: ref
+        data_type: varchar
+      - name: alt
+        data_type: varchar
+      - name: vaf
+        data_type: double
+      - name: dp
+        data_type: double
+      - name: cytoband
+        data_type: varchar
+      - name: gene
+        data_type: varchar
+      - name: variant_type
+        data_type: varchar
+      - name: cosmic_ids
+        data_type: varchar
+      - name: max_cosmic_count
+        data_type: double
+      - name: clinvar_ids
+        data_type: varchar
+      - name: clinvar_significance
+        data_type: varchar
+      - name: ac_gnomad_exome
+        data_type: double
+      - name: ac_gnomad_genome
+        data_type: double
+      - name: ac_1000g
+        data_type: double
+      - name: max_db_ac
+        data_type: double
+      - name: germline_filter_db
+        data_type: varchar
+      - name: germline_filter_proxi
+        data_type: varchar
+      - name: nonsynonymous
+        data_type: varchar
+      - name: within_valid_tmb_region
+        data_type: varchar
+      - name: included_in_tmb_numerator
+        data_type: varchar
+      - name: status
+        data_type: varchar
+      - name: protein_change
+        data_type: varchar
+      - name: cds_change
+        data_type: varchar
+      - name: exons
+        data_type: varchar
+      - name: consequence
+        data_type: varchar

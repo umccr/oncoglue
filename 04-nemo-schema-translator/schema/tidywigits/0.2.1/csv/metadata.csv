@@ -1,0 +1,6 @@
+input_id, varchar
+output_id, varchar
+input_dirs, array<varchar>
+output_dir, varchar
+pkg_versions, array<struct<name: varchar, version: varchar>>
+files, array<struct<tbl: varchar, prefix: varchar, fout: varchar, fin: varchar>>

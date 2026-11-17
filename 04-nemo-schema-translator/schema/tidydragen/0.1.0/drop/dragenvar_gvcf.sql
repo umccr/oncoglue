@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS tidydragen.dragenvar_gvcf;

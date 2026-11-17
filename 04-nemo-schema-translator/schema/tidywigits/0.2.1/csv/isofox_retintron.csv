@@ -1,0 +1,13 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+gene_id, varchar
+gene_name, varchar
+chrom, varchar
+strand, double
+position, double
+type, varchar
+frag_count, double
+spliced_frag_count, double
+dp_total, double
+transcript_info, varchar

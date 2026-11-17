@@ -1,0 +1,19 @@
+models:
+  - name: dragencov_reportbedcumu
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: start
+        data_type: bigint
+      - name: end
+        data_type: bigint
+      - name: cov_min
+        data_type: bigint
+      - name: pct_above
+        data_type: double

@@ -1,0 +1,11 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+software_display_name, varchar
+software_name, varchar
+software_version, varchar
+genome_build, varchar
+instance_name, varchar
+nirvana_software_version, varchar
+genome_assembly, varchar
+refseq_version, varchar

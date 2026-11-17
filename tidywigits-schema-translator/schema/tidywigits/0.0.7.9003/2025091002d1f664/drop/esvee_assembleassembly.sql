@@ -1,1 +1,0 @@
-DROP TABLE IF EXISTS tidywigits.esvee_assembleassembly;

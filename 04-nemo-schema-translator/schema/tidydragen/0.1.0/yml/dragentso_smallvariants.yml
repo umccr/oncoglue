@@ -1,0 +1,31 @@
+models:
+  - name: dragentso_smallvariants
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: gene
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: pos
+        data_type: bigint
+      - name: ref
+        data_type: varchar
+      - name: alt
+        data_type: varchar
+      - name: vaf
+        data_type: double
+      - name: dp
+        data_type: double
+      - name: pdot
+        data_type: varchar
+      - name: cdot
+        data_type: varchar
+      - name: consequence
+        data_type: varchar
+      - name: exons
+        data_type: varchar

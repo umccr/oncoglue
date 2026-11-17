@@ -1,8 +1,0 @@
-input_id, varchar
-input_pfix, varchar
-output_id, varchar
-chrom, varchar
-start, double
-end, double
-cn, double
-baf, double

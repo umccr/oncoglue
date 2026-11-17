@@ -1,0 +1,11 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+level, varchar
+yield, double
+yield_projected, double
+aligned_pct, double
+error_rate, double
+intensity_c1, double
+pct_q30, double
+pct_occupied, double

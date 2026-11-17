@@ -1,0 +1,15 @@
+models:
+  - name: dragenfqc_readlen
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: mate
+        data_type: varchar
+      - name: bp
+        data_type: bigint
+      - name: reads
+        data_type: double

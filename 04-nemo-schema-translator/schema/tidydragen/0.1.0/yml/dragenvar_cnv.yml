@@ -1,0 +1,71 @@
+models:
+  - name: dragenvar_cnv
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: bases_in_ref_genome
+        data_type: double
+      - name: cov_alignment_avg_over_genome
+        data_type: double
+      - name: n_alignment
+        data_type: double
+      - name: n_filt_tot
+        data_type: double
+      - name: n_filt_tot_pct
+        data_type: double
+      - name: n_filt_dup
+        data_type: double
+      - name: n_filt_dup_pct
+        data_type: double
+      - name: n_filt_mapq
+        data_type: double
+      - name: n_filt_mapq_pct
+        data_type: double
+      - name: n_filt_unmap
+        data_type: double
+      - name: n_filt_unmap_pct
+        data_type: double
+      - name: coverage_mad
+        data_type: double
+      - name: gene_scaled_mad
+        data_type: double
+      - name: median_bin_count
+        data_type: double
+      - name: n_target_intervals
+        data_type: double
+      - name: n_samp_norm
+        data_type: double
+      - name: n_seg
+        data_type: double
+      - name: n_amp
+        data_type: double
+      - name: n_del
+        data_type: double
+      - name: n_amp_pass
+        data_type: double
+      - name: n_amp_pass_pct
+        data_type: double
+      - name: n_del_pass
+        data_type: double
+      - name: n_del_pass_pct
+        data_type: double
+      - name: sex_karyotype
+        data_type: varchar
+      - name: sex_genotyper_confidence
+        data_type: double
+      - name: pmad
+        data_type: double
+      - name: outlier_baf_fraction
+        data_type: double
+      - name: purity_tumor
+        data_type: double
+      - name: cov_diploid
+        data_type: double
+      - name: ploidy_overall
+        data_type: double
+      - name: homozygosity_index
+        data_type: double

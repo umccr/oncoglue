@@ -1,0 +1,8 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+sample, varchar
+loh_score, bigint
+tai_score, bigint
+lst_score, bigint
+hrd_score, bigint

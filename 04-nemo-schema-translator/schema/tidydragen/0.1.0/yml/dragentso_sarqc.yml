@@ -1,0 +1,69 @@
+models:
+  - name: dragentso_sarqc
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: contamination_score
+        data_type: double
+      - name: median_exon_coverage
+        data_type: double
+      - name: pct_exon_1000x
+        data_type: double
+      - name: gene_scaled_mad
+        data_type: double
+      - name: median_bin_count_cnv_target
+        data_type: double
+      - name: total_pf_reads
+        data_type: double
+      - name: mean_family_size
+        data_type: double
+      - name: median_target_coverage
+        data_type: double
+      - name: pct_chimeric_reads
+        data_type: double
+      - name: pct_exon_500x
+        data_type: double
+      - name: pct_exon_1500x
+        data_type: double
+      - name: pct_read_enrichment
+        data_type: double
+      - name: pct_usable_umi_reads
+        data_type: double
+      - name: mean_target_coverage
+        data_type: double
+      - name: pct_aligned_reads
+        data_type: double
+      - name: pct_contamination_est
+        data_type: double
+      - name: pct_target_04x_mean
+        data_type: double
+      - name: pct_target_500x
+        data_type: double
+      - name: pct_target_1000x
+        data_type: double
+      - name: pct_target_1500x
+        data_type: double
+      - name: pct_duplexfamilies
+        data_type: double
+      - name: median_insert_size
+        data_type: double
+      - name: max_somatic_af
+        data_type: double
+      - name: pct_soft_clipped_bases
+        data_type: double
+      - name: pct_q30_bases
+        data_type: double
+      - name: msi_pct_unstable_sites
+        data_type: double
+      - name: msi_sum_jsd
+        data_type: double
+      - name: tmb_per_mb
+        data_type: double
+      - name: tmb_coding_region_size_mb
+        data_type: double
+      - name: tmb_somatic_coding_variants_count
+        data_type: double

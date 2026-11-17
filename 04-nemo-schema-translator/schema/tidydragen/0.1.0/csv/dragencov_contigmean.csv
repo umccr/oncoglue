@@ -1,0 +1,6 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+chrom, varchar
+bases, double
+cov_mean, double

@@ -1,0 +1,23 @@
+models:
+  - name: interop_indexsummarydetail
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: lane
+        data_type: bigint
+      - name: index_number
+        data_type: bigint
+      - name: sample_id
+        data_type: varchar
+      - name: project
+        data_type: varchar
+      - name: index1
+        data_type: varchar
+      - name: index2
+        data_type: varchar
+      - name: pct_identified
+        data_type: double

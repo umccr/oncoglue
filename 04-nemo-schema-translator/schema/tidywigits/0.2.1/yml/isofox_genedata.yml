@@ -1,0 +1,35 @@
+models:
+  - name: isofox_genedata
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: gene_id
+        data_type: varchar
+      - name: gene_name
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: gene_length
+        data_type: bigint
+      - name: intronic_length
+        data_type: bigint
+      - name: transcript_count
+        data_type: bigint
+      - name: gene_set_id
+        data_type: varchar
+      - name: spliced_fragments
+        data_type: bigint
+      - name: unspliced_fragments
+        data_type: bigint
+      - name: tpm_adj
+        data_type: double
+      - name: tpm_raw
+        data_type: double
+      - name: fit_residuals
+        data_type: double
+      - name: low_map_quality_fragments
+        data_type: double

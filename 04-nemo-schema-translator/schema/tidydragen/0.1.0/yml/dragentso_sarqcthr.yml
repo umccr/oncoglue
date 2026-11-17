@@ -1,0 +1,21 @@
+models:
+  - name: dragentso_sarqcthr
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: group
+        data_type: varchar
+      - name: metric
+        data_type: varchar
+      - name: value
+        data_type: double
+      - name: uom
+        data_type: varchar
+      - name: lsl
+        data_type: double
+      - name: usl
+        data_type: double

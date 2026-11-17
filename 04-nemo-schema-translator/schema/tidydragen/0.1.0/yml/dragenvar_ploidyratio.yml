@@ -1,0 +1,13 @@
+models:
+  - name: dragenvar_ploidyratio
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: ratio
+        data_type: double

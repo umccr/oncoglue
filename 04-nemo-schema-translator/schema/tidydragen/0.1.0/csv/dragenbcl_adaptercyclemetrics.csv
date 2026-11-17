@@ -1,0 +1,11 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+lane, bigint
+sampleid, varchar
+index, varchar
+index2, varchar
+read, bigint
+cycle, bigint
+cluster_n, double
+cluster_pct, double

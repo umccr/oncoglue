@@ -1,5 +1,0 @@
-input_id, varchar
-input_pfix, varchar
-output_id, varchar
-covx, double
-value, double

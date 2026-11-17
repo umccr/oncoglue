@@ -1,0 +1,13 @@
+models:
+  - name: dragenmap_replayconfig
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: name
+        data_type: varchar
+      - name: value
+        data_type: varchar

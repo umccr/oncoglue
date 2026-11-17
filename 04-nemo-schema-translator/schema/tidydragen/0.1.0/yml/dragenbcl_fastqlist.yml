@@ -1,0 +1,21 @@
+models:
+  - name: dragenbcl_fastqlist
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: rgid
+        data_type: varchar
+      - name: rgsm
+        data_type: varchar
+      - name: rglb
+        data_type: varchar
+      - name: lane
+        data_type: bigint
+      - name: read
+        data_type: bigint
+      - name: filepath
+        data_type: varchar

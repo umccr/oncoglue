@@ -1,0 +1,17 @@
+models:
+  - name: dragenmap_gcbias
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: gc_window
+        data_type: bigint
+      - name: windows
+        data_type: double
+      - name: pct
+        data_type: double
+      - name: cov_norm
+        data_type: double

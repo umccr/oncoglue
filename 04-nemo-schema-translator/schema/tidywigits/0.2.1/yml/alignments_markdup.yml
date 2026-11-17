@@ -1,0 +1,29 @@
+models:
+  - name: alignments_markdup
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: library
+        data_type: varchar
+      - name: unpaired_reads_examined
+        data_type: double
+      - name: read_pairs_examined
+        data_type: double
+      - name: secondary_or_supplementary_reads
+        data_type: double
+      - name: unmapped_reads
+        data_type: double
+      - name: unpaired_read_duplicates
+        data_type: double
+      - name: read_pair_duplicates
+        data_type: double
+      - name: read_pair_optical_duplicates
+        data_type: double
+      - name: percent_duplication
+        data_type: double
+      - name: estimated_library_size
+        data_type: double

@@ -1,0 +1,10 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+lane, bigint
+reads_tot, double
+reads_pf, double
+pct_identified, double
+cv, double
+pct_identified_min, double
+pct_identified_max, double

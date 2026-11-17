@@ -1,0 +1,13 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+chrom, varchar
+start, bigint
+end, bigint
+total_cvg, double
+mean_cvg, double
+q1_cvg, double
+median_cvg, double
+q3_cvg, double
+min_cvg, double
+max_cvg, double

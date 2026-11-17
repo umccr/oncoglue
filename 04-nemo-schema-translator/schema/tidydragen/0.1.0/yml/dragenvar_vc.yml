@@ -1,0 +1,109 @@
+models:
+  - name: dragenvar_vc
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: section
+        data_type: varchar
+      - name: rg
+        data_type: varchar
+      - name: region
+        data_type: varchar
+      - name: total
+        data_type: double
+      - name: total_pct
+        data_type: double
+      - name: single_allelic
+        data_type: double
+      - name: single_allelic_pct
+        data_type: double
+      - name: biallelic
+        data_type: double
+      - name: biallelic_pct
+        data_type: double
+      - name: multiallelic
+        data_type: double
+      - name: multiallelic_pct
+        data_type: double
+      - name: snps
+        data_type: double
+      - name: snps_pct
+        data_type: double
+      - name: insertions
+        data_type: double
+      - name: insertions_pct
+        data_type: double
+      - name: insertions_hap
+        data_type: double
+      - name: insertions_hap_pct
+        data_type: double
+      - name: insertions_hom
+        data_type: double
+      - name: insertions_hom_pct
+        data_type: double
+      - name: insertions_het
+        data_type: double
+      - name: insertions_het_pct
+        data_type: double
+      - name: deletions
+        data_type: double
+      - name: deletions_pct
+        data_type: double
+      - name: deletions_hap
+        data_type: double
+      - name: deletions_hap_pct
+        data_type: double
+      - name: deletions_hom
+        data_type: double
+      - name: deletions_hom_pct
+        data_type: double
+      - name: deletions_het
+        data_type: double
+      - name: deletions_het_pct
+        data_type: double
+      - name: indels_het
+        data_type: double
+      - name: indels_het_pct
+        data_type: double
+      - name: chrx_snps
+        data_type: double
+      - name: chry_snps
+        data_type: double
+      - name: chrx_chry_snp_ratio
+        data_type: double
+      - name: snp_ti
+        data_type: double
+      - name: snp_tv
+        data_type: double
+      - name: titv_ratio
+        data_type: double
+      - name: heterozygous
+        data_type: double
+      - name: homozygous
+        data_type: double
+      - name: het_hom_ratio
+        data_type: double
+      - name: snp_mosaics
+        data_type: double
+      - name: indel_mosaics
+        data_type: double
+      - name: dbsnp_yes
+        data_type: double
+      - name: dbsnp_yes_pct
+        data_type: double
+      - name: dbsnp_not
+        data_type: double
+      - name: dbsnp_not_pct
+        data_type: double
+      - name: callability_pct
+        data_type: double
+      - name: autosome_callability_pct
+        data_type: double
+      - name: qc_region_callability_region1_pct
+        data_type: double
+      - name: qc_region_callability_region2_pct
+        data_type: double

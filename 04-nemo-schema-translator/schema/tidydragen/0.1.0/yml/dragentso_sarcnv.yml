@@ -1,0 +1,23 @@
+models:
+  - name: dragentso_sarcnv
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: foldchange
+        data_type: double
+      - name: qual
+        data_type: double
+      - name: cn_type
+        data_type: varchar
+      - name: gene
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: start
+        data_type: double
+      - name: end
+        data_type: double

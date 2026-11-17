@@ -1,0 +1,10 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+lane, bigint
+index_number, bigint
+sample_id, varchar
+project, varchar
+index1, varchar
+index2, varchar
+pct_identified, double

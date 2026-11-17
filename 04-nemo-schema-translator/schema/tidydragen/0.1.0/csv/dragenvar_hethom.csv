@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+section, varchar
+rg, varchar
+chrom, varchar
+het, double
+hom, double
+het_hom_ratio, double

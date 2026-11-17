@@ -1,0 +1,29 @@
+models:
+  - name: isofox_retintron
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: gene_id
+        data_type: varchar
+      - name: gene_name
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: strand
+        data_type: double
+      - name: position
+        data_type: double
+      - name: type
+        data_type: varchar
+      - name: frag_count
+        data_type: double
+      - name: spliced_frag_count
+        data_type: double
+      - name: dp_total
+        data_type: double
+      - name: transcript_info
+        data_type: varchar

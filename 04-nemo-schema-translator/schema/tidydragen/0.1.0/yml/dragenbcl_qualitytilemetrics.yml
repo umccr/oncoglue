@@ -1,0 +1,31 @@
+models:
+  - name: dragenbcl_qualitytilemetrics
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: lane
+        data_type: bigint
+      - name: sampleid
+        data_type: varchar
+      - name: index
+        data_type: varchar
+      - name: index2
+        data_type: varchar
+      - name: read
+        data_type: bigint
+      - name: tile
+        data_type: bigint
+      - name: yield
+        data_type: double
+      - name: yield_q30
+        data_type: double
+      - name: qscore_sum
+        data_type: double
+      - name: qscore_mean_pf
+        data_type: double
+      - name: q30_pct
+        data_type: double

@@ -1,0 +1,75 @@
+models:
+  - name: interop_summaryreadlane
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: read
+        data_type: varchar
+      - name: lane
+        data_type: bigint
+      - name: surface
+        data_type: bigint
+      - name: tiles
+        data_type: bigint
+      - name: density
+        data_type: double
+      - name: density_sd
+        data_type: double
+      - name: cluster_pf_pct
+        data_type: double
+      - name: cluster_pf_pct_sd
+        data_type: double
+      - name: legacy_phasing_rate
+        data_type: double
+      - name: legacy_prephasing_rate
+        data_type: double
+      - name: phasing_slope
+        data_type: double
+      - name: phasing_offset
+        data_type: double
+      - name: prephasing_slope
+        data_type: double
+      - name: prephasing_offset
+        data_type: double
+      - name: reads
+        data_type: double
+      - name: reads_pf
+        data_type: double
+      - name: pct_q30
+        data_type: double
+      - name: yield
+        data_type: double
+      - name: cycles_error
+        data_type: varchar
+      - name: aligned_pct
+        data_type: double
+      - name: aligned_pct_sd
+        data_type: double
+      - name: error_pct
+        data_type: double
+      - name: error_pct_sd
+        data_type: double
+      - name: error35_pct
+        data_type: double
+      - name: error35_pct_sd
+        data_type: double
+      - name: error75_pct
+        data_type: double
+      - name: error75_pct_sd
+        data_type: double
+      - name: error100_pct
+        data_type: double
+      - name: error100_pct_sd
+        data_type: double
+      - name: pct_occupied
+        data_type: double
+      - name: pct_occupied_sd
+        data_type: double
+      - name: intensity_c1
+        data_type: double
+      - name: intensity_c1_sd
+        data_type: double

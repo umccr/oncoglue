@@ -1,0 +1,7 @@
+.env
+manifest.csv
+
+# exclude any local data
+data/*
+!data/.gitkeep
+__pycache__/

@@ -1,0 +1,9 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+lane, bigint
+index, varchar
+index2, varchar
+reads_n, double
+unknown_barcodes_pct, double
+all_reads_pct, double

@@ -1,0 +1,19 @@
+models:
+  - name: dragenvar_hrd
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: sample
+        data_type: varchar
+      - name: loh_score
+        data_type: bigint
+      - name: tai_score
+        data_type: bigint
+      - name: lst_score
+        data_type: bigint
+      - name: hrd_score
+        data_type: bigint

@@ -1,0 +1,56 @@
+---
+version: 2
+models:
+  - name: sat_dragenmap_gcmain
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: window_size
+        data_type: bigint
+      - name: windows_valid
+        data_type: double
+      - name: windows_discarded
+        data_type: double
+      - name: gc_ref_avg
+        data_type: double
+      - name: cov_global_mean
+        data_type: double
+      - name: cov_norm_gc_0_19
+        data_type: double
+      - name: cov_norm_gc_20_39
+        data_type: double
+      - name: cov_norm_gc_40_59
+        data_type: double
+      - name: cov_norm_gc_60_79
+        data_type: double
+      - name: cov_norm_gc_80_100
+        data_type: double
+      - name: at_dropout
+        data_type: double
+      - name: gc_dropout
+        data_type: double

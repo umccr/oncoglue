@@ -1,0 +1,15 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+lane, bigint
+sampleid, varchar
+index, varchar
+index2, varchar
+reads_n, double
+perfect_idx_reads_n, double
+one_mismatch_idx_reads_n, double
+two_mismatch_idx_reads_n, double
+reads_pct, double
+perfect_idx_reads_pct, double
+one_mismatch_idx_reads_pct, double
+two_mismatch_idx_reads_pct, double

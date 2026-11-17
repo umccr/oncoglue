@@ -1,0 +1,29 @@
+models:
+  - name: dragencov_reportbedmain
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: chrom
+        data_type: varchar
+      - name: start
+        data_type: bigint
+      - name: end
+        data_type: bigint
+      - name: total_cvg
+        data_type: double
+      - name: mean_cvg
+        data_type: double
+      - name: q1_cvg
+        data_type: double
+      - name: median_cvg
+        data_type: double
+      - name: q3_cvg
+        data_type: double
+      - name: min_cvg
+        data_type: double
+      - name: max_cvg
+        data_type: double

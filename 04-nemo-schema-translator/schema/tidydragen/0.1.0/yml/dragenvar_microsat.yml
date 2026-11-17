@@ -1,0 +1,23 @@
+models:
+  - name: dragenvar_microsat
+    columns:
+      - name: input_id
+        data_type: varchar
+      - name: input_prefix
+        data_type: varchar
+      - name: output_id
+        data_type: varchar
+      - name: sites_assessed
+        data_type: double
+      - name: sites_unstable
+        data_type: double
+      - name: pct_unstable
+        data_type: double
+      - name: result_valid
+        data_type: varchar
+      - name: result_message
+        data_type: varchar
+      - name: sum_distance
+        data_type: double
+      - name: sum_jsd
+        data_type: double

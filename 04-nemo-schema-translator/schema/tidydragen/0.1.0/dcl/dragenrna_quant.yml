@@ -1,0 +1,98 @@
+---
+version: 2
+models:
+  - name: sat_dragenrna_quant
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - library_workflow_run_hk
+              - load_date
+              - hash_diff
+    columns:
+      - name: library_workflow_run_hk
+        data_type: varchar(64)
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('link_library_workflow_run')
+                field: library_workflow_run_hk
+      - name: load_date
+        data_type: date
+      - name: hash_diff
+        data_type: varchar(64)
+      - name: record_source
+        data_type: varchar(255)
+      - name: last_seen_datetime
+        data_type: timestamp
+      - name: batch_id
+        data_type: varchar(26)
+      - name: batch_date
+        data_type: date
+      - name: library_orientation
+        data_type: varchar
+      - name: genes_tot
+        data_type: double
+      - name: transcripts_tot
+        data_type: double
+      - name: genes_coding
+        data_type: double
+      - name: transcript_cv_cov_median
+        data_type: double
+      - name: cov_bias_5prime_median
+        data_type: double
+      - name: cov_bias_3prime_median
+        data_type: double
+      - name: genes_cov_gt1x
+        data_type: double
+      - name: genes_cov_gt1x_pct
+        data_type: double
+      - name: genes_cov_gt10x
+        data_type: double
+      - name: genes_cov_gt10x_pct
+        data_type: double
+      - name: genes_cov_gt30x
+        data_type: double
+      - name: genes_cov_gt30x_pct
+        data_type: double
+      - name: genes_cov_gt100x
+        data_type: double
+      - name: genes_cov_gt100x_pct
+        data_type: double
+      - name: frags_fwd_transcript
+        data_type: double
+      - name: frags_fwd_transcript_pct
+        data_type: double
+      - name: frags_rev_transcript
+        data_type: double
+      - name: frags_rev_transcript_pct
+        data_type: double
+      - name: frags_strand_mismatch
+        data_type: double
+      - name: frags_strand_mismatch_pct
+        data_type: double
+      - name: frags_strand_ambiguous
+        data_type: double
+      - name: frags_strand_ambiguous_pct
+        data_type: double
+      - name: frags_unknown_transcript
+        data_type: double
+      - name: frags_unknown_transcript_pct
+        data_type: double
+      - name: frags_intron
+        data_type: double
+      - name: frags_intron_pct
+        data_type: double
+      - name: frags_intergenic
+        data_type: double
+      - name: frags_intergenic_pct
+        data_type: double
+      - name: cov_fold_exons_all
+        data_type: double
+      - name: cov_fold_introns
+        data_type: double
+      - name: cov_fold_intergenic
+        data_type: double
+      - name: cov_fold_exons_coding
+        data_type: double

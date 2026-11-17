@@ -1,0 +1,10 @@
+input_id, varchar
+input_prefix, varchar
+output_id, varchar
+dragen_version, varchar
+nodename, varchar
+kernel_release, varchar
+ht_sw_version, varchar
+hash_table_version, varchar
+ht_command_line, varchar
+command_line, varchar
